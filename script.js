@@ -6,7 +6,7 @@ const buttonsLevel= async()=>{
     const response = await fetch("fases.json");
     const data = await response.json();
     buttons.innerHTML="";
-    text.innerHTML="";
+    read.innerHTML="";
     result.innerHTML="";
     for(let i=0;i<data.length;i++){
         buttons.innerHTML+=`<input type="button" onclick="chooseLevel(${i})" value="Level ${i+1}"><br>`;
@@ -17,7 +17,7 @@ buttonsLevel()
 const chooseLevel =  async(level) => {
     const response = await fetch("fases.json");
     const data = await response.json();
-    text.innerHTML="";
+    read.innerHTML="";
     buttons.innerHTML="";
     for(let i=0;i<data[level].length;i++){
         buttons.innerHTML+=`<input type="button" onclick="choosePhase(${i},${level})" value="${Object.keys(data[level][i])}"/><br>`;
@@ -30,7 +30,7 @@ const chooseLevel =  async(level) => {
 
 const choosePhase = async(phase,level)=>{
     result.innerHTML="";
-    text.innerHTML="";
+    read.innerHTML="";
     const response = await fetch("fases.json");
     const data = await response.json();
 
@@ -55,18 +55,37 @@ const choosePhase = async(phase,level)=>{
     if(phaseName=="palavras"){
         buttons.innerHTML=`<br><input type="button" onclick="startArtyon()" value="Começar"/></br>`;
         var hits=0;
-        let numberWord=0;
-        text.innerHTML=arrayText[numberWord];
-
+        var numberWord=0;
+        
+        read.innerHTML=arrayText[0];
         artyom.redirectRecognizedTextOutput(function(text,isFinal){
             if(isFinal){
                 var arrayWord=Artyom.prototype.splitStringByChunks(text,1);
-                    console.log(arrayWord[0].trim().toLowerCase()+"<-recebe|json->"+arrayText[numberWord].toLowerCase())
-                    console.log(arrayWord[0].trim().toLowerCase()==arrayText[numberWord].toLowerCase())
-                    if(arrayWord[0].trim().toLowerCase()==arrayText[numberWord].toLowerCase()){
-                        hits++;
-                        numberWord++;
+                console.log(arrayWord[0].trim().toLowerCase()+"<-recebe|json->"+arrayText[numberWord].toLowerCase())
+                console.log(arrayWord[0].trim().toLowerCase()==arrayText[numberWord].toLowerCase())
+                if(arrayWord[0].trim().toLowerCase()==arrayText[numberWord].toLowerCase()){
+                    hits++;
+                }
+                numberWord++;
+                read.innerHTML=arrayText[numberWord];
+                if(numberWord==3){
+                    if(hits==3){
+                        read.innerHTML=arrayText[2];
+                        result.innerHTML="Parabes voce conseguiu 3 estrelas<br>";
+                    }else if(hits==2){
+                        read.innerHTML=arrayText[2];
+                        result.innerHTML="Voce conseguiu 2 estrelas<br>";
+                    }else if(hits==1){
+                        read.innerHTML=arrayText[2];
+                        result.innerHTML="Voce consegiu 1 estrelas<br>";
+                    }else if(hits==0){
+                        read.innerHTML=arrayText[2];
+                        result.innerHTML="Voce nao conseguiu nenhuma estrela";
                     }
+                    result.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level})" value="Proxima fase"/><br>`;
+                    result.innerHTML+=`<input type="button" onclick="buttonsLevel()" value="Voltar ao começo"/><br>`;
+                    stopArtyon();
+                }
             }
         });
 
@@ -75,7 +94,7 @@ const choosePhase = async(phase,level)=>{
     }else{
         buttons.innerHTML=`<br><input type="button" onclick="startArtyon()" value="Começar"/></br>`;
         for(var i=0;i<arrayText.length;i++){
-            text.innerHTML+=arrayText[i];
+            read.innerHTML+=arrayText[i];
         }
 
         artyom.redirectRecognizedTextOutput(function(text,isFinal){
@@ -106,6 +125,7 @@ const choosePhase = async(phase,level)=>{
     } 
 
 }
+
 //Artyom codes
 
 var artyom = new Artyom();
