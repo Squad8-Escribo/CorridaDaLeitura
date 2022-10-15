@@ -6,16 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/game.css">
     <title>Corrida Maluca</title>
 </head>
 
 <body>
     <div class="bg_body">
-        <h1>Primeira versão do front-end</h1>
-        <canvas id="game_screen">
-            <p>O seu navegador não suporta o HTML5, por favor, tente em outro navegador.</p>
-        </canvas>
+        <div class="game-screen">
+            <div class="game-logo" id="logo">
+                <img src="public/img/logo.png" alt="" class="img-logo">
+            </div>
+            <div class="game-menu" id="game">
+                <button class="game-cfg game-menu_btn">
+                    <img src="public/img/settings.png" alt="" class="img-btn">
+                </button>
+                <button class="game-play game-menu_btn" onclick="play()">
+                    <img src="public/img/play.png" alt="" class="img-btn">
+                </button>
+                <button class="game-faq game-menu_btn">
+                    <img src="public/img/instruct.png" alt="" class="img-btn">
+                </button>
+            </div>
+        </div>
     </div>
 </body>
 <script src="public/js/index.js"></script>
+
 </html>

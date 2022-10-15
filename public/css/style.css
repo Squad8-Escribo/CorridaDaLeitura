@@ -10,9 +10,3 @@ body{
     flex-direction: column;
     justify-content: space-around;
 }
-
-#game_screen{
-    border: 1px solid black;
-    height: 400px;
-    width: 700px
-}

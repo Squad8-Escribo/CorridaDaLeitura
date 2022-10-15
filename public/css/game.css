@@ -1,0 +1,27 @@
+.game-screen{
+    background-image: url(../img/fundoSemCarro.png);
+    background-size: contain;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 700px
+}
+
+.game-logo{
+    margin: 80px auto;
+}
+
+.img-logo{
+    width: 400px;
+}
+
+.img-btn{
+    width: 60px;
+}
+
+.game-menu{
+    display: flex;
+    justify-content: space-evenly;
+}
+
