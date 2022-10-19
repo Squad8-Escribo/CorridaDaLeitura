@@ -1,0 +1,27 @@
+#game-levels{
+    display: none;
+    font-size: 20px;
+    justify-content: space-evenly;
+    margin: auto 0;
+    flex-direction: column;
+    width: 100%;
+}
+
+.levelImg{
+    width: 100px;
+}
+
+.fases{
+    display: flex;
+    justify-content: space-evenly;
+    height: 300px;
+    align-items: center;
+}
+
+.back-button{
+    margin-left: 10px;
+}
+
+.back-button img{
+    width: 60px;
+}

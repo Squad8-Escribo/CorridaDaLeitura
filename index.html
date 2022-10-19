@@ -7,28 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/game.css">
+    <link rel="stylesheet" href="public/css/levelsMenu.css">
     <title>Corrida Maluca</title>
 </head>
 
 <body>
     <div class="bg_body">
-        <div class="game-screen">
+        <div class="game-screen" id="bg">
             <div class="game-logo" id="logo">
                 <img src="public/img/logo.png" alt="" class="img-logo">
             </div>
             <div class="game-menu" id="game">
-                <button class="game-cfg game-menu_btn">
+                <a class="game-cfg game-menu_btn">
                     <img src="public/img/settings.png" alt="" class="img-btn">
-                </button>
-                <button class="game-play game-menu_btn" onclick="play()">
+                </a>
+                <a class="game-play game-menu_btn" onclick="play()">
                     <img src="public/img/play.png" alt="" class="img-btn">
-                </button>
-                <button class="game-faq game-menu_btn">
+                </a>
+                <a class="game-faq game-menu_btn">
                     <img src="public/img/instruct.png" alt="" class="img-btn">
-                </button>
+                </a>
             </div>
-            <div id="back">
-                <button>Voltar</button>
+            <div id="game-levels">
+                <div class="back-button">
+                    <a href=""><img src="public/img/botaoVoltar.png" alt=""></a>
+                </div>
+                <div class="fases">
+                <a class="faseUm fase"><img src="public/img/balaoDeFaseNome.png" alt="" class="levelImg"></a>
+                <a class="faseDois fase"><img src="public/img/balaoDeFaseNome.png" alt="" class="levelImg"></a>
+                <a class="faseTres fase"><img src="public/img/balaoDeFaseNome.png" alt="" class="levelImg"></a>
+            </div>
             </div>
         </div>
     </div>

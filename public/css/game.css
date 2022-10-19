@@ -1,5 +1,5 @@
 .game-screen{
-    background-image: url(../img/fundoSemCarro.png);
+    background-image: url(../img/backgroundTelaInicial.png);
     background-size: contain;
     border: 1px solid black;
     display: flex;
@@ -25,8 +25,9 @@
     justify-content: space-evenly;
 }
 
-#back{
+#game-tutorial img{
     display: none;
-    font-size: 20px;
+    width: 600px;
 }
+
 
