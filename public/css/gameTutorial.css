@@ -1,0 +1,10 @@
+#tutorial{
+    display: none;
+    flex-direction: column;
+}
+
+.tutorial-image{
+    display: flex;
+    margin: 0 auto;
+    width: 550px;
+}

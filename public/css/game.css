@@ -9,7 +9,7 @@
 }
 
 .game-logo{
-    margin: 80px auto;
+    margin: 60px auto 10px;
 }
 
 .img-logo{
@@ -18,11 +18,22 @@
 
 .img-btn{
     width: 60px;
+    margin-right: 0;
+}
+
+.play-btn{
+    width: 100px;
 }
 
 .game-menu{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.game-menu_btn{
+    margin-right: 30px;
 }
 
 #game-tutorial img{

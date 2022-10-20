@@ -8,35 +8,63 @@
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/game.css">
     <link rel="stylesheet" href="public/css/levelsMenu.css">
+    <link rel="stylesheet" href="public/css/gameTutorial.css">
     <title>Corrida Maluca</title>
 </head>
 
 <body>
     <div class="bg_body">
+
         <div class="game-screen" id="bg">
+
+            <!-- Página de menu inicial -->
+
             <div class="game-logo" id="logo">
                 <img src="public/img/logo.png" alt="" class="img-logo">
             </div>
             <div class="game-menu" id="game">
                 <a class="game-cfg game-menu_btn">
-                    <img src="public/img/settings.png" alt="" class="img-btn">
+                    <img src="public/img/btns/settings.png" alt="" class="img-btn">
                 </a>
                 <a class="game-play game-menu_btn" onclick="play()">
-                    <img src="public/img/play.png" alt="" class="img-btn">
+                    <img src="public/img/btns/play.png" alt="" class="img-btn play-btn">
                 </a>
-                <a class="game-faq game-menu_btn">
-                    <img src="public/img/instruct.png" alt="" class="img-btn">
+                <a class="game-faq game-menu_btn" onclick="exibeTutorial()">
+                    <img src="public/img/btns/instruct.png" alt="" class="img-btn">
                 </a>
             </div>
+
+            <!-- Página de tutoriais -->
+
+            <div id="tutorial">
+                <div class="back-button">
+                    <a href=""><img src="public/img/btns/botaoVoltar.png" alt=""></a>
+                </div>
+                <div class="tutorial-container">
+                    <img src="public/img/tutorial.png" alt="" class="tutorial-image">
+                </div>
+            </div>
+
+            <!-- Página de fases -->
+
             <div id="game-levels">
                 <div class="back-button">
-                    <a href=""><img src="public/img/botaoVoltar.png" alt=""></a>
+                    <a href=""><img src="public/img/btns/botaoVoltar.png" alt=""></a>
                 </div>
                 <div class="fases">
-                <a class="faseUm fase"><img src="public/img/balaoDeFaseNome.png" alt="" class="levelImg"></a>
-                <a class="faseDois fase"><img src="public/img/balaoDeFaseNome.png" alt="" class="levelImg"></a>
-                <a class="faseTres fase"><img src="public/img/balaoDeFaseNome.png" alt="" class="levelImg"></a>
-            </div>
+                    <div class="fases-carrinho">
+                        <a class="faseUm fase"><img src="public/img/balaoDeFaseNome.png" alt="" class="levelImg"></a>
+                        <img src="public/img/carrinhos/carrinho1.png" alt="" class="carrinho carrinhoUm">
+                    </div>
+                    <div class="fases-carrinho">
+                        <a class="faseDois fase"><img src="public/img/balaoDeFaseNome.png" alt="" class="levelImg"></a>
+                        <img src="public/img/carrinhos/carrinho2.png" alt="" class="carrinho">
+                    </div>
+                    <div class="fases-carrinho">
+                        <a class="faseTres fase"><img src="public/img/balaoDeFaseNome.png" alt="" class="levelImg"></a>
+                        <img src="public/img/carrinhos/carrinho3.png" alt="" class="carrinho carrinhoTres">
+                    </div>
+                </div>
             </div>
         </div>
     </div>

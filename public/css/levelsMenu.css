@@ -8,7 +8,8 @@
 }
 
 .levelImg{
-    width: 100px;
+    width: 120px;
+    margin-top: 0;
 }
 
 .fases{
@@ -20,8 +21,30 @@
 
 .back-button{
     margin-left: 10px;
+    margin-top: 10px;
 }
 
 .back-button img{
     width: 60px;
 }
+
+.fases-carrinho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carrinho{
+    width: 60px;
+}
+
+.faseDois{
+    margin-top: 45px
+}
+
+.carrinhoTres, .carrinhoUm{
+    margin-bottom: 25px;
+}
+
+
+
