@@ -1,0 +1,98 @@
+.game-screen{
+    height: 400px;
+    width: 700px;
+    border: 1px solid black;
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#sky {
+    background: url(/public/img/ceu.png);
+    background-size: contain;
+    height: 200px;
+    width: 1000%;
+    display: block;
+    position: absolute;
+    background-repeat: repeat-x;
+}
+
+#road {
+    height: 200px;
+    width: 1000%;
+    background: url(/public/img/estrada.png);
+    background-size: contain;
+    display: block;
+    position: absolute;
+    background-repeat: repeat-x;
+    bottom: 0%;
+    left: 0%;
+}
+#car {
+    position: absolute;
+    bottom: 31%;
+    left: 2%;
+}
+#car img {
+    height: 40px;
+    width: auto;
+}
+
+/*  vou arrumar ainda
+#obstacle {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 110px;
+    left: 580px;
+}
+*/
+
+/*Animations*/
+.carJump {
+    animation: carJump 1s linear;
+}
+
+.carSuspension {
+    animation: carSuspension 1s ease infinite;
+
+}
+
+.skyAnimation {
+    animation: carMove 35s ease;
+}
+
+.roadAnimation {
+    animation: carMove 30s ease; 
+}
+
+@keyframes carMove {
+    100%{
+        transform: translateX(-2950px);
+    }
+}
+
+@keyframes carSuspension {
+    100%{
+        transform: translateY(-4px);
+    } 50% {
+        transform: translateY(2px);
+    } 0% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes carJump {
+    0% {
+        top: 200px;
+    } 30% {
+        top: 220px;
+    } 50% {
+        top: 150px;
+    } 80% {
+        top: 180px;
+    } 100% {
+        top: 200px;
+    }
+}
