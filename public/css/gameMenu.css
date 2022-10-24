@@ -34,6 +34,12 @@
 
 .game-menu_btn{
     margin-right: 30px;
+    transition: 0.3s;
+}
+
+.game-menu_btn:hover {
+    transform: scale(1.3);
+    z-index: 2;
 }
 
 #game-tutorial img{
