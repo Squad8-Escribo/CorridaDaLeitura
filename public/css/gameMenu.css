@@ -1,5 +1,5 @@
 .game-screen{
-    background-image: url(../img/backgroundTelaInicial.png);
+    background-image: url(../img//background/backgroundStartScreen.png);
     background-size: contain;
     border: 1px solid black;
     display: flex;

@@ -17,7 +17,7 @@ function play() {
 }
 
 function levelScreen(){
-    gameScreen.style.backgroundImage = "url('public/img/backgroundTelaDeFase_Limpa.png')"
+    gameScreen.style.backgroundImage = "url('public/img/background/backgroundCleanScreen.png')"
     levels.style.display = "flex";
 
     for(let i = 0; i<3; i++){

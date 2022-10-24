@@ -9,7 +9,7 @@
 }
 
 #sky {
-    background: url(/public/img/ceu.png);
+    background: url(/public/img/elements/sky.png);
     background-size: contain;
     height: 200px;
     width: 1000%;
@@ -24,7 +24,7 @@
     top: 20px;
     left: 155px;
     position: absolute;
-    background: url(/public/img/word-box.png);
+    background: url(/public/img/elements/word-box.png);
     background-size: contain ;
     background-repeat: no-repeat;
     z-index: 1;
@@ -33,7 +33,7 @@
 #road {
     height: 200px;
     width: 1000%;
-    background: url(/public/img/estrada.png);
+    background: url(/public/img/elements/road.png);
     background-size: contain;
     display: block;
     position: absolute;
@@ -51,7 +51,7 @@
     width: auto;
 }
 #mic {
-    background: url(/public/img/btns/btn-mic.png);
+    background: url(/public/img/btns/micBtn.png);
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
