@@ -21,7 +21,8 @@ function levelScreen(){
     levels.style.display = "flex";
 
     for(let i = 0; i<3; i++){
-        fase[i].onclick = primeiraFase; //TODO: Implementar array de fases
+        fase[i].onclick = primeiraFase;        
+        //TODO: Implementar array de fases
     }
     
 }
@@ -32,6 +33,8 @@ function exibeTutorial(){
 }
 
 function primeiraFase(){
-    alert("Primeira fase em breve...")
+    limparTela()
+    //pra ir pra a pagina play.html ela tem que estar rodando no live server!!
+   window.location.href = "http://127.0.0.1:5500/play.html"
 }
 
