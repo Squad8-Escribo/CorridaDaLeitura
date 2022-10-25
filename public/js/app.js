@@ -6,13 +6,13 @@ const levels = document.getElementById('game-levels');
 const fase = document.getElementsByClassName('fase');
 const tutorial = document.getElementById('tutorial')
 
-function limparTela(){
+function cleanScreen(){
     gameMenu.style.display = "none";
     logo.style.display = "none";
 }
 
-function play() {
-    limparTela()
+function playGame() {
+    cleanScreen()
     levelScreen()
 }
 
@@ -27,13 +27,13 @@ function levelScreen(){
     
 }
 
-function exibeTutorial(){
-    limparTela()
+function showTutorial(){
+    cleanScreen()
     tutorial.style.display = "flex";
 }
 
 function primeiraFase(){
-    limparTela()
+    cleanScreen()
     //pra ir pra a pagina play.html ela tem que estar rodando no live server!!
    window.location.href = "http://127.0.0.1:5500/play.html"
 }
