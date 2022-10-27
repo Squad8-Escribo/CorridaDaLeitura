@@ -1,4 +1,4 @@
-.game-screen{
+.game-screen {
     background-image: url(../img//background/backgroundStartScreen.png);
     background-size: contain;
     border: 1px solid black;
@@ -7,44 +7,32 @@
     height: 400px;
     width: 700px
 }
-
-.game-logo{
-    margin: 60px auto 10px;
-}
-
-.img-logo{
-    width: 400px;
-}
-
-.img-btn{
-    width: 60px;
-    margin-right: 0;
-}
-
-.play-btn{
-    width: 100px;
-}
-
-.game-menu{
+.game-screen__menu {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 300px;
 }
-
-.game-menu_btn{
+.game-screen__menu-logo {
+    margin: 60px auto 10px;
+}
+.game-screen__menu-logo--img {
+    width: 400px;
+}
+.game-screen__menu-btn {
     margin-right: 30px;
     transition: 0.3s;
 }
-
-.game-menu_btn:hover {
+.game-screen__menu-btn:hover {
     transform: scale(1.3);
     z-index: 2;
 }
-
-#game-tutorial img{
-    display: none;
-    width: 600px;
+.game-screen__menu-btn--img {
+    width: 60px;
+    margin-right: 0;
+}
+.game-screen__menu-btn--play{
+    width: 100px;
 }
 
 

@@ -1,14 +1,14 @@
-.game-screen{
+#game-play {
     height: 400px;
     width: 700px;
     border: 1px solid black;
     position: relative;
     overflow-x: hidden;
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
-#sky {
+#game-play__sky {
     background: url(/public/img/elements/sky.png);
     background-size: contain;
     height: 200px;

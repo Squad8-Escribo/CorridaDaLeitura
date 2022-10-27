@@ -7,68 +7,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/gameMenu.css">
-    <link rel="stylesheet" href="public/css/levelsMenu.css">
+    <link rel="stylesheet" href="public/css/gameLevels.css">
     <link rel="stylesheet" href="public/css/gameTutorial.css">
+    <link rel="stylesheet" href="public/css/gamePlay.css">
     <title>Corrida Maluca</title>
 </head>
 
 <body>
-    <div class="bg_body">
+    <div class="bg-body">
 
-        <div class="game-screen" id="bg">
+        <div class="game-screen" id="game-screen">
 
-            <!-- Página de menu inicial -->
+            <!-- Game Screen -->
 
-            <div class="game-logo" id="logo">
-                <img src="public/img/elements/logo.png" alt="" class="img-logo">
-            </div>
-            <div class="game-menu" id="game">
-                <a class="game-cfg game-menu_btn">
-                    <img src="public/img/btns/settingsBtn.png" alt="" class="img-btn">
-                </a>
-                <a class="game-play game-menu_btn" onclick="playGame()">
-                    <img src="public/img/btns/playBtn.png" alt="" class="img-btn play-btn">
-                </a>
-                <a class="game-faq game-menu_btn" onclick="showTutorial()">
-                    <img src="public/img/btns/tutorialBtn.png" alt="" class="img-btn">
-                </a>
+            <div class="game-screen__menu-logo" id="game-logo">
+                <img src="public/img/elements/logo.png" alt="" class="game-screen__menu-logo--img">
             </div>
 
-            <!-- Página de tutoriais -->
+             <!-- Menu Screen-->
 
-            <div id="tutorial">
-                <div class="back-button">
+            <div class="game-screen__menu" id="game-menu">
+                <a class="game-screen__menu-btn--cfg game-screen__menu-btn">
+                    <img src="public/img/btns/settingsBtn.png" alt="" class="game-screen__menu-btn--img">
+                </a>
+                <a id="playBtn" class="game-screen__menu-play game-screen__menu-btn" onclick="playGame()">
+                    <img src="public/img/btns/playBtn.png" alt="" class="game-screen__menu-btn--img game-screen__menu-btn--play">
+                </a>
+                <a class="game-screen__menu-tutorial game-screen__menu-btn" onclick="showTutorial()">
+                    <img src="public/img/btns/tutorialBtn.png" alt="" class="game-screen__menu-btn--img">
+                </a>
+            </div>
+
+            <!-- Tutorial Screen-->
+
+            <div id="game-tutorial">
+                <div class="game-tutorial__back-btn">
                     <a href=""><img src="public/img/btns/backBtn.png" alt=""></a>
                 </div>
-                <div class="tutorial-container">
-                    <img src="public/img/elements/tutorial.png" alt="" class="tutorial-image">
+                <div class="game-tutorial__container">
+                    <img src="public/img/elements/tutorial.png" alt="" class="game-tutorial__container--img">
                 </div>
             </div>
 
-            <!-- Página de fases -->
+            <!-- Levels Screeen -->
 
             <div id="game-levels">
-                <div class="back-button">
+                <div class="game-levels__back-btn">
                     <a href=""><img src="public/img/btns/backBtn.png" alt=""></a>
                 </div>
-                <div class="fases">
-                    <div class="fases-carrinho">
-                        <a class="faseUm fase"><img src="public/img/btns/levelBtn.png" alt="" class="levelImg"></a>
-                        <img src="public/img/cars/carBlue.png" alt="" class="carrinho carrinhoUm">
+                <div class="game-levels__levels">
+                    <div class="game-levels__levels-car">
+                        <a class="game-levels__levels--one level"><img src="public/img/btns/levelBtn.png" alt="" class="game-levels__levels-img"></a>
+                        <img src="public/img/cars/carBlue.png" alt="" class="game-levels__cars game-levels__cars--one,">
                     </div>
-                    <div class="fases-carrinho">
-                        <a class="faseDois fase"><img src="public/img/btns/levelBtn.png" alt="" class="levelImg"></a>
-                        <img src="public/img/cars/carGreen.png" alt="" class="carrinho">
+                    <div class="game-levels__levels-car">
+                        <a class="game-levels__levels--two level"><img src="public/img/btns/levelBtn.png" alt="" class="game-levels__levels-img"></a>
+                        <img src="public/img/cars/carGreen.png" alt="" class="game-levels__cars game-levels__cars--two">
                     </div>
-                    <div class="fases-carrinho">
-                        <a class="faseTres fase"><img src="public/img/btns/levelBtn.png" alt="" class="levelImg"></a>
-                        <img src="public/img/cars/carYellow.png" alt="" class="carrinho carrinhoTres">
+                    <div class="game-levels__levels-car">
+                        <a class="game-levels__levels--three level"><img src="public/img/btns/levelBtn.png" alt="" class="game-levels__levels-img"></a>
+                        <img src="public/img/cars/carYellow.png" alt="" class="game-levels__cars game-levels__cars--three">
                     </div>
                 </div>
+            </div>
+
+            <!-- Play Screen -->
+
+            <div id="game-play">
+                    <div id="word-box"></div>
+                    <div id="sky"></div>
+                    <div id="road"></div>
+                    <div id="car">
+                        <img src="public/img/cars/carRed.png" alt="">
+                    </div>
+                    <div id="mic"></div>
+                    <!--Ainda vou criar-->
+                    <div id="obstacle">
+            
+                    </div>
             </div>
         </div>
     </div>
 </body>
 <script src="public/js/app.js"></script>
+<script src="public/js/game.js"></script>
 
 </html>

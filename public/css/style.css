@@ -3,7 +3,7 @@ body{
     padding: 0;
 }
 
-.bg_body{
+.bg-body{
     align-items: center;
     display: flex;
     flex-direction: column;

@@ -1,14 +1,17 @@
-const gameScreen = document.getElementById('bg')
-const playBt = document.getElementsByClassName('game-play');
-const gameMenu = document.getElementById('game');
-const logo = document.getElementById('logo');
-const levels = document.getElementById('game-levels');
-const fase = document.getElementsByClassName('fase');
-const tutorial = document.getElementById('tutorial')
+const gameScreen = document.getElementById('game-screen')
+const gameMenu = document.getElementById('game-menu');
+const playBtn = document.getElementById('play-btn ');
+const gameLogo = document.getElementById('game-logo');
+const gameTutorial = document.getElementById('game-tutorial')
+const gameLevels = document.getElementById('game-levels');
+const level = document.getElementsByClassName('level');
+const gamePlay = document.getElementById('game-play')
+
+gamePlay.style.display = "none"
 
 function cleanScreen(){
     gameMenu.style.display = "none";
-    logo.style.display = "none";
+    gameLogo.style.display = "none";
 }
 
 function playGame() {
@@ -18,10 +21,10 @@ function playGame() {
 
 function levelScreen(){
     gameScreen.style.backgroundImage = "url('public/img/background/backgroundCleanScreen.png')"
-    levels.style.display = "flex";
+    gameLevels.style.display = "flex";
 
     for(let i = 0; i<3; i++){
-        fase[i].onclick = primeiraFase;        
+        level[i].onclick = firstLevel;        
         //TODO: Implementar array de fases
     }
     
@@ -29,12 +32,13 @@ function levelScreen(){
 
 function showTutorial(){
     cleanScreen()
-    tutorial.style.display = "flex";
+    gameTutorial.style.display = "flex";
 }
 
-function primeiraFase(){
+function firstLevel() {
     cleanScreen()
-    //pra ir pra a pagina play.html ela tem que estar rodando no live server!!
-   window.location.href = "http://127.0.0.1:5500/play.html"
+    gameLevels.style.display = "none";
+    gamePlay.style.display = "flex";
+
 }
 
