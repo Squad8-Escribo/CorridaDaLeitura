@@ -5,20 +5,22 @@ const gameLogo = document.getElementById('game-logo');
 const gameTutorial = document.getElementById('game-tutorial')
 const gameLevels = document.getElementById('game-levels');
 const level = document.getElementsByClassName('level');
-const gamePlay = document.getElementById('game-play')
+const gamePlay = document.getElementById('game-play');
 
-gamePlay.style.display = "none"
-
+function cleanPlay() {
+    gamePlay.style.display = "none";
+}
+function cleanLevel() {
+    gameLevels.style.display = "none";
+}
 function cleanScreen(){
     gameMenu.style.display = "none";
     gameLogo.style.display = "none";
 }
-
 function playGame() {
-    cleanScreen()
-    levelScreen()
+    cleanScreen();
+    levelScreen();
 }
-
 function levelScreen(){
     gameScreen.style.backgroundImage = "url('public/img/background/backgroundCleanScreen.png')"
     gameLevels.style.display = "flex";
@@ -29,16 +31,13 @@ function levelScreen(){
     }
     
 }
-
 function showTutorial(){
     cleanScreen()
     gameTutorial.style.display = "flex";
 }
-
 function firstLevel() {
-    cleanScreen()
-    gameLevels.style.display = "none";
+    cleanScreen();
+    cleanLevel();
     gamePlay.style.display = "flex";
-
 }
-
+cleanPlay();
