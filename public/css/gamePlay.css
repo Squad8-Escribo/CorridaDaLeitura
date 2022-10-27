@@ -8,7 +8,7 @@
     flex-direction: column;
 }
 
-#game-play__sky {
+#sky {
     background: url(/public/img/elements/sky.png);
     background-size: contain;
     height: 200px;
