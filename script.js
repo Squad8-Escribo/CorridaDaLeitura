@@ -53,13 +53,14 @@ const choosePhase = async(phase,level)=>{
     //if chosse word, one by one
 
     if(phaseName=="palavras"){
-        buttons.innerHTML=`<br><input type="button" onclick="startArtyon()" value="Começar"/></br>`;
+        buttons.innerHTML=`<br><input type="button" onclick="startArtyon();start();" value="Começar"/></br>`;
+        document.getElementById("stopwatch").innerHTML = "00:00:00";
         var hits=0;
         var numberWord=0;
         
         read.innerHTML=arrayText[0];
         artyom.redirectRecognizedTextOutput(function(text,isFinal){
-            if(isFinal){
+            if(isFinal ){
                 var arrayWord=Artyom.prototype.splitStringByChunks(text,1);
                 console.log(arrayWord[0].trim().toLowerCase()+"<-recebe|json->"+arrayText[numberWord].toLowerCase())
                 console.log(arrayWord[0].trim().toLowerCase()==arrayText[numberWord].toLowerCase())
@@ -69,6 +70,7 @@ const choosePhase = async(phase,level)=>{
                 numberWord++;
                 read.innerHTML=arrayText[numberWord];
                 if(numberWord==3){
+                    pause();
                     if(hits==3){
                         read.innerHTML=arrayText[2];
                         result.innerHTML="Parabes voce conseguiu 3 estrelas<br>";
@@ -82,49 +84,118 @@ const choosePhase = async(phase,level)=>{
                         read.innerHTML=arrayText[2];
                         result.innerHTML="Voce nao conseguiu nenhuma estrela";
                     }
-                    result.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level})" value="Proxima fase"/><br>`;
-                    result.innerHTML+=`<input type="button" onclick="buttonsLevel()" value="Voltar ao começo"/><br>`;
+                    result.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level});reset()" value="Proxima fase"/><br>`;
+                    result.innerHTML+=`<input type="button" onclick="buttonsLevel();reset()" value="Voltar ao começo"/><br>`;
                     stopArtyon();
                 }
             }
         });
 
-    //others cases
+    //other cases
 
     }else{
-        buttons.innerHTML=`<br><input type="button" onclick="startArtyon()" value="Começar"/></br>`;
+        buttons.innerHTML=`<br><input type="button" onclick="startArtyon();start()" value="Começar"/></br>`;
+        document.getElementById("stopwatch").innerHTML = "00:00:00";
         for(var i=0;i<arrayText.length;i++){
             read.innerHTML+=arrayText[i];
         }
-
         artyom.redirectRecognizedTextOutput(function(text,isFinal){
+            console.log("teste "+text);
+            
             if(isFinal){
+                console.log(isFinal);
+                pause();
+                console.log(elapsedTime);
                 let hits=0;
                 var arrayWord=Artyom.prototype.splitStringByChunks(text,1);
                 for(var i=0;i<arrayWord.length;i++){
                     console.log(arrayWord[i].trim().toLowerCase()+"<-recebe|json->"+arrayText[i].trim().toLowerCase())
                     console.log(arrayWord[i].trim().toLowerCase()==arrayText[i].trim().toLowerCase())
                     if(arrayWord[i].trim().toLowerCase()==arrayText[i].trim().toLowerCase()){
-                        hits++;
+                            hits++;
                     }
                 }
-                if(hits>=(arrayWord.length*0.9)){
+                if(hits>=(arrayText.length*0.9)){
                     result.innerHTML="Parabes voce conseguiu 3 estrelas<br>";
-                }else if(hits>=(arrayWord.length*0.75)){
+                }else if(hits>=(arrayText.length*0.75)){
                     result.innerHTML="Voce conseguiu 2 estrelas<br>";
-                }else if(hits>=(arrayWord.length*0.5)){
+                }else if(hits>=(arrayText.length*0.5)){
                     result.innerHTML="Voce consegiu 1 estrelas<br>";
                 }else{
                     result.innerHTML="Voce nao conseguiu nenhuma estrela";
                 }
-                result.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level})" value="Proxima fase"/><br>`;
-                result.innerHTML+=`<input type="button" onclick="buttonsLevel()" value="Voltar ao começo"/><br>`;
+                result.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level});reset()" value="Proxima fase"/><br>`;
+                result.innerHTML+=`<input type="button" onclick="buttonsLevel();reset()" value="Voltar ao começo"/><br>`;
                 stopArtyon();
             }
         });
     } 
 
 }
+
+//Stopwatch codes
+
+// Convert time to a format of hours, minutes, seconds, and milliseconds
+
+function timeToString(time) {
+    let diffInHrs = time / 3600000;
+    let hh = Math.floor(diffInHrs);
+  
+    let diffInMin = (diffInHrs - hh) * 60;
+    let mm = Math.floor(diffInMin);
+  
+    let diffInSec = (diffInMin - mm) * 60;
+    let ss = Math.floor(diffInSec);
+  
+    let diffInMs = (diffInSec - ss) * 100;
+    let ms = Math.floor(diffInMs);
+  
+    let formattedMM = mm.toString().padStart(2, "0");
+    let formattedSS = ss.toString().padStart(2, "0");
+    let formattedMS = ms.toString().padStart(2, "0");
+    
+    return `${formattedMM}:${formattedSS}:${formattedMS}`;
+}
+  
+// Declare variables to use in our functions below
+  
+
+let startTime;
+let elapsedTime = 0;
+let timerInterval;
+let returnTime=1;
+  
+// Create function to modify innerHTML
+  
+function print(txt) {
+    document.getElementById("stopwatch").innerHTML = txt;
+}
+  
+// Create "start", "pause" and "reset" functions
+  
+function start() {
+    startTime = Date.now() - elapsedTime;
+    timerInterval = setInterval(function printTime() {
+        elapsedTime = Date.now() - startTime;
+        if(elapsedTime>=1000){
+            returnTime=1;
+        }else if(elapsedTime>=60000){
+            returnTime=60;
+        }
+        print(timeToString(elapsedTime));
+}, 10); }
+  
+
+function pause() {
+    clearInterval(timerInterval);
+}
+
+  
+function reset() {
+    clearInterval(timerInterval);
+    elapsedTime = 0;
+}
+  
 
 //Artyom codes
 
