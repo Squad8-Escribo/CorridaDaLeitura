@@ -57,7 +57,7 @@
                 </div>
                 <div class="game-levels__levels">
                     <div class="game-levels__levels-car">
-                        <a class="game-levels__levels--one level"><img src="public/img/btns/levelBtn.png" alt="" class="game-levels__levels-img"></a>
+                        <a class="game-levels__levels--one level"><img src="public/img/btns/levelBtn.png" alt="" class="game-levels__levels-img" onclick="choosePhase(1,0)"></a>
                         <img src="public/img/cars/carBlue.png" alt="" class="game-levels__cars game-levels__cars--one,">
                     </div>
                     <div class="game-levels__levels-car">
@@ -74,13 +74,18 @@
             <!-- Play Screen -->
 
             <div id="game-play">
-                    <div id="word-box"></div>
+                    <div id="word-box">
+                        <h1 id="buttons"></h1>
+                        <h2 id="stopwatch"></h2>
+                        <h1 id="read"></h1>
+                        <h2 id="result"></h2>
+                    </div>
                     <div id="sky"></div>
                     <div id="road"></div>
                     <div id="car">
                         <img src="public/img/cars/carRed.png" alt="">
                     </div>
-                    <div id="mic"></div>
+                    <div id="mic" onclick="startArtyon();start();AnimationGame();appearText(1,0)"></div>
                     <!--Ainda vou criar-->
                     <div id="obstacle">
             
@@ -90,6 +95,8 @@
     </div>
 </body>
 <script src="public/js/app.js"></script>
-<script src="public/js/game.js"></script>
+<script src="public/js/game.js" ></script>
+<script src="API/artyom.window.js" defer></script>
+<script src="API/script.js" defer></script>
 
 </html>

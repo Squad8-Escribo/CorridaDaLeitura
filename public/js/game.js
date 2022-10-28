@@ -19,11 +19,11 @@ function carAnimation() {
 // },300)
 
 
-document.addEventListener('keydown', function (event) {
+function AnimationGame() {
     skyAnimation();
     roadAnimation();
     carAnimation();
-})
+}
 
 function carAnimation() {
     car.classList.add('carSuspension')
