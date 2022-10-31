@@ -85,16 +85,16 @@ const choosePhase = async(phase,level)=>{
                     pause();
                     if(hits==3){
                         read.innerHTML=arrayText[2];
-                        result.innerHTML="Parabes voce conseguiu 3 estrelas<br>";
+                        result.innerHTML="Parabéns você conseguiu 3 estrelas<br>";
                     }else if(hits==2){
                         read.innerHTML=arrayText[2];
                         result.innerHTML="Voce conseguiu 2 estrelas<br>";
                     }else if(hits==1){
                         read.innerHTML=arrayText[2];
-                        result.innerHTML="Voce consegiu 1 estrelas<br>";
+                        result.innerHTML="Voce conseguiu 1 estrelas<br>";
                     }else if(hits==0){
                         read.innerHTML=arrayText[2];
-                        result.innerHTML="Voce nao conseguiu nenhuma estrela";
+                        result.innerHTML="Voce nÃo conseguiu nenhuma estrela";
                     }
                     result.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level});reset()" value="Proxima fase"/><br>`;
                     result.innerHTML+=`<input type="button" onclick="buttonsLevel();reset()" value="Voltar ao começo"/><br>`;
