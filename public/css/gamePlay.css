@@ -41,6 +41,24 @@
     bottom: 0%;
     left: 0%;
 }
+
+
+#read{
+    font-size: 24px;
+    color: yellow;
+    font-family: sans-serif;
+    margin-left: 60px;
+    margin-top: 80px;
+}
+
+#result{
+    font-size: 24px;
+    color: yellow;
+    font-family: sans-serif;
+    margin-right: 321px;
+    margin-top: 60px;
+    text-align: center;
+}
 #car {
     position: absolute;
     bottom: 31%;
