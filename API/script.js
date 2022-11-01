@@ -106,22 +106,44 @@ const choosePhase = async(phase,level)=>{
     //other cases
 
     }else{
+        var arrayWord=[];
+        var finish=false;
         artyom.redirectRecognizedTextOutput(function(text,isFinal){
             console.log("teste "+text);
-            
             if(isFinal){
-                console.log(isFinal);
-                pause();
-                console.log(elapsedTime);
-                let hits=0;
-                var arrayWord=Artyom.prototype.splitStringByChunks(text,1);
-                for(var i=0;i<arrayWord.length;i++){
-                    console.log(arrayWord[i].trim().toLowerCase()+"<-recebe|json->"+arrayText[i].trim().toLowerCase())
-                    console.log(arrayWord[i].trim().toLowerCase()==arrayText[i].trim().toLowerCase())
-                    if(arrayWord[i].trim().toLowerCase()==arrayText[i].trim().toLowerCase()){
-                            hits++;
+                var hits=0;
+                var arrayTemporary=Artyom.prototype.splitStringByChunks(text,1);
+                console.log("asdasdasdasda   "+(arrayText[(arrayWord.length)]))
+                console.log("dsfgdfgdgf   "+(arrayWord[(arrayWord.length)]))
+                if((arrayTemporary[arrayTemporary.length]===arrayText[arrayTemporary.length]) || (arrayTemporary[(arrayTemporary.length)-1]===arrayText[(arrayTemporary.length)-1])){
+                    for(var i=0;i<arrayTemporary.length;i++){
+                        console.log(arrayTemporary[i].trim().toLowerCase()+"<-recebe|json->"+arrayText[i].trim().toLowerCase())
+                        console.log(arrayTemporary[i].trim().toLowerCase()==arrayText[i].trim().toLowerCase())
+                        if(arrayTemporary[i].trim().toLowerCase()==arrayText[i].trim().toLowerCase()){
+                                hits++;
+                        }
+                    }
+                    finish=true;
+                }else{
+                    arrayWord=arrayWord.concat(arrayTemporary);
+                    console.log("etste t   "+arrayWord);
+                    if((arrayWord[arrayWord.length]===arrayText[arrayWord.length]) || (arrayWord[(arrayWord.length)-1]===arrayText[(arrayWord.length)-1])){
+                        for(var i=0;i<arrayWord.length;i++){
+                            console.log(arrayWord[i].trim().toLowerCase()+"<-recebe|json->"+arrayText[i].trim().toLowerCase())
+                            console.log(arrayWord[i].trim().toLowerCase()==arrayText[i].trim().toLowerCase())
+                            if(arrayWord[i].trim().toLowerCase()==arrayText[i].trim().toLowerCase()){
+                                    hits++;
+                            }
+                        }
+                        finish=true;
                     }
                 }
+                
+            }
+            if(finish){
+                pause();
+                console.log(elapsedTime);
+                
                 if(hits>=(arrayText.length*0.9)){
                     read.innerHTML="Parabes voce conseguiu a </br>medalha de diamante</br>";
                 }else if(hits>=(arrayText.length*0.7)){
