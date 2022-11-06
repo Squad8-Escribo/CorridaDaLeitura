@@ -108,32 +108,52 @@ const choosePhase = async(phase,level)=>{
     }else{
         var arrayWord=[];
         var finish=false;
+        var finishLast=false;
+        var finishPenultimate=false;
+        var finishNumber=false;
         artyom.redirectRecognizedTextOutput(function(text,isFinal){
             console.log("teste "+text);
+
             if(isFinal){
                 var hits=0;
-                var arrayTemporary=Artyom.prototype.splitStringByChunks(text,1);
+                arrayTemporary=Artyom.prototype.splitStringByChunks(text,1);
+                if(arrayTemporary.length<arrayText.length){
+                    finishLast=(arrayTemporary[arrayTemporary.length]===arrayText[arrayTemporary.length]) ||(arrayTemporary[(arrayTemporary.length)-1]===arrayText[arrayTemporary.length]);
+                    finishPenultimate=(arrayTemporary[(arrayTemporary.length)-1]===arrayText[(arrayTemporary.length)-1]);
+                }else{
+                    finishNumber=true
+                }
                 console.log("asdasdasdasda   "+(arrayText[(arrayWord.length)]))
                 console.log("dsfgdfgdgf   "+(arrayWord[(arrayWord.length)]))
-                if((arrayTemporary[arrayTemporary.length]===arrayText[arrayTemporary.length]) || (arrayTemporary[(arrayTemporary.length)-1]===arrayText[(arrayTemporary.length)-1])){
-                    for(var i=0;i<arrayTemporary.length;i++){
+                if (finishLast|| finishPenultimate|| finishNumber){
+                    for(var i=0;i<arrayText.length;i++){
                         console.log(arrayTemporary[i].trim().toLowerCase()+"<-recebe|json->"+arrayText[i].trim().toLowerCase())
-                        console.log(arrayTemporary[i].trim().toLowerCase()==arrayText[i].trim().toLowerCase())
                         if(arrayTemporary[i].trim().toLowerCase()==arrayText[i].trim().toLowerCase()){
-                                hits++;
+                            hits++;
                         }
+                    }
+                    if(arrayTemporary.length>arrayText.length){
+                        hits=hits-(arrayText.length/5);
                     }
                     finish=true;
                 }else{
                     arrayWord=arrayWord.concat(arrayTemporary);
+                    if(arrayWord.length<arrayText.length){
+                        finishLast=(arrayWord[arrayWord.length]===arrayText[arrayWord.length]) ||(arrayWord[(arrayWord.length)-1]===arrayText[arrayWord.length]);
+                        finishPenultimate=(arrayWord[(arrayWord.length)-1]===arrayText[(arrayTemporary.length)-1]);
+                    }else{
+                        finishNumber=true;
+                    }
                     console.log("etste t   "+arrayWord);
-                    if((arrayWord[arrayWord.length]===arrayText[arrayWord.length]) || (arrayWord[(arrayWord.length)-1]===arrayText[(arrayWord.length)-1])){
-                        for(var i=0;i<arrayWord.length;i++){
+                    if(finishLast|| finishPenultimate|| finishNumber){
+                        for(var i=0;i<arrayText.length;i++){
                             console.log(arrayWord[i].trim().toLowerCase()+"<-recebe|json->"+arrayText[i].trim().toLowerCase())
-                            console.log(arrayWord[i].trim().toLowerCase()==arrayText[i].trim().toLowerCase())
                             if(arrayWord[i].trim().toLowerCase()==arrayText[i].trim().toLowerCase()){
-                                    hits++;
+                                hits++;
                             }
+                        }
+                        if(arrayWord.length>arrayText.length){
+                            hits=hits-(arrayText.length/5);
                         }
                         finish=true;
                     }
