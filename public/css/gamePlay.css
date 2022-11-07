@@ -1,0 +1,222 @@
+#game-play {
+    background-color: #0cda18;
+    background-image: none;
+    height: 400px;
+    width: 700px;
+    border: 1px solid black;
+    position: relative;
+    overflow-x: hidden;
+    display: none;
+    flex-direction: column;
+}
+
+#sky {
+    background: url(/public/img/elements/sky.png);
+    background-size: contain;
+    height: 150px;
+    width: 1000%;
+    display: block;
+    position: absolute;
+    background-repeat: repeat-x;
+}
+
+#word-box {
+    background: #632e01;
+    border: 20px solid #632e01;
+    border-radius: 30px;
+    box-shadow: 10px 0 #632e01 inset;
+    position: absolute;
+    z-index: 3;
+    display: none;
+}
+
+.word-box__word {
+    height: 10%;
+    width: 25%;
+    top: 10%;
+    left: 34%;
+}
+
+.word-box__phrase {
+    height: 20%;
+    top: 10%;
+    left: 30%;
+}
+
+.word-box__text {
+    height: 40%;
+    width: 75%;
+    top: 6%;
+    left: 8%;
+}
+
+#read{
+    position: relative;
+    font-size: 24px;
+    color: white;
+    font-family: sans-serif;
+}
+
+#result{
+    font-size: 24px;
+    color: white;
+    font-family: sans-serif;
+    right: 10%;;
+    margin-top: 60px;
+    text-align: center;
+}
+
+#tree {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    top: 40px;
+}
+#tree img{
+    height: 200px;
+}
+.tree-one { 
+    margin-left: 50px;
+}
+
+.tree-two {
+    margin-left: 220px;
+}
+
+#fence {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+}
+
+#fence img {
+    height: 60px;
+}
+
+.fence-one {
+    margin-left: 3%;
+    margin-top: 70%;
+}
+
+.fence-two {
+    margin-left: 8%;
+    margin-top: 43%;
+}
+
+#flower {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+}
+
+#flower img {
+    height: 65px;
+}
+
+.flower-one {
+    margin-left: 130%;
+    margin-top: 118%;
+}
+
+.flower-two {
+    margin-left: 130%;
+    margin-top: 200%;
+}
+
+.flower-three {
+    margin-left: 90%;
+    margin-top: 80%;
+}
+#road {
+    height: 100px;
+    width: 1000%;
+    background: url(/public/img/elements/road.png);
+    background-size: contain;
+    display: block;
+    position: absolute;
+    background-repeat: repeat-x;
+    bottom: 10%;
+}
+#car {
+    position: absolute;
+    bottom: 24%;
+    left: 2%;
+}
+#car img {
+    height: 50px;
+    width: auto;
+}
+#mic {
+    background: url(/public/img/btns/micBtn.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 2;
+    height: 128px;
+    width: 250px;
+    top: 63%;
+    left: 78%;
+    transition: 0.5s;
+}
+
+#mic:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+/*  vou arrumar ainda
+#obstacle {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 110px;
+    left: 580px;
+}
+*/
+
+/*Animations*/
+.carJump {
+    animation: carJump 1s linear;
+}
+
+.carSuspension {
+    animation: carSuspension 1s ease infinite;
+
+}
+
+.skyAnimation {
+    animation: carMove 35s ease;
+}
+
+.roadAnimation {
+    animation: carMove 30s ease; 
+}
+
+@keyframes carMove {
+    100%{
+        transform: translateX(-2950px);
+    }
+}
+
+@keyframes carSuspension {
+    100%{
+        transform: translateY(-4px);
+    } 50% {
+        transform: translateY(2px);
+    } 0% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes carJump {
+    0% {
+        top: 200px;
+    } 30% {
+        top: 220px;
+    } 50% {
+        top: 150px;
+    } 80% {
+        top: 180px;
+    } 100% {
+        top: 200px;
+    }
+}

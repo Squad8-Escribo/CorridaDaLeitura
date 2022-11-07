@@ -1,0 +1,21 @@
+#game-tutorial{
+    display: none;
+    flex-direction: column;
+}
+.game-tutorial__back-btn{
+    margin-left: 20px;
+    margin-top: 10px;
+    transition: 1s;
+}
+.game-tutorial__back-btn img{
+    width: 60px;
+}
+.game-tutorial__back-btn:hover img{
+    transform: scale(1.3);
+    z-index: 2;
+}
+.game-tutorial__container--img{
+    display: flex;
+    margin: 0 auto;
+    width: 550px;
+}
