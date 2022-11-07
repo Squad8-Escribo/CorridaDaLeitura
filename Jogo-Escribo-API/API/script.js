@@ -54,7 +54,7 @@ const choosePhase = async(phase,level)=>{
     }
     if(level>=data.length){
         //buttonsLevel()
-        alert("Parabens voce terminou o jogo");
+        alert("Parabéns Você terminou o jogo");
     } 
     //get array for json
 
@@ -85,16 +85,16 @@ const choosePhase = async(phase,level)=>{
                     pause();
                     if(hits==3){
                         read.innerHTML=arrayText[2];
-                        result.innerHTML="Parabes voce conseguiu 3 estrelas<br>";
+                        result.innerHTML="Parabéns você conseguiu 3 estrelas<br>";
                     }else if(hits==2){
                         read.innerHTML=arrayText[2];
-                        result.innerHTML="Voce conseguiu 2 estrelas<br>";
+                        result.innerHTML="Você conseguiu 2 estrelas<br>";
                     }else if(hits==1){
                         read.innerHTML=arrayText[2];
-                        result.innerHTML="Voce consegiu 1 estrelas<br>";
+                        result.innerHTML="Você conseguiu 1 estrelas<br>";
                     }else if(hits==0){
                         read.innerHTML=arrayText[2];
-                        result.innerHTML="Voce nao conseguiu nenhuma estrela";
+                        result.innerHTML="Você não conseguiu nenhuma estrela";
                     }
                     result.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level});reset()" value="Proxima fase"/><br>`;
                     result.innerHTML+=`<input type="button" onclick="buttonsLevel();reset()" value="Voltar ao começo"/><br>`;
@@ -106,45 +106,74 @@ const choosePhase = async(phase,level)=>{
     //other cases
 
     }else{
-        const mic = document.getElementById("mic")
+        var arrayWord=[];
+        var finish=false;
+        var finishLast=false;
+        var finishPenultimate=false;
+        var finishNumber=false;
         artyom.redirectRecognizedTextOutput(function(text,isFinal){
             console.log("teste "+text);
-            
+
             if(isFinal){
-                console.log(isFinal);
-                pause();
-                console.log(elapsedTime);
-                let hits=0;
-                var arrayWord=Artyom.prototype.splitStringByChunks(text,1);
-                for(var i=0;i<arrayWord.length;i++){
-                    console.log(arrayWord[i].trim().toLowerCase()+"<-recebe|json->"+arrayText[i].trim().toLowerCase())
-                    console.log(arrayWord[i].trim().toLowerCase()==arrayText[i].trim().toLowerCase())
-                    if(arrayWord[i].trim().toLowerCase()==arrayText[i].trim().toLowerCase()){
+                var hits=0;
+                arrayTemporary=Artyom.prototype.splitStringByChunks(text,1);
+                if(arrayTemporary.length<arrayText.length){
+                    finishLast=(arrayTemporary[arrayTemporary.length]===arrayText[arrayTemporary.length]) ||(arrayTemporary[(arrayTemporary.length)-1]===arrayText[arrayTemporary.length]);
+                    finishPenultimate=(arrayTemporary[(arrayTemporary.length)-1]===arrayText[(arrayTemporary.length)-1]);
+                }else{
+                    finishNumber=true
+                }
+                console.log("asdasdasdasda   "+(arrayText[(arrayWord.length)]))
+                console.log("dsfgdfgdgf   "+(arrayWord[(arrayWord.length)]))
+                if (finishLast|| finishPenultimate|| finishNumber){
+                    for(var i=0;i<arrayText.length;i++){
+                        console.log(arrayTemporary[i].trim().toLowerCase()+"<-recebe|json->"+arrayText[i].trim().toLowerCase())
+                        if(arrayTemporary[i].trim().toLowerCase()==arrayText[i].trim().toLowerCase()){
                             hits++;
+                        }
+                    }
+                    if(arrayTemporary.length>arrayText.length){
+                        hits=hits-(arrayText.length/5);
+                    }
+                    finish=true;
+                }else{
+                    arrayWord=arrayWord.concat(arrayTemporary);
+                    if(arrayWord.length<arrayText.length){
+                        finishLast=(arrayWord[arrayWord.length]===arrayText[arrayWord.length]) ||(arrayWord[(arrayWord.length)-1]===arrayText[arrayWord.length]);
+                        finishPenultimate=(arrayWord[(arrayWord.length)-1]===arrayText[(arrayTemporary.length)-1]);
+                    }else{
+                        finishNumber=true;
+                    }
+                    console.log("etste t   "+arrayWord);
+                    if(finishLast|| finishPenultimate|| finishNumber){
+                        for(var i=0;i<arrayText.length;i++){
+                            console.log(arrayWord[i].trim().toLowerCase()+"<-recebe|json->"+arrayText[i].trim().toLowerCase())
+                            if(arrayWord[i].trim().toLowerCase()==arrayText[i].trim().toLowerCase()){
+                                hits++;
+                            }
+                        }
+                        if(arrayWord.length>arrayText.length){
+                            hits=hits-(arrayText.length/5);
+                        }
+                        finish=true;
                     }
                 }
+                
+            }
+            if(finish){
+                pause();
+                console.log(elapsedTime);
+                
                 if(hits>=(arrayText.length*0.9)){
-                    result.innerHTML="Parabes voce conseguiu a </br>medalha de diamante</br>";
-                    AnimationGame();
-                    mic.style.display = 'none';
-                    read.style.display = 'none'
+                    read.innerHTML="Parabéns você conseguiu a </br>medalha de diamante</br>";
                 }else if(hits>=(arrayText.length*0.7)){
-                    result.innerHTML="Voce conseguiu a </br>medalha de ouro</br>";
-                    AnimationGame()
-                    mic.style.display = 'none';
-                    read.style.display = 'none'
+                    read.innerHTML="Você conseguiu a </br>medalha de ouro</br>";
                 }else if(hits>=(arrayText.length*0.5)){
-                    result.innerHTML="Voce consegiu a </br>medalha de prata</br>";
-                    AnimationGame()
-                    mic.style.display = 'none';
-                    read.style.display = 'none'
+                    read.innerHTML="Você consegiu a </br>medalha de prata</br>";
                 }else{
-                    result.innerHTML="Voce conseguiu a </br>medalha de bronze</br>";
-                    AnimationGame()
-                    mic.style.display = 'none';
-                    read.style.display = 'none'
+                    read.innerHTML="Você conseguiu a </br>medalha de bronze</br>";
                 }
-                result.innerHTML+=`Seu tempo foi:${timeToString(elapsedTime)}`;
+                read.innerHTML+=`Seu tempo foi:${timeToString(elapsedTime)}`;
                 /* read.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level});reset()" value="Proxima fase"/><br>`;
                 read.innerHTML+=`<input type="button" onclick="buttonsLevel();reset()" value="Voltar ao começo"/><br>`; */
                 stopArtyon();
