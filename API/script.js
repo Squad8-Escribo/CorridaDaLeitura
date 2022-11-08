@@ -40,7 +40,6 @@ const chooseLevel =  async(level) => {
     }
 } */
 
-
 const choosePhase = async(phase,level)=>{
     read.innerHTML="";
 
@@ -82,15 +81,32 @@ const choosePhase = async(phase,level)=>{
                 if(numberWord==3){
                     pause();
                     if(hits==3){
-                        read.innerHTML="Parabéns, você conseguiu a medalha de Diamante!<br>";
+                        read.innerHTML=""
+                        result.innerHTML="<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE DIAMANTE!</h5>";
+                        wordbox.classList.add('word-box__congrats')
+                        medalSelect(1)
+                        backgroundOpacity()
+                
                     }else if(hits==2){
-                        read.innerHTML="Você conseguiu a medalha de Ouro!<br>";
+                        result.innerHTML="<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE OURO!</h5>";
+                        read.innerHTML=""
+                        wordbox.classList.add('word-box__congrats')
+                        medalSelect(2)
+                        backgroundOpacity()
                     }else if(hits==1){
-                        read.innerHTML="Você conseguiu a medalha de Prata!<br>";
+                        result.innerHTML="<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A  <br> MEDALHA DE PRATA!</h5>";
+                        read.innerHTML=""
+                        wordbox.classList.add('word-box__congrats')
+                        medalSelect(3)
+                        backgroundOpacity()
                     }else if(hits==0){
-                        read.innerHTML="Você conseguiu a medalha de Bronze!<br>";
+                        result.innerHTML="<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE BRONZE!</h5>";
+                        read.innerHTML=""
+                        wordbox.classList.add('word-box__congrats')
+                        medalSelect(4)
+                        backgroundOpacity()
                     }
-                    read.innerHTML+=`Seu tempo foi de: ${timeToString(elapsedTime)}`;   
+                    result.innerHTML+=`<h5>SEU TEMPO FOI DE <br> ${timeToString(elapsedTime)}</h5>`;   
                     // result.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level});reset()" value="Proxima fase"/><br>`;
                     // result.innerHTML+=`<input type="button" onclick="buttonsLevel();reset()" value="Voltar ao começo"/><br>`;
                     stopArtyon();
