@@ -1,1 +1,77 @@
-[[{"palavras":["Gato","Bola","Casa"]},{"frase1":["O ","rato ","comeu ","o ","queijo"]},{"frase2":["A ","boneca ","da ","menina"]},{"frase3":["O ","sapo ","pula ","muito"]},{"texto":["Mariana ","tem ","nove ","anos ","ela ","gosta ","de ","jogar ","bola ","fazer ","bolo ","de ","cenoura ","com ","sua ","vovó ","está ","na ","escola ","com ","seus ","amigos ","ela ","é ","uma ","menina ","bem ","feliz"]}],[{"palavras":["Porta","Pirulito","Janela"]}]]
+[
+    [
+        {
+            "palavras": [
+                "Gato",
+                "Bola",
+                "Casa"
+            ]
+        },
+        {
+            "frase1": [
+                "O ",
+                "rato ",
+                "comeu ",
+                "o ",
+                "queijo"
+            ]
+        },
+        {
+            "frase2": [
+                "A ",
+                "boneca ",
+                "da ",
+                "menina"
+            ]
+        },
+        {
+            "frase3": [
+                "O ",
+                "sapo ",
+                "pula ",
+                "muito"
+            ]
+        },
+        {
+            "texto": [
+                "Mariana ",
+                "tem ",
+                "nove ",
+                "anos ",
+                "ela ",
+                "gosta ",
+                "de ",
+                "jogar ",
+                "bola ",
+                "fazer ",
+                "bolo ",
+                "de ",
+                "cenoura ",
+                "com ",
+                "sua ",
+                "vovó ",
+                "está ",
+                "na ",
+                "escola ",
+                "com ",
+                "seus ",
+                "amigos ",
+                "ela ",
+                "é ",
+                "uma ",
+                "menina ",
+                "bem ",
+                "feliz"
+            ]
+        }
+    ],
+    [
+        {
+            "palavras": [
+                "Porta",
+                "Pirulito",
+                "Janela"
+            ]
+        }
+    ]
+]

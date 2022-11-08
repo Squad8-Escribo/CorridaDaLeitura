@@ -12,9 +12,9 @@
         buttons.innerHTML+=`<input type="button" onclick="chooseLevel(${i})" value="Level ${i+1}"><br>`;
     }
 }
-buttonsLevel() */
 
-/* const chooseLevel =  async(level) => {
+
+const chooseLevel =  async(level) => {
     const response = await fetch("fases.json");
     const data = await response.json();
     read.innerHTML="";
@@ -29,7 +29,7 @@ buttonsLevel() */
 //Game codes
 
 //Text appear if click button "start"
-const appearText=async(phase,level)=>{
+/* const appearText=async(phase,level)=>{
     const response = await fetch("API/fases.json");
     const data = await response.json();
     var phaseName=Object.keys(data[level][phase]);
@@ -38,14 +38,19 @@ const appearText=async(phase,level)=>{
     for(var i=0;i<arrayText.length;i++){
         read.innerHTML+=arrayText[i];
     }
-}
+} */
 
 
 const choosePhase = async(phase,level)=>{
     read.innerHTML="";
+
     const response = await fetch("API/fases.json");
     const data = await response.json();
+    var phaseName=Object.keys(data[level][phase]);
+    var phaseName=phaseName[0]
+    var arrayText=(data[level][phase][phaseName]);
     
+
     //level passing system
 
     if(phase>=data[level].length){
@@ -53,20 +58,13 @@ const choosePhase = async(phase,level)=>{
         phase=0;
     }
     if(level>=data.length){
-        //buttonsLevel()
         alert("Parabéns Você terminou o jogo");
     } 
-    //get array for json
 
-    var phaseName=Object.keys(data[level][phase]);
-    var phaseName=phaseName[0]
-    const arrayText=(data[level][phase][phaseName]);
 
     //if chosse word, one by one
 
     if(phaseName=="palavras"){
-        buttons.innerHTML=`<br><input type="button" onclick="startArtyon();start();" value="Começar"/></br>`;
-        document.getElementById("stopwatch").innerHTML = "00:00:00";
         var hits=0;
         var numberWord=0;
         
@@ -84,20 +82,16 @@ const choosePhase = async(phase,level)=>{
                 if(numberWord==3){
                     pause();
                     if(hits==3){
-                        read.innerHTML=arrayText[2];
-                        result.innerHTML="Parabéns você conseguiu 3 estrelas<br>";
+                        read.innerHTML="Parabéns você conseguiu 3 estrelas<br>";
                     }else if(hits==2){
-                        read.innerHTML=arrayText[2];
-                        result.innerHTML="Você conseguiu 2 estrelas<br>";
+                        read.innerHTML="Você conseguiu 2 estrelas<br>";
                     }else if(hits==1){
-                        read.innerHTML=arrayText[2];
-                        result.innerHTML="Você conseguiu 1 estrelas<br>";
+                        read.innerHTML="Você conseguiu 1 estrelas<br>";
                     }else if(hits==0){
-                        read.innerHTML=arrayText[2];
-                        result.innerHTML="Você não conseguiu nenhuma estrela";
+                        read.innerHTML="Você não conseguiu nenhuma estrela";
                     }
-                    result.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level});reset()" value="Proxima fase"/><br>`;
-                    result.innerHTML+=`<input type="button" onclick="buttonsLevel();reset()" value="Voltar ao começo"/><br>`;
+                    // result.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level});reset()" value="Proxima fase"/><br>`;
+                    // result.innerHTML+=`<input type="button" onclick="buttonsLevel();reset()" value="Voltar ao começo"/><br>`;
                     stopArtyon();
                 }
             }
@@ -106,6 +100,9 @@ const choosePhase = async(phase,level)=>{
     //other cases
 
     }else{
+        for(var i=0;i<arrayText.length;i++){
+            read.innerHTML+=arrayText[i];
+        }
         var arrayWord=[];
         var finish=false;
         var finishLast=false;

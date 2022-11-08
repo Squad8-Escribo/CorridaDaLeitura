@@ -57,15 +57,15 @@
                 </div>
                 <div class="game-levels__levels">
                     <div class="game-levels__levels-car">
-                        <a class="game-levels__levels--one level"><img src="public/img/btns/levelBtn.png" alt="" class="game-levels__levels-img" onclick="choosePhase(1,0)"></a>
+                        <a class="game-levels__levels--one level"><img src="public/img/btns/levelBtn.png" alt="" class="game-levels__levels-img" onclick="choosePhase(0,0)"></a>
                         <img src="public/img/cars/carBlue.png" alt="" class="game-levels__cars game-levels__cars--one,">
                     </div>
                     <div class="game-levels__levels-car">
-                        <a class="game-levels__levels--two level"><img src="public/img/btns/levelBtn.png" alt="" class="game-levels__levels-img"></a>
+                        <a class="game-levels__levels--two level"><img src="public/img/btns/levelBtn.png" alt="" class="game-levels__levels-img" onclick="choosePhase(1,0)"></a>
                         <img src="public/img/cars/carGreen.png" alt="" class="game-levels__cars game-levels__cars--two">
                     </div>
                     <div class="game-levels__levels-car">
-                        <a class="game-levels__levels--three level"><img src="public/img/btns/levelBtn.png" alt="" class="game-levels__levels-img"></a>
+                        <a class="game-levels__levels--three level"><img src="public/img/btns/levelBtn.png" alt="" class="game-levels__levels-img" onclick="choosePhase(4,0)"></a>
                         <img src="public/img/cars/carYellow.png" alt="" class="game-levels__cars game-levels__cars--three">
                     </div>
                 </div>
@@ -79,38 +79,12 @@
                         <h2 id="result"></h2>
                     </div>
                     <div id="sky"></div>
-                    <div id="tree">
-                        <div class="tree-one">
-                            <img src="public/img/elements/tree.png" alt="">
-                        </div>
-                        <div class="tree-two">
-                            <img src="public/img/elements/tree.png" alt="">
-                        </div>
-                    </div>
-                    <div id="flower">
-                        <div class="flower-one"> 
-                            <img src="public/img/elements/red-flower.png" alt="">
-                        </div>
-                        <div class="flower-two">
-                            <img src="public/img/elements/pink-flower.png" alt="">
-                        </div>
-                        <div class="flower-three">
-                            <img src="public/img/elements/blue-flower.png" alt="">
-                        </div>
-                    </div>
-                    <div id="fence">
-                        <div class="fence-one">
-                            <img src="public/img/elements/fence.png" alt="">
-                        </div>
-                        <div class="fence-two">
-                            <img src="public/img/elements/fence.png" alt="">
-                        </div>
-                    </div>
+                    <div id="background"></div>
                     <div id="road"></div>
                     <div id="car">
                         <img src="public/img/cars/carRed.png" alt="">
                     </div>
-                    <div id="mic" onclick="startArtyon();start();appearText(1,0);wordBox()"></div>
+                    <div id="mic" onclick="startArtyon();start();wordBox();animationGame()"></div>
                     <!--Ainda vou criar-->
                     <div id="obstacle">
             
