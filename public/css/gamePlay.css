@@ -15,9 +15,10 @@
     background-size: contain;
     height: 30%;
     width: 1000%;
-    display: block;
+    display: flex;
     position: absolute;
     background-repeat: repeat-x;
+    animation: carMove 200s linear infinite;
 } 
 
 #background {
@@ -26,6 +27,7 @@
     background-repeat: repeat-x;
     height: 100%;
     width: 1000%;
+    z-index: 0;
 }
 
 #word-box {
@@ -34,7 +36,7 @@
     border-radius: 30px;
     box-shadow: 10px 0 #632e01 inset;
     position: absolute;
-    z-index: 3;
+    z-index: 2;
     display: none;
 }
 
@@ -126,7 +128,7 @@
 }
 
 .carSuspension {
-    animation: carSuspension 1s ease infinite;
+    animation: carSuspension 1s linear infinite;
 
 }
 
@@ -135,7 +137,7 @@
 }
 
 .roadAnimation {
-    animation: carMove 30s linear infinite; 
+    animation: carMove 20s linear infinite; 
 }
 
 @keyframes carMove {
