@@ -82,14 +82,15 @@ const choosePhase = async(phase,level)=>{
                 if(numberWord==3){
                     pause();
                     if(hits==3){
-                        read.innerHTML="Parabéns você conseguiu 3 estrelas<br>";
+                        read.innerHTML="Parabéns, você conseguiu a medalha de Diamante!<br>";
                     }else if(hits==2){
-                        read.innerHTML="Você conseguiu 2 estrelas<br>";
+                        read.innerHTML="Você conseguiu a medalha de Ouro!<br>";
                     }else if(hits==1){
-                        read.innerHTML="Você conseguiu 1 estrelas<br>";
+                        read.innerHTML="Você conseguiu a medalha de Prata!<br>";
                     }else if(hits==0){
-                        read.innerHTML="Você não conseguiu nenhuma estrela";
+                        read.innerHTML="Você conseguiu a medalha de Bronze!<br>";
                     }
+                    read.innerHTML+=`Seu tempo foi de: ${timeToString(elapsedTime)}`;   
                     // result.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level});reset()" value="Proxima fase"/><br>`;
                     // result.innerHTML+=`<input type="button" onclick="buttonsLevel();reset()" value="Voltar ao começo"/><br>`;
                     stopArtyon();
@@ -160,15 +161,14 @@ const choosePhase = async(phase,level)=>{
             if(finish){
                 pause();
                 console.log(elapsedTime);
-                
                 if(hits>=(arrayText.length*0.9)){
-                    read.innerHTML="Parabéns você conseguiu a </br>medalha de diamante</br>";
+                    read.innerHTML="Parabéns você conseguiu a </br>medalha de Diamante!</br>";
                 }else if(hits>=(arrayText.length*0.7)){
-                    read.innerHTML="Você conseguiu a </br>medalha de ouro</br>";
+                    read.innerHTML="Você conseguiu a </br>medalha de Ouro!</br>";
                 }else if(hits>=(arrayText.length*0.5)){
-                    read.innerHTML="Você consegiu a </br>medalha de prata</br>";
+                    read.innerHTML="Você conseguiu a </br>medalha de Prata!</br>";
                 }else{
-                    read.innerHTML="Você conseguiu a </br>medalha de bronze</br>";
+                    read.innerHTML="Você conseguiu a </br>medalha de Bronze!</br>";
                 }
                 read.innerHTML+=`Seu tempo foi:${timeToString(elapsedTime)}`;
                 /* read.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level});reset()" value="Proxima fase"/><br>`;
