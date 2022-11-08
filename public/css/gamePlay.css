@@ -10,18 +10,18 @@
     flex-direction: column;
 }
 
-/* #sky {
+ #sky {
     background: url(/public/img/elements/sky.png);
     background-size: contain;
-    height: 150px;
+    height: 30%;
     width: 1000%;
     display: block;
     position: absolute;
     background-repeat: repeat-x;
-} */
+} 
 
 #background {
-    background: url(/public/img/background/backgorundAllElements.png);
+    background: url(/public/img/background/backgroundGamePlayScreen.png);
     background-size: contain;
     background-repeat: repeat-x;
     height: 100%;
