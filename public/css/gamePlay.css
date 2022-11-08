@@ -10,7 +10,7 @@
     flex-direction: column;
 }
 
-#sky {
+/* #sky {
     background: url(/public/img/elements/sky.png);
     background-size: contain;
     height: 150px;
@@ -18,6 +18,14 @@
     display: block;
     position: absolute;
     background-repeat: repeat-x;
+} */
+
+#background {
+    background: url(/public/img/background/backgorundAllElements.png);
+    background-size: contain;
+    background-repeat: repeat-x;
+    height: 100%;
+    width: 1000%;
 }
 
 #word-box {
@@ -66,68 +74,7 @@
     text-align: center;
 }
 
-#tree {
-    display: flex;
-    position: absolute;
-    z-index: 2;
-    top: 40px;
-}
-#tree img{
-    height: 200px;
-}
-.tree-one { 
-    margin-left: 50px;
-}
-
-.tree-two {
-    margin-left: 220px;
-}
-
-#fence {
-    display: flex;
-    position: absolute;
-    z-index: 2;
-}
-
-#fence img {
-    height: 60px;
-}
-
-.fence-one {
-    margin-left: 3%;
-    margin-top: 70%;
-}
-
-.fence-two {
-    margin-left: 8%;
-    margin-top: 43%;
-}
-
-#flower {
-    display: flex;
-    position: absolute;
-    z-index: 2;
-}
-
-#flower img {
-    height: 65px;
-}
-
-.flower-one {
-    margin-left: 130%;
-    margin-top: 118%;
-}
-
-.flower-two {
-    margin-left: 130%;
-    margin-top: 200%;
-}
-
-.flower-three {
-    margin-left: 90%;
-    margin-top: 80%;
-}
-#road {
+/* #road {
     height: 100px;
     width: 1000%;
     background: url(/public/img/elements/road.png);
@@ -136,7 +83,7 @@
     position: absolute;
     background-repeat: repeat-x;
     bottom: 10%;
-}
+} */
 #car {
     position: absolute;
     bottom: 24%;
@@ -184,11 +131,11 @@
 }
 
 .skyAnimation {
-    animation: carMove 35s ease;
+    animation: carMove 35s linear infinite;
 }
 
 .roadAnimation {
-    animation: carMove 30s ease; 
+    animation: carMove 30s linear infinite; 
 }
 
 @keyframes carMove {

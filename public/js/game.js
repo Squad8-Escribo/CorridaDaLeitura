@@ -1,6 +1,7 @@
 const car = document.getElementById('car');
 const sky = document.getElementById('sky');
 const road = document.getElementById('road');
+const background = document.getElementById('background');
 
 function skyAnimation() {
     sky.classList.add('skyAnimation');
@@ -8,6 +9,7 @@ function skyAnimation() {
 
 function roadAnimation() {
     road.classList.add('roadAnimation')
+    background.classList.add('roadAnimation')
 }
 
 function carAnimation() {
@@ -19,7 +21,7 @@ function carAnimation() {
 // },300)
 
 
-function AnimationGame() {
+function animationGame() {
     skyAnimation();
     roadAnimation();
     carAnimation();
