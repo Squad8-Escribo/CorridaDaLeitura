@@ -82,15 +82,16 @@ const choosePhase = async(phase,level)=>{
                 if(numberWord==3){
                     pause();
                     if(hits==3){
-                        read.innerHTML="Parabéns, você conseguiu a medalha de Diamante!<br>";
+                        read.innerHTML="Parabéns você conseguiu a </br>medalha de diamante</br>";
                     }else if(hits==2){
-                        read.innerHTML="Você conseguiu a medalha de Ouro!<br>";
+                        read.innerHTML="Você conseguiu a </br>medalha de ouro</br>";
                     }else if(hits==1){
-                        read.innerHTML="Você conseguiu a medalha de Prata!<br>";
+                        read.innerHTML="Você consegiu a </br>medalha de prata</br>";
                     }else if(hits==0){
-                        read.innerHTML="Você conseguiu a medalha de Bronze!<br>";
+                        read.innerHTML="Você conseguiu a </br>medalha de bronze</br>";
                     }
-                    read.innerHTML+=`Seu tempo foi de: ${timeToString(elapsedTime)}`;   
+                    read.innerHTML+=`Seu tempo foi:${timeToString(elapsedTime)}`;
+                    //read.innerHTML+=`<a class="game-levels__levels--three level"><img src="public/img/btns/passBtn.png" alt="" class="" onclick="choosePhase(${(phase+1)},${level});reset()"></a>`
                     // result.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level});reset()" value="Proxima fase"/><br>`;
                     // result.innerHTML+=`<input type="button" onclick="buttonsLevel();reset()" value="Voltar ao começo"/><br>`;
                     stopArtyon();
@@ -171,6 +172,8 @@ const choosePhase = async(phase,level)=>{
                     read.innerHTML="Você conseguiu a </br>medalha de Bronze!</br>";
                 }
                 read.innerHTML+=`Seu tempo foi:${timeToString(elapsedTime)}`;
+                //read.innerHTML+-'<div class="game-result__back-btn"><a href=""><img src="public/img/btns/backBtn.png" alt=""></a> </div>';
+                read.innerHTML+=`<a class="passBtn"><img src="public/img/btns/passBtn.png" alt="" class="game-levels__pass-btn" onclick="choosePhase(${(phase+3)},${level});reset();thirdLevel()"></a>`
                 /* read.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level});reset()" value="Proxima fase"/><br>`;
                 read.innerHTML+=`<input type="button" onclick="buttonsLevel();reset()" value="Voltar ao começo"/><br>`; */
                 stopArtyon();
