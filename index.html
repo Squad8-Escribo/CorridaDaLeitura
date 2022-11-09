@@ -15,7 +15,6 @@
 
 <body>
     <div class="bg-body">
-
         <div class="game-screen" id="game-screen">
 
             <!-- Game Screen -->
@@ -24,14 +23,15 @@
                 <img src="public/img/elements/logo.png" alt="" class="game-screen__menu-logo--img">
             </div>
 
-             <!-- Menu Screen-->
+            <!-- Menu Screen-->
 
             <div class="game-screen__menu" id="game-menu">
                 <a class="game-screen__menu-btn--cfg game-screen__menu-btn">
                     <img src="public/img/btns/settingsBtn.png" alt="" class="game-screen__menu-btn--img">
                 </a>
                 <a id="playBtn" class="game-screen__menu-play game-screen__menu-btn" onclick="playGame()">
-                    <img src="public/img/btns/playBtn.png" alt="" class="game-screen__menu-btn--img game-screen__menu-btn--play">
+                    <img src="public/img/btns/playBtn.png" alt=""
+                        class="game-screen__menu-btn--img game-screen__menu-btn--play">
                 </a>
                 <a class="game-screen__menu-tutorial game-screen__menu-btn" onclick="showTutorial()">
                     <img src="public/img/btns/tutorialBtn.png" alt="" class="game-screen__menu-btn--img">
@@ -57,16 +57,20 @@
                 </div>
                 <div class="game-levels__levels">
                     <div class="game-levels__levels-car">
-                        <a class="game-levels__levels--one level"><img src="public/img/btns/levelBtn.png" alt="" class="game-levels__levels-img" onclick="choosePhase(0,0)"></a>
+                        <a class="game-levels__levels--one level"><img src="public/img/btns/levelBtn.png" alt=""
+                                class="game-levels__levels-img" onclick="choosePhase(0,0)"></a>
                         <img src="public/img/cars/carBlue.png" alt="" class="game-levels__cars game-levels__cars--one,">
                     </div>
                     <div class="game-levels__levels-car">
-                        <a class="game-levels__levels--two level"><img src="public/img/btns/levelBtn.png" alt="" class="game-levels__levels-img" onclick="choosePhase(1,0)"></a>
+                        <a class="game-levels__levels--two level"><img src="public/img/btns/levelBtn.png" alt=""
+                                class="game-levels__levels-img" onclick="randomLevel(0)"></a>
                         <img src="public/img/cars/carGreen.png" alt="" class="game-levels__cars game-levels__cars--two">
                     </div>
                     <div class="game-levels__levels-car">
-                        <a class="game-levels__levels--three level"><img src="public/img/btns/levelBtn.png" alt="" class="game-levels__levels-img" onclick="choosePhase(4,0)"></a>
-                        <img src="public/img/cars/carYellow.png" alt="" class="game-levels__cars game-levels__cars--three">
+                        <a class="game-levels__levels--three level"><img src="public/img/btns/levelBtn.png" alt=""
+                                class="game-levels__levels-img" onclick="choosePhase(4,0)"></a>
+                        <img src="public/img/cars/carYellow.png" alt=""
+                            class="game-levels__cars game-levels__cars--three">
                     </div>
                 </div>
             </div>
@@ -74,26 +78,27 @@
             <!-- Play Screen -->
 
             <div id="game-play">
-                    <div id="word-box">
-                        <h1 id="read"></h1>
-                        <h2 id="result"></h2>
-                        <div id="medal"></div>
-                    </div>
-                    <div id="sky"></div>
-                    <div id="background"></div>
-                    <div id="car">
-                        <img src="public/img/cars/carRed.png" alt="">
-                    </div>
-                    <div id="mic" onclick="startArtyon();start();wordBox();animationGame()"></div>
-                    <!--Ainda vou criar-->
-                    <div id="obstacle">
-                    </div>
+                <div id="word-box">
+                    <h1 id="read"></h1>
+                    <h2 id="result"></h2>
+                    <div id="medal"></div>
+                </div>
+                <div id="sky"></div>
+                <div id="background"></div>
+                <div id="car">
+                    <img src="public/img/cars/carRed.png" alt="">
+                </div>
+                <div id="mic" onclick="startArtyon();start();wordBox();animationGame()"></div>
+                <!--Ainda vou criar-->
+                <div id="obstacle">
+                </div>
             </div>
         </div>
     </div>
 </body>
+
 <script src="public/js/app.js"></script>
-<script src="public/js/game.js" ></script>
+<script src="public/js/game.js"></script>
 <script src="API/artyom.window.js" defer></script>
 <script src="API/script.js" defer></script>
 
