@@ -114,6 +114,8 @@ const choosePhase = async (phase, level) => {
           }
           backgroundOpacity()
           showTime()
+          showPassBtn()
+          passBtn.setAttribute("onclick", `randomLevel(0);reset();cleanResult();cleanMedal();passLevelPhrase()`)
           // result.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level});reset()" value="Proxima fase"/><br>`;
           // result.innerHTML+=`<input type="button" onclick="buttonsLevel();reset()" value="Voltar ao começo"/><br>`;
           stopArtyon()
@@ -128,6 +130,7 @@ const choosePhase = async (phase, level) => {
     } else {
       readSize(2)
     }
+    cleanPassBtn()
     for (var i = 0; i < arrayText.length; i++) {
       read.innerHTML += arrayText[i]
     }

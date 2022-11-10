@@ -13,15 +13,47 @@ const medal = document.getElementById('medal')
 const mic = document.getElementById('mic')
 const background = document.getElementById('background')
 const sky = document.getElementById('sky')
+const passBtn = document.getElementById('pass-btn')
 
 function cleanPlay() {
   gamePlay.style.display = 'none'
+}
+
+function cleanWordBox() {
+  wordbox.style.display = 'none'
+}
+
+function passLevelPhrase() {
+  wordbox.classList.remove('word-box__congrats')
+  wordbox.classList.remove('word-box__word')
+  wordbox.classList.add('word-box__phrase')
+  wordbox.style.display = 'flex'
+  mic.style.display = 'flex'
+  background.classList.remove('background-opacity')
+  mic.classList.remove('mic-opacity')
+}
+
+// function passLevelText() {
+//   wordbox.classList.remove('word-box__phrase')
+//   wordbox.
+// }
+
+function cleanResult() {
+  result.style.display = 'none'
+}
+
+function cleanMedal() {
+  medal.style.display = 'none'
 }
 
 function showTime() {
   result.innerHTML += `<h5>SEU TEMPO FOI DE <br> ${timeToString(
     elapsedTime
   )}</h5>`
+}
+
+function cleanPassBtn() {
+  passBtn.style.display = 'none'
 }
 
 function cleanLevel() {
@@ -51,6 +83,14 @@ function playGame() {
 // function backgroundOpacity () {
 //     mic.classList.add('mic-opacity')
 // }
+
+
+function showPassBtn() {
+  passBtn.style.display = 'flex'
+  passBtn.classList.add('pass-btn')
+}
+
+
 
 function backgroundOpacity() {
   mic.classList.add('mic-opacity')
