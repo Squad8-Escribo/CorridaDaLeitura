@@ -90,12 +90,8 @@ const choosePhase = async (phase, level) => {
           wordNot2=randomWord;
         }
         randomWord = (Math.random() * 10).toFixed(0)
-        console.log(wordNot1==randomWord)
-        console.log(wordNot2==randomWord)
         while (randomWord > 5 || wordNot1==randomWord || wordNot2==randomWord) {
           randomWord = (Math.random() * 10).toFixed(0)
-          console.log(wordNot1==randomWord)
-          console.log(wordNot2==randomWord)
         }
         read.innerHTML = arrayText[randomWord]
         numberWord++
@@ -154,7 +150,6 @@ const choosePhase = async (phase, level) => {
     var finishPenultimate = false
     var finishNumber = false
     artyom.redirectRecognizedTextOutput(function (text, isFinal) {
-      console.log('teste ' + text)
 
       if (isFinal) {
         var hits = 0
@@ -171,8 +166,6 @@ const choosePhase = async (phase, level) => {
         } else {
           finishNumber = true
         }
-        console.log('asdasdasdasda   ' + arrayText[arrayWord.length])
-        console.log('dsfgdfgdgf   ' + arrayWord[arrayWord.length])
         if (finishLast || finishPenultimate || finishNumber) {
           for (var i = 0; i < arrayText.length; i++) {
             console.log(
