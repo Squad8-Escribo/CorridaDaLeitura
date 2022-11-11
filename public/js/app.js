@@ -14,6 +14,7 @@ const mic = document.getElementById('mic')
 const background = document.getElementById('background')
 const sky = document.getElementById('sky')
 const passBtn = document.getElementById('pass-btn')
+const carApp = document.getElementById('car')
 
 function cleanPlay() {
   gamePlay.style.display = 'none'
@@ -31,13 +32,20 @@ function passLevelPhrase() {
   mic.style.display = 'flex'
   background.classList.remove('background-opacity')
   mic.classList.remove('mic-opacity')
+  carApp.classList.remove('car-opacity')
 }
 
-// function passLevelText() {
-//   wordbox.classList.remove('word-box__phrase')
-//   wordbox.
-// }
-
+function passLevelText() {
+  wordbox.classList.remove('word-box__congrats')
+  wordbox.classList.remove('word-box__phrase')
+  wordbox.classList.add('word-box__text')
+  background.classList.remove('background-opacity')
+  wordbox.style.display ='flex'
+  mic.style.display = 'flex'
+  mic.classList.remove('mic-opacity')
+  carApp.classList.remove('car-opacity')
+}
+ 
 function cleanResult() {
   result.style.display = 'none'
 }
@@ -105,8 +113,11 @@ function gamePlayScreen() {
 
 function medalSelect(a) {
   if (a == 1) {
+    medal.classList.add('medal')
+    medal.style.display='flex'
     medal.innerHTML = "  <img src='public/img/elements/diamond-medal.png'>"
   } else if (a == 2) {
+    medal.style.display='flex'
     medal.innerHTML = "  <img src='public/img/elements/gold-medal.png'>"
   } else if (a == 3) {
     medal.innerHTML = "  <img src='public/img/elements/silver-medal.png'>"

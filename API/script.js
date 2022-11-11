@@ -218,7 +218,7 @@ const choosePhase = async (phase, level) => {
           read.innerHTML = ''
           result.innerHTML =
             '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE DIAMANTE!</h5>'
-          wordbox.classList.add('word-box__phrase')
+          wordbox.classList.add('word-box__congrats')
           medalSelect(1)
         } else if (hits >= arrayText.length * 0.7) {
           read.innerHTML = ''
@@ -241,6 +241,10 @@ const choosePhase = async (phase, level) => {
         }
         backgroundOpacity()
         showTime()
+        showPassBtn()
+        passBtn.setAttribute("onclick", `choosePhase(4,0);reset();cleanResult();cleanMedal();passLevelText()`)
+
+
         /* read.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level});reset()" value="Proxima fase"/><br>`;
                 read.innerHTML+=`<input type="button" onclick="buttonsLevel();reset()" value="Voltar ao começo"/><br>`; */
         stopArtyon()
