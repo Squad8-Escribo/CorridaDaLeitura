@@ -62,7 +62,8 @@ const choosePhase = async (phase, level) => {
   if (phaseName == 'palavras') {
     var hits = 0
     var numberWord = 0
-
+    var wordNot1=100
+    var wordNot2=100
     readSize(1)
     let randomWord = (Math.random() * 10).toFixed(0)
       while (randomWord > 5) {
@@ -85,8 +86,7 @@ const choosePhase = async (phase, level) => {
         }
         if(wordNot1==100){
           wordNot1=randomWord;
-        }
-        if(wordNot2==100){
+        }else if(wordNot2==100){
           wordNot2=randomWord;
         }
         randomWord = (Math.random() * 10).toFixed(0)
