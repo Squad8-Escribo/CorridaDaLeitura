@@ -64,27 +64,41 @@ const choosePhase = async (phase, level) => {
     var numberWord = 0
 
     readSize(1)
-    read.innerHTML = arrayText[0]
+    let randomWord = (Math.random() * 10).toFixed(0)
+      while (randomWord > 5) {
+        randomWord = (Math.random() * 10).toFixed(0)
+      }
+    read.innerHTML = arrayText[randomWord]
     artyom.redirectRecognizedTextOutput(function (text, isFinal) {
       if (isFinal) {
         var arrayWord = Artyom.prototype.splitStringByChunks(text, 1)
         console.log(
           arrayWord[0].trim().toLowerCase() +
             '<-recebe|json->' +
-            arrayText[numberWord].toLowerCase()
-        )
-        console.log(
-          arrayWord[0].trim().toLowerCase() ==
-            arrayText[numberWord].toLowerCase()
+            arrayText[randomWord].toLowerCase()
         )
         if (
           arrayWord[0].trim().toLowerCase() ==
-          arrayText[numberWord].toLowerCase()
+          arrayText[randomWord].toLowerCase()
         ) {
           hits++
         }
+        if(wordNot1==100){
+          wordNot1=randomWord;
+        }
+        if(wordNot2==100){
+          wordNot2=randomWord;
+        }
+        randomWord = (Math.random() * 10).toFixed(0)
+        console.log(wordNot1==randomWord)
+        console.log(wordNot2==randomWord)
+        while (randomWord > 5 || wordNot1==randomWord || wordNot2==randomWord) {
+          randomWord = (Math.random() * 10).toFixed(0)
+          console.log(wordNot1==randomWord)
+          console.log(wordNot2==randomWord)
+        }
+        read.innerHTML = arrayText[randomWord]
         numberWord++
-        read.innerHTML = arrayText[numberWord]
         if (numberWord == 3) {
           pause()
           if (hits == 3) {
