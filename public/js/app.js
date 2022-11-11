@@ -19,7 +19,10 @@ const gamePhase = document.getElementById('game-phase')
 const phase1 = document.getElementById('phase-one')
 const phase2 = document.getElementById('phase-two')
 const phase3 = document.getElementById('phase-three')
-
+const car1 = document.getElementById("car-phase1")
+const car2 = document.getElementById("car-phase2")
+const car3 = document.getElementById("car-phase3")
+const carGame = document.getElementById("carGamer")
 
 function cleanPlay() {
   gamePlay.style.display = 'none'
@@ -226,6 +229,13 @@ function randomLevel(phase) {
     randomPhrase = (Math.random() * 10 + 1).toFixed(0)
   }
   choosePhase(randomPhrase, phase)
+}
+
+function selectCar(color){
+  car1.setAttribute("src", `public/img/cars/car${color}.png`)
+  car2.setAttribute("src", `public/img/cars/car${color}.png`)
+  car3.setAttribute("src", `public/img/cars/car${color}.png`)
+  carGame.setAttribute("src", `public/img/cars/car${color}.png`)
 }
 
 cleanPlay()
