@@ -15,6 +15,11 @@ const background = document.getElementById('background')
 const sky = document.getElementById('sky')
 const passBtn = document.getElementById('pass-btn')
 const carApp = document.getElementById('car')
+const gamePhase = document.getElementById('game-phase')
+const phase1 = document.getElementById('phase-one')
+const phase2 = document.getElementById('phase-two')
+const phase3 = document.getElementById('phase-three')
+
 
 function cleanPlay() {
   gamePlay.style.display = 'none'
@@ -98,7 +103,9 @@ function showPassBtn() {
   passBtn.classList.add('pass-btn')
 }
 
-
+function showGame() {
+  gamePlayScreen()
+}
 
 function backgroundOpacity() {
   mic.classList.add('mic-opacity')
@@ -110,7 +117,6 @@ function backgroundOpacity() {
 function gamePlayScreen() {
   gamePlay.style.display = 'flex'
 }
-
 function medalSelect(a) {
   if (a == 1) {
     medal.classList.add('medal')
@@ -131,27 +137,33 @@ function levelScreen() {
     "url('public/img/background/backgroundCleanScreen.png')"
   gameLevels.style.display = 'flex'
 
-  for (let i = 0; i < 3; i++) {
+  /* for (let i = 0; i < 3; i++) {
     level[0].onclick = firstLevel
     level[1].onclick = secondLevel
     level[2].onclick = thirdLevel
+    level[3].onclick = fourthLevel
+  } */
+}
+
+function phaseScreen() {
+  gameScreen.style.background =  "url('public/img/background/backgroundCleanScreen.png')"
+
+  for (let i = 0; i < 3; i++) {
+    phase[0].onclick = phase    
   }
 }
 
 // implementar função wordbox
-function wordBox() {
-  // if ----
-  wordbox.style.display = 'flex'
-
-  // if (a==1) {
-  //     wordbox.classList.add('word-box__word')
-  // } else if (a=='phrase') {
-  //     wordbox.classList.add('word-box__phrase')
-  // } else if (a='text') {
-  //     wordbox.classList.add('word-box__text')
-  // } else if (a==4) {
-  //     wordbox.classList.add('word-box__congrats')
-  // }
+function wordBox(a) {
+    if (a==1) {
+       wordbox.classList.add('word-box__word')
+   } else if (a==2) {
+       wordbox.classList.add('word-box__phrase')
+   } else if (a=3) {
+       wordbox.classList.add('word-box__text')
+   } else if (a==4) {
+     wordbox.classList.add('word-box__congrats')
+   }
 }
 
 function showTutorial() {
@@ -159,27 +171,48 @@ function showTutorial() {
   gameTutorial.style.display = 'flex'
 }
 
-function firstLevel() {
-  cleanScreen()
-  cleanLevel()
-  gamePlayScreen()
-  wordbox.classList.add('word-box__word')
+function phaseScreen() {
+  gamePhase.style.display = 'flex'
 }
 
+function showWordBox() {
+  wordbox.style.display = 'flex'
+}
+
+function chooseLevel(level) {
+  phase1.setAttribute("onclick", `choosePhase(0,${level});showGame(); wordBox(1)`)
+  phase2.setAttribute("onclick", `randomLevel(${level});showGame(); wordBox(2)`)
+  phase3.setAttribute("onclick", `choosePhase(4,${level});showGame(); wordBox(3)`)
+}
+
+function cleanPhase(){
+  cleanScreen()
+  cleanLevel()
+  phaseScreen()
+}
+/* function firstLevel() {
+  cleanScreen()
+  cleanLevel()
+  phaseScreen()
+}
 function secondLevel() {
   cleanScreen()
   cleanLevel()
-  gamePlayScreen()
-  wordbox.classList.add('word-box__phrase')
+  phaseScreen()
 }
 
 function thirdLevel() {
   cleanScreen()
   cleanLevel()
-  gamePlayScreen()
-  wordbox.classList.add('word-box__text')
+  phaseScreen()
 }
 
+function fourthLevel() {
+  cleanScreen()
+  cleanLevel()
+  phaseScreen()
+}
+ */
 function randomLevel(phase) {
   let randomPhrase = (Math.random() * 10 + 1).toFixed(0)
   while (randomPhrase > 3) {

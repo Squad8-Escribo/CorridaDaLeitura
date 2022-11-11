@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="public/css/gameLevels.css">
     <link rel="stylesheet" href="public/css/gameTutorial.css">
     <link rel="stylesheet" href="public/css/gamePlay.css">
+    <link rel="stylesheet" href="public/css/gamePhase.css">
     <title>Corrida Maluca</title>
 </head>
 
@@ -58,23 +59,23 @@
                 <div class="game-levels__levels">
                     <div class="game-levels__levels-car">
                         <a class="game-levels__levels--one level"><img src="public/img/btns/levelBtnOne.png" alt=""
-                                class="game-levels__levels-img" onclick="choosePhase(0,0)"></a>
+                                class="game-levels__levels-img" onclick="chooseLevel(0);cleanPhase()"></a>
                         <img src="public/img/cars/carBlue.png" alt="" class="game-levels__cars game-levels__cars--one,">
                     </div>
                     <div class="game-levels__levels-car">
                         <a class="game-levels__levels--two level"><img src="public/img/btns/leveBtnTwo.png" alt=""
-                                class="game-levels__levels-img" onclick="randomLevel(0)"></a>
+                                class="game-levels__levels-img" onclick="chooseLevel(1);cleanPhase()"></a>
                         <img src="public/img/cars/carGreen.png" alt="" class="game-levels__cars game-levels__cars--two">
                     </div>
                     <div class="game-levels__levels-car">
                         <a class="game-levels__levels--three level"><img src="public/img/btns/levelBtnThree.png" alt=""
-                                class="game-levels__levels-img" onclick="choosePhase(4,0)"></a>
+                                class="game-levels__levels-img" onclick="chooseLevel(2);cleanPhase()"></a>
                         <img src="public/img/cars/carYellow.png" alt=""
                             class="game-levels__cars game-levels__cars--three">
                     </div>
                     <div class="game-levels__levels-car">
                         <a class="game-levels__levels--three level"><img src="public/img/btns/levelBtnFour.png" alt=""
-                                class="game-levels__levels-img" onclick="choosePhase(4,0)"></a>
+                                class="game-levels__levels-img" onclick="chooseLevel(3);cleanPhase()"></a>
                         <img src="public/img/cars/carYellow.png" alt=""
                             class="game-levels__cars game-levels__cars--three">
                     </div>
@@ -82,24 +83,24 @@
             </div>
 
             <!-- Phase Screen -->
-            <div id="game-levels">
+            <div id="game-phase">
                 <div class="game-levels__back-btn">
                     <a href=""><img src="public/img/btns/backBtn.png" alt=""></a>
                 </div>
                 <div class="game-levels__levels">
                     <div class="game-levels__levels-car">
-                        <a class="game-levels__levels--one level"><img src="public/img/btns/levelBtn.png" alt=""
-                                class="game-levels__levels-img" onclick="choosePhase(0,0)"></a>
+                        <a class="game-levels__levels--one phase"><img id="phase-one" src="public/img/btns/phaseBtnOne.png" alt=""
+                                class="game-levels__levels-img"></a>
                         <img src="public/img/cars/carBlue.png" alt="" class="game-levels__cars game-levels__cars--one,">
                     </div>
                     <div class="game-levels__levels-car">
-                        <a class="game-levels__levels--two level"><img src="public/img/btns/levelBtn.png" alt=""
-                                class="game-levels__levels-img" onclick="randomLevel(0)"></a>
+                        <a class="game-levels__levels--two phase"><img id="phase-two" src="public/img/btns/phaseBtnTwo.png" alt=""
+                                class="game-levels__levels-img"></a>
                         <img src="public/img/cars/carGreen.png" alt="" class="game-levels__cars game-levels__cars--two">
                     </div>
                     <div class="game-levels__levels-car">
-                        <a class="game-levels__levels--three level"><img src="public/img/btns/levelBtn.png" alt=""
-                                class="game-levels__levels-img" onclick="choosePhase(4,0)"></a>
+                        <a class="game-levels__levels--three phase"><img id="phase-three" src="public/img/btns/phaseBtnThree.png" alt=""
+                                class="game-levels__levels-img"></a>
                         <img src="public/img/cars/carYellow.png" alt=""
                             class="game-levels__cars game-levels__cars--three">
                     </div>
@@ -121,7 +122,7 @@
                 <div id="car">
                     <img src="public/img/cars/car.png" alt="">
                 </div>
-                <div id="mic" onclick="startArtyon();start();wordBox();animationGame()"></div>
+                <div id="mic" onclick="startArtyon();start();showWordBox();animationGame()"></div>
                 <!--Ainda vou criar-->
                 <div id="obstacle">
                 </div>

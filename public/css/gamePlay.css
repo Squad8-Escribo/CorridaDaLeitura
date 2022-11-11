@@ -51,8 +51,10 @@
 }
 
 .word-box__word {
+  justify-content: baseline;
+  align-items: baseline;
   height: 10%;
-  width: 25%;
+  width: 30%;
   top: 10%;
   left: 34%;
 }
