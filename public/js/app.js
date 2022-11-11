@@ -55,6 +55,10 @@ function cleanResult() {
   result.style.display = 'none'
 }
 
+function showResult() {
+  result.style.display = 'flex'
+  result.classList.add('result')
+}
 function cleanMedal() {
   medal.style.display = 'none'
 }
@@ -159,9 +163,12 @@ function wordBox(a) {
        wordbox.classList.add('word-box__word')
    } else if (a==2) {
        wordbox.classList.add('word-box__phrase')
-   } else if (a=3) {
+   } else if (a==3) {
        wordbox.classList.add('word-box__text')
    } else if (a==4) {
+    wordbox.classList.add('word-box__congrats')
+     wordbox.classList.remove('word-box__word')
+     wordbox.classList.remove('word-box__text')
      wordbox.classList.add('word-box__congrats')
    }
 }

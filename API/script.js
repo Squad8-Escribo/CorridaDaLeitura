@@ -98,36 +98,35 @@ const choosePhase = async (phase, level) => {
         if (numberWord == 3) {
           pause()
           if (hits == 3) {
+            wordBox(4)
             read.innerHTML = ''
+            medalSelect(1)
             result.innerHTML =
               '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE DIAMANTE!</h5>'
-            wordbox.classList.add('word-box__congrats')
-            medalSelect(1)
           } else if (hits == 2) {
+            wordBox(4)
+            read.innerHTML = ''
+            medalSelect(2)
             result.innerHTML =
               '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE OURO!</h5>'
-            read.innerHTML = ''
-            wordbox.classList.add('word-box__congrats')
-            medalSelect(2)
           } else if (hits == 1) {
+            wordBox(4)
+            read.innerHTML = ''
+            medalSelect(3)
             result.innerHTML =
               '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A  <br> MEDALHA DE PRATA!</h5>'
-            read.innerHTML = ''
-            wordbox.classList.add('word-box__congrats')
             medalSelect(3)
           } else if (hits == 0) {
+            wordBox(4)
+            read.innerHTML = ''
+            medalSelect(4)
             result.innerHTML =
               '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE BRONZE!</h5>'
-            read.innerHTML = ''
-            wordbox.classList.add('word-box__congrats')
-            medalSelect(4)
           }
           backgroundOpacity()
           showTime()
           showPassBtn()
           passBtn.setAttribute("onclick", `randomLevel(${phase});reset();cleanResult();cleanMedal();passLevelPhrase()`)
-          // result.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level});reset()" value="Proxima fase"/><br>`;
-          // result.innerHTML+=`<input type="button" onclick="buttonsLevel();reset()" value="Voltar ao começo"/><br>`;
           stopArtyon()
         }
       }
@@ -220,31 +219,36 @@ const choosePhase = async (phase, level) => {
       }
       if (finish) {
         pause()
-        console.log(elapsedTime)
         if (hits >= arrayText.length * 0.9) {
+          wordBox(4)
           read.innerHTML = ''
+          medalSelect(1)
+          showResult()
           result.innerHTML =
             '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE DIAMANTE!</h5>'
-          wordbox.classList.add('word-box__congrats')
-          medalSelect(1)
         } else if (hits >= arrayText.length * 0.7) {
+          wordBox(4)
           read.innerHTML = ''
+          medalSelect(2)
+          showResult()
           result.innerHTML =
             '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE OURO!</h5>'
-          wordbox.classList.add('word-box__congrats')
-          medalSelect(2)
         } else if (hits >= arrayText.length * 0.5) {
-          read.innerHTML = ''
-          result.innerHTML =
-            '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE PRATA!</h5>'
-          wordbox.classList.add('word-box__congrats')
-          medalSelect(3)
+          wordBox(4)
+            read.innerHTML = ''
+            medalSelect(3)
+            showResult()
+            result.innerHTML =
+              '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A  <br> MEDALHA DE PRATA!</h5>'
+            medalSelect(3)
+            showResult()
         } else {
-          read.innerHTML = ''
-          result.innerHTML =
-            '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE BRONZE!</h5>'
-          wordbox.classList.add('word-box__congrats')
-          medalSelect(4)
+            wordBox(4)
+            read.innerHTML = ''
+            medalSelect(4)
+            showResult()
+            result.innerHTML =
+              '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE BRONZE!</h5>'
         }
         backgroundOpacity()
         showTime()
