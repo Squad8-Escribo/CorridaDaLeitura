@@ -28,25 +28,36 @@ function cleanPlay() {
   gamePlay.style.display = 'none'
 }
 
-function cleanWordBox() {
+function cleanWordBox(x) {
+
   wordbox.style.display = 'none'
+
+  if (x===1) {
+    wordbox.classList.remove('word-box__congrats')
+    wordbox.classList.remove('word-box__word')
+    wordbox.classList.add('word-box__phrase')
+  } else if (x===2) {
+    wordbox.classList.remove('word-box__congrats')
+    wordbox.classList.remove('word-box__phrase')
+    wordbox.classList.add('word-box__text')
+  }
 }
 
+
+
 function passLevelPhrase() {
-  wordbox.classList.remove('word-box__congrats')
-  wordbox.classList.remove('word-box__word')
-  wordbox.classList.add('word-box__phrase')
-  wordbox.style.display = 'flex'
+  cleanWordBox(1)
+  stopAnimation()
   mic.style.display = 'flex'
   background.classList.remove('background-opacity')
   mic.classList.remove('mic-opacity')
   carApp.classList.remove('car-opacity')
+  sky.classList.remove('sky-opacity')
 }
 
 function passLevelText() {
-  wordbox.classList.remove('word-box__congrats')
-  wordbox.classList.remove('word-box__phrase')
-  wordbox.classList.add('word-box__text')
+  cleanWordBox(2)
+  stopAnimation()
   background.classList.remove('background-opacity')
   wordbox.style.display ='flex'
   mic.style.display = 'flex'
