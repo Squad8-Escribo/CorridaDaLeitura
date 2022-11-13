@@ -60,15 +60,17 @@ const choosePhase = async (phase, level) => {
   //if chosse word, one by one
 
   if (phaseName == 'palavras') {
+    setReadSize('word')
     var hits = 0
     var numberWord = 0
     var wordNot1=100
     var wordNot2=100
-    readSize(1)
+
     let randomWord = (Math.random() * 10).toFixed(0)
       while (randomWord > 5) {
         randomWord = (Math.random() * 10).toFixed(0)
       }
+
     read.innerHTML = arrayText[randomWord]
     artyom.redirectRecognizedTextOutput(function (text, isFinal) {
       if (isFinal) {
@@ -97,44 +99,28 @@ const choosePhase = async (phase, level) => {
         numberWord++
         if (numberWord == 3) {
           pause()
+          cleanRead() 
           if (hits == 3) {
-            wordBox(4)
-            read.innerHTML = ''
             medalSelect(1)
-            result.innerHTML =
-              '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE DIAMANTE!</h5>'
           } else if (hits == 2) {
-            wordBox(4)
-            read.innerHTML = ''
             medalSelect(2)
-            result.innerHTML =
-              '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE OURO!</h5>'
           } else if (hits == 1) {
-            wordBox(4)
-            read.innerHTML = ''
-            medalSelect(3)
-            result.innerHTML =
-              '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A  <br> MEDALHA DE PRATA!</h5>'
             medalSelect(3)
           } else if (hits == 0) {
-            wordBox(4)
-            read.innerHTML = ''
-            medalSelect(4)
-            result.innerHTML =
-              '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE BRONZE!</h5>'
+            medalSelect(4)          
           }
-          showCongrats()
+          showCongratulations()
           passBtn.setAttribute("onclick", `randomLevel(${phase});reset();cleanResult();cleanMedal();passLevelPhrase()`)
-        }
+        } 
       }
     })
 
     //other cases
   } else {
     if (phaseName == 'texto') {
-      readSize(3)
+      setReadSize('text')
     } else {
-      readSize(2)
+      setReadSize('phrase')
     }
     cleanPassBtn()
     for (var i = 0; i < arrayText.length; i++) {
@@ -216,32 +202,17 @@ const choosePhase = async (phase, level) => {
       }
       if (finish) {
         pause()
+        cleanRead() 
         if (hits >= arrayText.length * 0.9) {
-          wordBox(4)
-          read.innerHTML = ''
           medalSelect(1)
-          result.innerHTML =
-            '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE DIAMANTE!</h5>'
         } else if (hits >= arrayText.length * 0.7) {
-          wordBox(4)
-          read.innerHTML = ''
           medalSelect(2)
-          result.innerHTML =
-            '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE OURO!</h5>'
         } else if (hits >= arrayText.length * 0.5) {
-          wordBox(4)
-            read.innerHTML = ''
-            medalSelect(3)
-            result.innerHTML =
-              '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A  <br> MEDALHA DE PRATA!</h5>'
+          medalSelect(3)
         } else {
-            wordBox(4)
-            read.innerHTML = ''
-            medalSelect(4)
-            result.innerHTML =
-              '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE BRONZE!</h5>'
+          medalSelect(4)
         }
-        showCongrats()
+        showCongratulations()
         passBtn.setAttribute("onclick", `choosePhase(4,0);reset();cleanResult();cleanMedal();passLevelText()`)
       }
     })

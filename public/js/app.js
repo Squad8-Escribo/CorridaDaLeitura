@@ -29,6 +29,10 @@ function cleanPlay() {
   gamePlay.style.display = 'none'
 }
 
+function cleanRead() {
+  read.style.display = 'none'
+}
+
 function cleanWordBox(x) {
 
   wordbox.style.display = 'none'
@@ -85,13 +89,14 @@ function cleanMedal() {
   medal.style.display = 'none'
 }
 
-function showCongrats() {
+function showCongratulations() {
   showMedal()
   backgroundOpacity()
   showResult()
   showTime()
-  stopArtyon()
   showPassBtn()
+  stopArtyon()
+  wordBox(4)
 }
 
 function showTime() {
@@ -113,12 +118,18 @@ function cleanScreen() {
   gameLogo.style.display = 'none'
 }
 
-function readSize(a) {
-  if (a == 1) {
+
+function setReadSize(a) {
+  
+  let word = 'word'
+  let phrase = 'phrase'
+  let text = 'text'
+
+  if (a===word) {
     read.classList.add('read-word')
-  } else if (a == 2) {
+  } else if (a===phrase) {
     read.classList.add('read-phrase')
-  } else if (a == 3) {
+  } else if (a===text) {
     read.classList.add('read-text')
   }
 }
@@ -127,11 +138,6 @@ function playGame() {
   cleanScreen()
   levelScreen()
 }
-
-// function backgroundOpacity () {
-//     mic.classList.add('mic-opacity')
-// }
-
 
 function showPassBtn() {
   passBtn.style.display = 'flex'
@@ -159,12 +165,16 @@ function gamePlayScreen() {
 function medalSelect(a) {
   if (a == 1) {
     medal.innerHTML = "  <img src='public/img/elements/diamond-medal.png'>"
+    result.innerHTML ='<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE DIAMANTE!</h5>'
   } else if (a == 2) {
     medal.innerHTML = "  <img src='public/img/elements/gold-medal.png'>"
+    result.innerHTML ='<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE OURO!</h5>'
   } else if (a == 3) {
     medal.innerHTML = "  <img src='public/img/elements/silver-medal.png'>"
+    result.innerHTML ='<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE PRATA!</h5>'
   } else if (a == 4) {
     medal.innerHTML = "  <img src='public/img/elements/cooper-medal.png'>"
+    result.innerHTML ='<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE BRONZE!</h5>'
   }
 }
 
@@ -172,13 +182,6 @@ function levelScreen() {
   gameScreen.style.backgroundImage =
     "url('public/img/background/backgroundCleanScreen.png')"
   gameLevels.style.display = 'flex'
-
-  /* for (let i = 0; i < 3; i++) {
-    level[0].onclick = firstLevel
-    level[1].onclick = secondLevel
-    level[2].onclick = thirdLevel
-    level[3].onclick = fourthLevel
-  } */
 }
 
 function phaseScreen() {
@@ -189,7 +192,6 @@ function phaseScreen() {
   }
 }
 
-// implementar função wordbox
 function wordBox(a) {
     if (a==1) {
        wordbox.classList.add('word-box__word')
@@ -198,7 +200,7 @@ function wordBox(a) {
    } else if (a==3) {
        wordbox.classList.add('word-box__text')
    } else if (a==4) {
-    wordbox.classList.add('word-box__congrats')
+     wordbox.classList.add('word-box__congrats')
      wordbox.classList.remove('word-box__word')
      wordbox.classList.remove('word-box__text')
      wordbox.classList.add('word-box__congrats')
@@ -229,29 +231,7 @@ function cleanPhase(){
   cleanLevel()
   phaseScreen()
 }
-/* function firstLevel() {
-  cleanScreen()
-  cleanLevel()
-  phaseScreen()
-}
-function secondLevel() {
-  cleanScreen()
-  cleanLevel()
-  phaseScreen()
-}
 
-function thirdLevel() {
-  cleanScreen()
-  cleanLevel()
-  phaseScreen()
-}
-
-function fourthLevel() {
-  cleanScreen()
-  cleanLevel()
-  phaseScreen()
-}
- */
 function randomLevel(phase) {
   let randomPhrase = (Math.random() * 10 + 1).toFixed(0)
   while (randomPhrase > 3) {
