@@ -33,6 +33,7 @@ function cleanRead() {
   read.style.display = 'none'
 }
 
+// especificar o tamanho da wbox
 function cleanWordBox(x) {
 
   wordbox.style.display = 'none'
@@ -48,21 +49,24 @@ function cleanWordBox(x) {
   }
 }
 
-
+function showRead(){
+  read.style.display = 'inline'
+}
 
 function passLevelPhrase() {
   cleanWordBox(1)
   stopAnimation()
   showMic()
   removeGameOpacity()
+  showRead()
 }
 
 function passLevelText() {
   cleanWordBox(2)
   stopAnimation()
-  showWordBox()
   showMic()
   removeGameOpacity()
+  showRead()
 }
 
 function showMic() {
