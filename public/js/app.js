@@ -70,7 +70,7 @@ function cleanResult() {
 }
 
 function showResult() {
-  result.style.display = 'flex'
+  result.style.display = 'block'
   result.classList.add('result')
 }
 function cleanMedal() {
