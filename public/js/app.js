@@ -48,23 +48,30 @@ function cleanWordBox(x) {
 function passLevelPhrase() {
   cleanWordBox(1)
   stopAnimation()
-  mic.style.display = 'flex'
-  background.classList.remove('background-opacity')
-  mic.classList.remove('mic-opacity')
-  carApp.classList.remove('car-opacity')
-  sky.classList.remove('sky-opacity')
+  showMic()
+  removeGameOpacity()
 }
 
 function passLevelText() {
   cleanWordBox(2)
   stopAnimation()
-  background.classList.remove('background-opacity')
-  wordbox.style.display ='flex'
+  showWordBox()
+  showMic()
+  removeGameOpacity()
+}
+
+function showMic() {
   mic.style.display = 'flex'
+
+}
+
+function removeGameOpacity() {
+  sky.classList.remove('sky-opacity')
   mic.classList.remove('mic-opacity')
   carApp.classList.remove('car-opacity')
+  background.classList.remove('background-opacity')
 }
- 
+
 function cleanResult() {
   result.style.display = 'none'
 }
