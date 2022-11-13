@@ -4,11 +4,16 @@ const gameBackground = document.getElementById('background');
 
 function raceAnimation() {
     // road.classList.add('roadAnimation')
-    gameBackground.classList.add('roadAnimation')
+    gameBackground.classList.add('raceAnimation')
 }
 function animationGame() {
     raceAnimation()
     carAnimation();
+}
+
+function stopAnimation() {
+    gameBackground.classList.remove('raceAnimation')
+    car.classList.remove('carSuspension')
 }
 
 function carAnimation() {
