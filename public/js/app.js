@@ -86,6 +86,7 @@ function cleanMedal() {
 }
 
 function showCongrats() {
+  showMedal()
   backgroundOpacity()
   showResult()
   showTime()
@@ -147,16 +148,18 @@ function backgroundOpacity() {
   sky.classList.add('sky-opacity')
 }
 
+function showMedal() {
+  medal.classList.add('medal')
+  medal.style.display='flex'
+}
+
 function gamePlayScreen() {
   gamePlay.style.display = 'flex'
 }
 function medalSelect(a) {
   if (a == 1) {
-    medal.classList.add('medal')
-    medal.style.display='flex'
     medal.innerHTML = "  <img src='public/img/elements/diamond-medal.png'>"
   } else if (a == 2) {
-    medal.style.display='flex'
     medal.innerHTML = "  <img src='public/img/elements/gold-medal.png'>"
   } else if (a == 3) {
     medal.innerHTML = "  <img src='public/img/elements/silver-medal.png'>"

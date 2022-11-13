@@ -234,7 +234,6 @@ const choosePhase = async (phase, level) => {
             medalSelect(3)
             result.innerHTML =
               '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A  <br> MEDALHA DE PRATA!</h5>'
-            medalSelect(3)
         } else {
             wordBox(4)
             read.innerHTML = ''
