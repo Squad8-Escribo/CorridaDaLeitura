@@ -123,11 +123,8 @@ const choosePhase = async (phase, level) => {
             result.innerHTML =
               '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE BRONZE!</h5>'
           }
-          backgroundOpacity()
-          showTime()
-          showPassBtn()
+          showCongrats()
           passBtn.setAttribute("onclick", `randomLevel(${phase});reset();cleanResult();cleanMedal();passLevelPhrase()`)
-          stopArtyon()
         }
       }
     })
@@ -223,42 +220,30 @@ const choosePhase = async (phase, level) => {
           wordBox(4)
           read.innerHTML = ''
           medalSelect(1)
-          showResult()
           result.innerHTML =
             '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE DIAMANTE!</h5>'
         } else if (hits >= arrayText.length * 0.7) {
           wordBox(4)
           read.innerHTML = ''
           medalSelect(2)
-          showResult()
           result.innerHTML =
             '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE OURO!</h5>'
         } else if (hits >= arrayText.length * 0.5) {
           wordBox(4)
             read.innerHTML = ''
             medalSelect(3)
-            showResult()
             result.innerHTML =
               '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A  <br> MEDALHA DE PRATA!</h5>'
             medalSelect(3)
-            showResult()
         } else {
             wordBox(4)
             read.innerHTML = ''
             medalSelect(4)
-            showResult()
             result.innerHTML =
               '<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE BRONZE!</h5>'
         }
-        backgroundOpacity()
-        showTime()
-        showPassBtn()
+        showCongrats()
         passBtn.setAttribute("onclick", `choosePhase(4,0);reset();cleanResult();cleanMedal();passLevelText()`)
-
-
-        /* read.innerHTML+=`<input type="button" onclick="choosePhase(${(phase+1)},${level});reset()" value="Proxima fase"/><br>`;
-                read.innerHTML+=`<input type="button" onclick="buttonsLevel();reset()" value="Voltar ao começo"/><br>`; */
-        stopArtyon()
       }
     })
   }

@@ -24,6 +24,7 @@ const car2 = document.getElementById("car-phase2")
 const car3 = document.getElementById("car-phase3")
 const carGame = document.getElementById("carGamer")
 
+
 function cleanPlay() {
   gamePlay.style.display = 'none'
 }
@@ -84,6 +85,14 @@ function cleanMedal() {
   medal.style.display = 'none'
 }
 
+function showCongrats() {
+  backgroundOpacity()
+  showResult()
+  showTime()
+  stopArtyon()
+  showPassBtn()
+}
+
 function showTime() {
   result.innerHTML += `<h5>SEU TEMPO FOI DE <br> ${timeToString(
     elapsedTime
@@ -133,7 +142,7 @@ function showGame() {
 }
 
 function backgroundOpacity() {
-  mic.classList.add('mic-opacity')
+  mic.style.display = 'none'
   car.classList.add('car-opacity')
   background.classList.add('background-opacity')
   sky.classList.add('sky-opacity')

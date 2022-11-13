@@ -177,13 +177,6 @@
 #mic:hover {
   transform: scale(1.1);
 }
-.mic-opacity {
-  display: none;
-  opacity: 0.7;
-  cursor: none;
-  transition: none;
-  transform: scale(1.1);
-}
 /*  vou arrumar ainda
 #obstacle {
     width: 20px;
