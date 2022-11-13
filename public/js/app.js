@@ -134,7 +134,6 @@ function playGame() {
 
 function showPassBtn() {
   passBtn.style.display = 'flex'
-  passBtn.classList.add('pass-btn')
 }
 
 function showGame() {

@@ -41,6 +41,7 @@
 }
 
 #word-box {
+  cursor: default;
   background: #632e01;
   border: 20px solid #632e01;
   border-radius: 40px;
@@ -140,28 +141,27 @@
   opacity: 0.7;
 }
 
-#pass-bn {
-  transition: 0.5s;
-}
-
-#pass-btn:hover{
-  transform: scale(1.05);
-}
-
-.pass-btn {
+#pass-btn {
+  display: none;
   background: url(/public/img/btns/passBtn.png);
   background-size: contain;
   position: absolute;
+  cursor: pointer;
   background-repeat: no-repeat;
+  transition: 0.3s;
   z-index: 2;
   height: 20%;
-  width: 30%;
   top: 70%;
   left: 45%;
-  display: none;
+  width: 30%;
+}
+
+#pass-btn:hover{
+  transform: scale(1.14);
 }
 
 #mic {
+  cursor: pointer;
   background: url(/public/img/btns/micBtn.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -171,7 +171,7 @@
   width: 250px;
   top: 63%;
   left: 78%;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 
 #mic:hover {
