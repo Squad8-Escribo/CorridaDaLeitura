@@ -63,7 +63,8 @@ const choosePhase = async (phase, level) => {
   //if chosse word, one by one
 
   if (phaseName == 'palavras') {
-    setReadSize('word')
+    cleanPassBtn()
+    setReadSize(1)
     var hits = 0
     var numberWord = 0
     var wordNot1=100
@@ -137,15 +138,17 @@ const choosePhase = async (phase, level) => {
 
     //Box size and pass button
 
+    cleanPassBtn()
     if (phaseName == 'texto') {
-      setReadSize('text')
-      passBtn.setAttribute("onclick", `choosePhase(0,${level+1});reset();cleanResult();cleanMedal();passLevelText()`)
+      cleanPassBtn()
+      setReadSize(3)
+      passBtn.setAttribute("onclick", `choosePhase(0,${level+1});reset();cleanResult();cleanMedal();passLevelWord();setReadSize(1)`)
       
     } else {
-      setReadSize('phrase')
-      passBtn.setAttribute("onclick", `choosePhase(4,${level});reset();cleanResult();cleanMedal();passLevelText()`)
+      cleanPassBtn()
+      setReadSize(2)
+      passBtn.setAttribute("onclick", `choosePhase(4,${level});reset();cleanResult();cleanMedal();passLevelText();setReadSize(2)`)
     }
-    cleanPassBtn()
 
     //Show text
 

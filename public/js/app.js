@@ -46,6 +46,10 @@ function cleanWordBox(x) {
     wordbox.classList.remove('word-box__congrats')
     wordbox.classList.remove('word-box__phrase')
     wordbox.classList.add('word-box__text')
+  } else if (x===3) {
+    wordbox.classList.remove('word-box__congrats')
+    wordbox.classList.remove('word-box__text')
+    wordbox.classList.add('word-box__word')
   }
 }
 function showRead(){
@@ -54,6 +58,14 @@ function showRead(){
 
 function passLevelPhrase() {
   cleanWordBox(1)
+  stopAnimation()
+  showMic()
+  removeGameOpacity()
+  showRead()
+}
+
+function passLevelWord() {
+  cleanWordBox(3)
   stopAnimation()
   showMic()
   removeGameOpacity()
@@ -132,15 +144,14 @@ function cleanScreen() {
 
 function setReadSize(a) {
   
-  let word = 'word'
-  let phrase = 'phrase'
-  let text = 'text'
-
-  if (a===word) {
+  if (a===1) {
+    read.classList.remove('read-text')
     read.classList.add('read-word')
-  } else if (a===phrase) {
+  } else if (a===2) {
+    read.classList.remove('read-word')
     read.classList.add('read-phrase')
-  } else if (a===text) {
+  } else if (a===3) {
+    read.classList.remove('read-phrase')
     read.classList.add('read-text')
   }
 }
