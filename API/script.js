@@ -126,7 +126,7 @@ const choosePhase = async (phase, level) => {
             medalSelect(4)          
           }
           showCongratulations()
-          passBtn.setAttribute("onclick", `randomLevel(${phase});reset();cleanResult();cleanMedal();passLevelPhrase()`)
+          passBtn.setAttribute("onclick", `randomLevel(${level});reset();cleanResult();cleanMedal();passLevelPhrase()`)
         } 
       }
     })
