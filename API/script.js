@@ -39,8 +39,10 @@ const chooseLevel =  async(level) => {
 } */
 
 const choosePhase = async (phase, level) => {
-  read.innerHTML = ''
+  
+  //Get phases for json
 
+  read.innerHTML = ''
   const response = await fetch('API/fases.json')
   const data = await response.json()
   var phaseName = Object.keys(data[level][phase])
@@ -66,26 +68,36 @@ const choosePhase = async (phase, level) => {
     var wordNot1=100
     var wordNot2=100
 
+    //System randomazing word
+
     let randomWord = (Math.random() * 10).toFixed(0)
       while (randomWord > 5) {
         randomWord = (Math.random() * 10).toFixed(0)
       }
-
     read.innerHTML = arrayText[randomWord]
+
+    //API array string transforming
+
     artyom.redirectRecognizedTextOutput(function (text, isFinal) {
       if (isFinal) {
         var arrayWord = Artyom.prototype.splitStringByChunks(text, 1)
         console.log(
-          arrayWord[0].trim().toLowerCase() +
+          arrayWord[0].trim().toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '') +
             '<-recebe|json->' +
-            arrayText[randomWord].toLowerCase()
-        )
+            arrayText[randomWord].toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '')
+        )//Debug
+
+        //Correction system
+
         if (
-          arrayWord[0].trim().toLowerCase() ==
-          arrayText[randomWord].toLowerCase()
+          arrayWord[0].trim().toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '') ==
+          arrayText[randomWord].toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '')
         ) {
           hits++
         }
+
+        //Do not repeat words
+
         if(wordNot1==100){
           wordNot1=randomWord;
         }else if(wordNot2==100){
@@ -97,6 +109,9 @@ const choosePhase = async (phase, level) => {
         }
         read.innerHTML = arrayText[randomWord]
         numberWord++
+
+        //Congratulations screen
+
         if (numberWord == 3) {
           pause()
           cleanRead() 
@@ -115,14 +130,21 @@ const choosePhase = async (phase, level) => {
       }
     })
 
-    //other cases
+  //other cases(Pharse or text)
+
   } else {
+
+    //Box size and pass button
+
     if (phaseName == 'texto') {
       setReadSize('text')
     } else {
       setReadSize('phrase')
     }
     cleanPassBtn()
+
+    //Show text
+
     for (var i = 0; i < arrayText.length; i++) {
       read.innerHTML += arrayText[i]
     }
@@ -131,33 +153,42 @@ const choosePhase = async (phase, level) => {
     var finishLast = false
     var finishPenultimate = false
     var finishNumber = false
-    artyom.redirectRecognizedTextOutput(function (text, isFinal) {
 
+    //API array string transforming
+
+    artyom.redirectRecognizedTextOutput(function (text, isFinal) {
       if (isFinal) {
         var hits = 0
         arrayTemporary = Artyom.prototype.splitStringByChunks(text, 1)
+
+        //System to terminate the API
+
         if (arrayTemporary.length < arrayText.length) {
           finishLast =
             arrayTemporary[arrayTemporary.length] ===
               arrayText[arrayTemporary.length] ||
             arrayTemporary[arrayTemporary.length - 1] ===
               arrayText[arrayTemporary.length]
+          
           finishPenultimate =
             arrayTemporary[arrayTemporary.length - 1] ===
             arrayText[arrayTemporary.length - 1]
         } else {
           finishNumber = true
         }
+
+        //First correction system
+
         if (finishLast || finishPenultimate || finishNumber) {
           for (var i = 0; i < arrayText.length; i++) {
             console.log(
-              arrayTemporary[i].trim().toLowerCase() +
+              arrayTemporary[i].trim().toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '') +
                 '<-recebe|json->' +
-                arrayText[i].trim().toLowerCase()
-            )
+                arrayText[i].trim().toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '')
+            )//Debug
             if (
-              arrayTemporary[i].trim().toLowerCase() ==
-              arrayText[i].trim().toLowerCase()
+              arrayTemporary[i].trim().toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '') ==
+              arrayText[i].trim().toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '')
             ) {
               hits++
             }
@@ -166,29 +197,32 @@ const choosePhase = async (phase, level) => {
             hits = hits - arrayText.length / 5
           }
           finish = true
+
+        //Final correction system
+
         } else {
           arrayWord = arrayWord.concat(arrayTemporary)
           if (arrayWord.length < arrayText.length) {
             finishLast =
-              arrayWord[arrayWord.length] === arrayText[arrayWord.length] ||
-              arrayWord[arrayWord.length - 1] === arrayText[arrayWord.length]
+              arrayWord[arrayWord.length].trim().toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '') === arrayText[arrayWord.length].trim().toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '') ||
+              arrayWord[arrayWord.length - 1].trim().toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '') === arrayText[arrayWord.length].trim().toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '')
+            
             finishPenultimate =
-              arrayWord[arrayWord.length - 1] ===
-              arrayText[arrayTemporary.length - 1]
+              arrayWord[arrayWord.length - 1].trim().toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '') ===
+              arrayText[arrayTemporary.length - 1].trim().toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '')
           } else {
             finishNumber = true
           }
-          console.log('etste t   ' + arrayWord)
           if (finishLast || finishPenultimate || finishNumber) {
             for (var i = 0; i < arrayText.length; i++) {
               console.log(
-                arrayWord[i].trim().toLowerCase() +
+                arrayWord[i].trim().toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '') +
                   '<-recebe|json->' +
-                  arrayText[i].trim().toLowerCase()
-              )
+                  arrayText[i].trim().toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '')
+              )//Debug
               if (
-                arrayWord[i].trim().toLowerCase() ==
-                arrayText[i].trim().toLowerCase()
+                arrayWord[i].trim().toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '') ==
+                arrayText[i].trim().toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '')
               ) {
                 hits++
               }
@@ -200,6 +234,9 @@ const choosePhase = async (phase, level) => {
           }
         }
       }
+
+      //Congratulations screen
+
       if (finish) {
         pause()
         cleanRead() 
