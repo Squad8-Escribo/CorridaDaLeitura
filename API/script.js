@@ -51,14 +51,6 @@ const choosePhase = async (phase, level) => {
 
   //level passing system
 
-  if (phase >= data[level].length) {
-    level++
-    phase = 0
-  }
-  if (level >= data.length) {
-    alert('Parabéns Você terminou o jogo')
-  }
-
   //if chosse word, one by one
 
   if (phaseName == 'palavras') {
@@ -138,8 +130,13 @@ const choosePhase = async (phase, level) => {
 
     if (phaseName == 'texto') {
       setReadSize('text')
+      console.log(level)
+      console.log(phase)
+      passBtn.setAttribute("onclick", `choosePhase(0,${level+1});reset();cleanResult();cleanMedal();passLevelText()`)
+
     } else {
       setReadSize('phrase')
+      passBtn.setAttribute("onclick", `choosePhase(4,${level});reset();cleanResult();cleanMedal();passLevelText()`)
     }
     cleanPassBtn()
 
@@ -250,7 +247,6 @@ const choosePhase = async (phase, level) => {
           medalSelect(4)
         }
         showCongratulations()
-        passBtn.setAttribute("onclick", `choosePhase(4,0);reset();cleanResult();cleanMedal();passLevelText()`)
       }
     })
   }
