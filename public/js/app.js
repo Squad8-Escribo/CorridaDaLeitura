@@ -13,6 +13,7 @@ const medal = document.getElementById('medal')
 const mic = document.getElementById('mic')
 const background = document.getElementById('background')
 const sky = document.getElementById('sky')
+const homeBtn = document.getElementById('home-btn')
 const passBtn = document.getElementById('pass-btn')
 const carApp = document.getElementById('car')
 const gamePhase = document.getElementById('game-phase')
@@ -24,6 +25,10 @@ const car2 = document.getElementById("car-phase2")
 const car3 = document.getElementById("car-phase3")
 const carGame = document.getElementById("carGamer")
 
+
+function showHomeBtn() {
+  homeBtn.style.display = 'flex'
+}
 
 function cleanPlay() {
   gamePlay.style.display = 'none'
@@ -117,6 +122,7 @@ function showCongratulations() {
   backgroundOpacity()
   showResult()
   showTime()
+  setHomeBtn()
   showPassBtn()
   stopArtyon()
   wordBox(4)
@@ -154,6 +160,11 @@ function setReadSize(a) {
     read.classList.remove('read-phrase')
     read.classList.add('read-text')
   }
+}
+
+function setHomeBtn() {
+  showHomeBtn()
+  homeBtn.setAttribute('onclick', "playGame();cleanPlay()")
 }
 
 function playGame() {
@@ -203,7 +214,7 @@ function medalSelect(a) {
 function levelScreen() {
   gameScreen.style.backgroundImage =
     "url('public/img/background/backgroundCleanScreen.png')"
-gameLevels.style.display = 'flex'
+  gameLevels.style.display = 'flex'
 }
 
 function phaseScreen() {
