@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 #game-play {
-  background-color: #0cda18;
   background-image: none;
   height: 400px;
   width: 700px;
@@ -16,7 +15,7 @@
   background: url(/public/img/elements/sky.png);
   background-size: contain;
   height: 30%;
-  width: 100000%;
+  width: 100000000%;
   display: flex;
   position: absolute;
   background-repeat: repeat-x;
@@ -24,7 +23,7 @@
 }
 
 .sky-opacity {
-  opacity: 0.7;
+  opacity: 0.3;
 }
 
 #background {
@@ -32,12 +31,12 @@
   background-size: contain;
   background-repeat: repeat-x;
   height: 100%;
-  width: 10000%;
+  width:  100000000%;
   z-index: 0;
 }
 
 .background-opacity {
-  opacity: 0.9;
+  opacity: 0.7;
 }
 
 #word-box {
@@ -75,6 +74,7 @@
 }
 
 .word-box__congrats {
+  animation: popup 0.7s;
   height: 45%;
   top: 8%;
   width: 50%;
@@ -142,6 +142,7 @@
 }
 
 #pass-btn {
+  animation: passBtnSlide 1s linear;
   display: none;
   background: url(/public/img/btns/passBtn.png);
   background-size: contain;
@@ -239,5 +240,35 @@
   }
   100% {
     top: 200px;
+  }
+}
+
+@keyframes passBtnSlide {
+  0% {
+    transform: translateX(-100%);
+  }
+  25% {
+    transform: translateX(5%);
+  }
+  50% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes popup {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.15);
+  }
+  80%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1);
   }
 }

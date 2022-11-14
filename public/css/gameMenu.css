@@ -1,11 +1,12 @@
-.game-screen {
-    background-image: url(../img//background/backgroundStartScreen.png);
+#game-screen {
+    background: url(../img//background/backgroundStartScreen.png);
     background-size: contain;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
     height: 400px;
-    width: 700px
+    width: 700px;
+    z-index: 0;
 }
 .game-screen__menu {
     display: flex;

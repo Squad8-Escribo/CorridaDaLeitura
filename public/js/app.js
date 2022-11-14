@@ -48,7 +48,6 @@ function cleanWordBox(x) {
     wordbox.classList.add('word-box__text')
   }
 }
-
 function showRead(){
   read.style.display = 'inline'
 }
@@ -93,7 +92,15 @@ function cleanMedal() {
   medal.style.display = 'none'
 }
 
+function rmBg() {
+  gameScreen.style.background='none'
+  gameLevels.style.display='none'
+  gamePhase.style.display = 'none'  
+
+}
+
 function showCongratulations() {
+  rmBg()
   showMedal()
   backgroundOpacity()
   showResult()
@@ -185,14 +192,14 @@ function medalSelect(a) {
 function levelScreen() {
   gameScreen.style.backgroundImage =
     "url('public/img/background/backgroundCleanScreen.png')"
-  gameLevels.style.display = 'flex'
+gameLevels.style.display = 'flex'
 }
 
 function phaseScreen() {
   gameScreen.style.background =  "url('public/img/background/backgroundCleanScreen.png')"
 
   for (let i = 0; i < 3; i++) {
-    phase[0].onclick = phase    
+    phase[0].onclick = phase  
   }
 }
 
