@@ -164,7 +164,8 @@ function setReadSize(a) {
 
 function setHomeBtn() {
   showHomeBtn()
-  homeBtn.setAttribute('onclick', "playGame();cleanPlay()")
+  homeBtn.classList.add("home-btn")
+  //homeBtn.setAttribute('onclick', "playGame();cleanPlay()")
 }
 
 function playGame() {
