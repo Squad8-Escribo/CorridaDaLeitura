@@ -1,127 +1,57 @@
-# Jogo-Escribo
-<h1 align="center">
-  <br>
-  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.png" alt="Markdownify" width="200"></a>
-  <br>
-  Markdownify
-  <br>
-</h1>
-
-<h4 align="center">A minimal Markdown Editor desktop app built on top of <a href="http://electron.atom.io" target="_blank">Electron</a>.</h4>
-
-<p align="center">
-  <a href="https://badge.fury.io/js/electron-markdownify">
-    <img src="https://badge.fury.io/js/electron-markdownify.svg"
-         alt="Gitter">
-  </a>
-  <a href="https://gitter.im/amitmerchant1990/electron-markdownify"><img src="https://badges.gitter.im/amitmerchant1990/electron-markdownify.svg"></a>
-  <a href="https://saythanks.io/to/bullredeyes@gmail.com">
-      <img src="https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg">
-  </a>
-  <a href="https://www.paypal.me/AmitMerchant">
-    <img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat">
-  </a>
-</p>
-
-<p align="center">
-  <a href="#key-features">Key Features</a> •
-  <a href="#how-to-use">How To Use</a> •
-  <a href="#download">Download</a> •
-  <a href="#credits">Credits</a> •
-  <a href="#related">Related</a> •
-  <a href="#license">License</a>
-</p>
-
 ![jogomenu](https://user-images.githubusercontent.com/90625499/202186718-d1f8f926-6959-4d74-8ccf-70f4087da446.PNG)
 
-## Key Features
+<p align="center">
+  <a href="#description">Descrição</a> •
+  <a href="#key-features">Funcionalidades</a> •
+  <a href="#how-to-use">Como jogar?</a> •
+  <a href="#tech">Tecnologias</a> •
+  <a href="#credits">Contribuidores</a> •
+  <a href="#license">Licença</a>
+</p>
 
-* LivePreview - Make changes, See changes
-  - Instantly see what your Markdown documents look like in HTML as you create them.
-* Sync Scrolling
-  - While you type, LivePreview will automatically scroll to the current location you're editing.
-* GitHub Flavored Markdown  
-* Syntax highlighting
-* [KaTeX](https://khan.github.io/KaTeX/) Support
-* Dark/Light mode
-* Toolbar for basic Markdown formatting
-* Supports multiple cursors
-* Save the Markdown preview as PDF
-* Emoji support in preview :tada:
-* App will keep alive in tray for quick usage
-* Full screen mode
-  - Write distraction free.
-* Cross platform
-  - Windows, macOS and Linux ready.
+## Descrição
+Corrida Maluca é uma ferramenta gamificada e lúdica, para avaliação automática da velocidade e da precisão de leitura. <br> <br> O público alvo da solução são crianças que já passaram pelo 1° ano do ensino fundamental, a partir da captação do resultado da fala e processamento dos dados.
+
+## Funcionalidades
+
+* Reconhecimento de fala 
+  - Atráves da [Artyom.js](https://sdkcarlos.github.io/sites/artyom.html), o software reconhece e realiza o processamento do áudio falado
+* Avaliação de fluência de leitura
+  - Enquanto você fala, o software avalia a precisão e acertividade da sua leitura
+  - O tempo de leitura também é retornado para o usuário
+* Tutorial Interativo
+  - Tutorial simples para entender a mecânica do jogo
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+## Tecnologias
 
-```bash
-# Clone this repository
-$ git clone https://github.com/amitmerchant1990/electron-markdownify
+Este software foi construído com as seguintes tecnologias:
 
-# Go into the repository
-$ cd electron-markdownify
+- [Artyom.js](https://sdkcarlos.github.io/sites/artyom.html) - Library open-source que atua como um wrapper para as APIs de [speechSynthesis](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis) e [webkitSpeechRecognition](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API)
+- [JavaScript](https://www.javascript.com/) - Linguagem de programção para dar dinamismo ao jogo
+- [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML) - Linguagem de marcação para estruturar o conteúdo
+- [CSS3](https://developer.mozilla.org/en-US/docs/Learn/CSS) - Linguagem de marcação para adicionar estilização 
 
-# Install dependencies
-$ npm install
+## Squad
+Integrantes da equipe:
 
-# Run the app
-$ npm start
-```
+<table>
+    <td align="center"><a href="https://github.com/matheuslimaandrade"><img src="https://avatars.githubusercontent.com/u/90625499?v=4" width="100px;" alt="Matheus Lima Andrade"/><br /><sub><b>Matheus Lima Andrade</b></sub></a><br />Desenvolvimento</td>
+  <td align="center"><a href="https://github.com/SamuelLemosS"><img src="https://avatars.githubusercontent.com/u/107142956?v=4" width="100px;" alt="Samuel Lemos "/><br /><sub><b>Samuel Lemos</b></sub></a><br />Desenvolvimento</td>
+    <td align="center"><a href="https://github.com/tiagobragafernandesm"><img src="https://avatars.githubusercontent.com/u/97136886?v=4" width="100px;" alt="Tiago Braga Fernandes"/><br /><sub><b>Tiago Braga Fernandes</b></sub></a><br />Desenvolvimento</td>
+     <td align="center"><a href="https://github.com/MariaGabrielaAlvesZuppardo"><img src="https://avatars.githubusercontent.com/u/89602692?v=4" width="100px;" alt="Gabriela Zuppardo"/><br /><sub><b>Gabriela Zuppardo</b></sub></a><br />Documentação</td>
+       <td align="center"><a href="https://www.linkedin.com/in/gabriel-trindade-3873ba238//"><img src="https://avatars.githubusercontent.com/u/67664738?v=4" width="100px;" alt="Gabriel Trindade"/><br /><sub><b>Gabriel Trindade</b></sub></a><br />Game Design</td>
+     <td align="center"><a href="https://github.com/KaremLeticia"><img src="https://avatars.githubusercontent.com/u/109493495?v=4" width="100px;" alt="Karem Letícia Fernandes"/><br /><sub><b>Karem Letícia</b></sub></a><br />Game Design</td>
+      <td align="center"><a href="https://github.com/mheloisagalvao"><img src="https://avatars.githubusercontent.com/u/92959408?v=4" width="100px;" alt="Maria Heloísa"/><br /><sub><b>Maria Heloísa</b></sub></a><br/>Game Design</td>
+      </tr>
+<table>
 
-> **Note**
-> If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+## Licença
+>Você pode checar a licença completa [aqui](https://github.com/IgorAntun/node-chat/blob/master/LICENSE)
 
+Esse projeto é lincenciado pelos termos da licença **MIT**.
 
-## Download
-
-You can [download](https://github.com/amitmerchant1990/electron-markdownify/releases/tag/v1.2.0) the latest installable version of Markdownify for Windows, macOS and Linux.
-
-## Emailware
-
-Markdownify is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if you liked using this app or it has helped you in any way, I'd like you send me an email at <bullredeyes@gmail.com> about anything you'd want to say about this software. I'd really appreciate it!
-
-## Credits
-
-This software uses the following open source packages:
-
-- [Electron](http://electron.atom.io/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
-- [showdown](http://showdownjs.github.io/showdown/)
-- [CodeMirror](http://codemirror.net/)
-- Emojis are taken from [here](https://github.com/arvida/emoji-cheat-sheet.com)
-- [highlight.js](https://highlightjs.org/)
-
-## Related
-
-[markdownify-web](https://github.com/amitmerchant1990/markdownify-web) - Web version of Markdownify
-
-## Support
-
-<a href="https://www.buymeacoffee.com/5Zn8Xh3l9" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
-<p>Or</p> 
-
-<a href="https://www.patreon.com/amitmerchant">
-	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-</a>
-
-## You may also like...
-
-- [Pomolectron](https://github.com/amitmerchant1990/pomolectron) - A pomodoro app
-- [Correo](https://github.com/amitmerchant1990/correo) - A menubar/taskbar Gmail App for Windows and macOS
-
-## License
-
-MIT
 
 ---
-
-> [amitmerchant.com](https://www.amitmerchant.com) &nbsp;&middot;&nbsp;
-> GitHub [@amitmerchant1990](https://github.com/amitmerchant1990) &nbsp;&middot;&nbsp;
-> Twitter [@amit_merchant](https://twitter.com/amit_merchant)
 
