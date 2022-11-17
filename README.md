@@ -37,9 +37,9 @@ Este software foi construído com as seguintes tecnologias:
 Integrantes da equipe:
 
 <table>
-    <td align="center"><a href="https://github.com/matheuslimaandrade"><img src="https://avatars.githubusercontent.com/u/90625499?v=4" width="100px;" alt="Matheus Lima"/><br /><sub><b>Matheus Lima Andrade</b></sub></a><br />Desenvolvimento</td>
+    <td align="center"><a href="https://github.com/matheuslimaandrade"><img src="https://avatars.githubusercontent.com/u/90625499?v=4" width="100px;" alt="Matheus Lima"/><br /><sub><b>Matheus Lima</b></sub></a><br />Desenvolvimento</td>
   <td align="center"><a href="https://github.com/SamuelLemosS"><img src="https://avatars.githubusercontent.com/u/107142956?v=4" width="100px;" alt="Samuel Lemos "/><br /><sub><b>Samuel Lemos</b></sub></a><br />Desenvolvimento</td>
-    <td align="center"><a href="https://github.com/tiagobragafernandesm"><img src="https://avatars.githubusercontent.com/u/97136886?v=4" width="100px;" alt="Tiago Braga"/><br /><sub><b>Tiago Braga Fernandes</b></sub></a><br />Desenvolvimento</td>
+    <td align="center"><a href="https://github.com/tiagobragafernandesm"><img src="https://avatars.githubusercontent.com/u/97136886?v=4" width="100px;" alt="Tiago Braga"/><br /><sub><b>Tiago Braga</b></sub></a><br />Desenvolvimento</td>
      <td align="center"><a href="https://github.com/MariaGabrielaAlvesZuppardo"><img src="https://avatars.githubusercontent.com/u/89602692?v=4" width="100px;" alt="Gabriela Zuppardo"/><br /><sub><b>Gabriela Zuppardo</b></sub></a><br />Documentação</td>
        <td align="center"><a href="https://www.linkedin.com/in/gabriel-trindade-3873ba238//"><img src="https://avatars.githubusercontent.com/u/67664738?v=4" width="100px;" alt="Gabriel Trindade"/><br /><sub><b>Gabriel Trindade</b></sub></a><br />Game Design</td>
      <td align="center"><a href="https://github.com/KaremLeticia"><img src="https://avatars.githubusercontent.com/u/109493495?v=4" width="100px;" alt="Karem Letícia Fernandes"/><br /><sub><b>Karem Letícia</b></sub></a><br />Game Design</td>
