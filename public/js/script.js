@@ -43,7 +43,7 @@ const choosePhase = async (phase, level) => {
   //Get phases for json
 
   read.innerHTML = ''
-  const response = await fetch('API/fases.json')
+  const response = await fetch('fases.json')
   const data = await response.json()
   var phaseName = Object.keys(data[level][phase])
   var phaseName = phaseName[0]
