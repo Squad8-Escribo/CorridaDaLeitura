@@ -133,6 +133,27 @@
   opacity: 0.7;
 }
 
+#restart-btn {
+  display: none;
+  animation: passBtnSlide 1s linear;
+  background: url(/public/img/btns/restartBtn.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: 20%;
+  top: 70%;
+  left: 45%;
+  width: 30%;
+  z-index: 2;
+  cursor: pointer;
+  transition: 0.2s;
+  margin: 0 auto;
+}
+
+#restart-btn:hover {
+  transform: scale(1.14);
+}
+
 #home-btn {
   display: none;
   position: absolute;

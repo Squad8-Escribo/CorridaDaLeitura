@@ -101,6 +101,9 @@ const choosePhase = async (phase, level) => {
 
   //level passing system
 
+  restarBtn.setAttribute("onclick",`choosePhase(${phase},${level});showPlayScn(); wordBox(${level});cleanWordBox(${level}); cleanOpacity(); stopAnimation(); showMicBtn(); cleanRestartBtn();cleanRead()`)
+
+
   /* if (phase >= data[level].length) {
     level++
     phase = 0
@@ -503,14 +506,17 @@ function cleanWordBox(x) {
   wordbox.style.display = "none";
 
   if (x === 1) {
+    wordbox.style.display = "none";
     wordbox.classList.remove("word-box__congrats");
     wordbox.classList.remove("word-box__word");
     wordbox.classList.add("word-box__phrase");
   } else if (x === 2) {
+    wordbox.style.display = "none";
     wordbox.classList.remove("word-box__congrats");
     wordbox.classList.remove("word-box__phrase");
     wordbox.classList.add("word-box__text");
   } else if (x === 3) {
+    wordbox.style.display = "none";
     wordbox.classList.remove("word-box__congrats");
     wordbox.classList.remove("word-box__text");
     wordbox.classList.add("word-box__word");
@@ -552,6 +558,28 @@ function showMicBtn() {
 function cleanMicBtn() {
   micBtn.style.display = "none";
 }
+
+ function showStopScn() {
+ setTimeout(() => {
+    cleanMedal()
+    showRestartBtn()
+    setOpacity()
+    wordBox(4)
+    cleanPhaseScn()
+    cleanLevelScn()
+     read.innerHTML = 'VOCÊ DEMOROU <br>A FALAR!! <br>REINICIE A FASE'
+   }, 1000); }
+
+const restarBtn = document.getElementById('restart-btn')
+
+function showRestartBtn () {
+  restarBtn.style.display = 'flex'
+}
+
+function cleanRestartBtn(){
+  restarBtn.style.display = 'none'
+}
+
 // Congrats Scn
 const result = document.getElementById("result");
 
