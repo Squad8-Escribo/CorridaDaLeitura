@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/gameMenu.css" />
+    <link rel="stylesheet" href="../assets/css/gameLevels.css" />
+    <link rel="stylesheet" href="../assets/css/gameTutorial.css" />
+    <link rel="stylesheet" href="../assets/css/gamePlay.css" />
+    <link rel="stylesheet" href="../assets/css/gamePhase.css" />
+    <title>Corrida Maluca</title>
+  </head>
+
+  <body>
+    <div class="bg-body">
+      <div class="game-screen" id="game-screen">
+        <!-- Game Screen -->
+
+        <div class="game-screen__menu-logo" id="game-logo">
+          <img
+            src="../assets/img/elements/logoMain.png"
+            alt=""
+            class="game-screen__menu-logo--img"
+          />
+        </div>
+
+        <!-- Menu Screen-->
+
+        <div class="game-screen__menu" id="game-menu">
+          <a class="game-screen__menu-btn--cfg game-screen__menu-btn">
+            <img
+              src="../assets/img/btns/settingsBtn.png"
+              alt=""
+              class="game-screen__menu-btn--img"
+            />
+          </a>
+          <a id="play-btn" class="game-screen__menu-play game-screen__menu-btn">
+            <img
+              src="../assets/img/btns/playBtn.png"
+              alt=""
+              class="game-screen__menu-btn--img game-screen__menu-btn--play"
+            />
+          </a>
+          <a
+            id="tutorial-btn"
+            class="game-screen__menu-tutorial game-screen__menu-btn"
+          >
+            <img
+              src="../assets/img/btns/tutorialBtn.png"
+              alt=""
+              class="game-screen__menu-btn--img"
+            />
+          </a>
+        </div>
+
+        <!-- Tutorial Screen-->
+
+        <div id="game-tutorial">
+          <div class="game-tutorial__back-btn">
+            <a href=""><img src="../assets/img/btns/backBtn.png" alt="" /></a>
+          </div>
+          <div class="game-tutorial__container">
+            <img
+              src="../assets/img/elements/tutorial.png"
+              alt=""
+              class="game-tutorial__container--img"
+            />
+          </div>
+        </div>
+
+        <!-- Levels Screeen -->
+
+        <div id="game-levels">
+          <div class="game-levels__back-btn">
+            <a href=""><img src="../assets/img/btns/backBtn.png" alt="" /></a>
+          </div>
+          <div class="game-levels__levels">
+            <div class="game-levels__levels-car">
+              <a class="game-levels__levels--one level"
+                ><img
+                  src="../assets/img/btns/levelBtnOne.png"
+                  alt=""
+                  class="game-levels__levels-img"
+                  onclick="chooseLevel(0);showPhaseScn();selectCar('Blue')"
+              /></a>
+              <img
+                src="../assets/img/cars/carBlue.png"
+                alt=""
+                class="game-levels__cars game-levels__cars--one,"
+              />
+            </div>
+            <div class="game-levels__levels-car">
+              <a class="game-levels__levels--two level"
+                ><img
+                  src="../assets/img/btns/leveBtnTwo.png"
+                  alt=""
+                  class="game-levels__levels-img"
+                  onclick="chooseLevel(1);showPhaseScn();selectCar('Green')"
+              /></a>
+              <img
+                src="../assets/img/cars/carGreen.png"
+                alt=""
+                class="game-levels__cars game-levels__cars--two"
+              />
+            </div>
+            <div class="game-levels__levels-car">
+              <a class="game-levels__levels--three level"
+                ><img
+                  src="../assets/img/btns/levelBtnThree.png"
+                  alt=""
+                  class="game-levels__levels-img"
+                  onclick="chooseLevel(2);showPhaseScn();selectCar('Red')"
+              /></a>
+              <img
+                src="../assets/img/cars/carRed.png"
+                alt=""
+                class="game-levels__cars game-levels__cars--three"
+              />
+            </div>
+            <div class="game-levels__levels-car">
+              <a class="game-levels__levels--three level"
+                ><img
+                  src="../assets/img/btns/levelBtnFour.png"
+                  alt=""
+                  class="game-levels__levels-img"
+                  onclick="chooseLevel(3);showPhaseScn();selectCar('Yellow')"
+              /></a>
+              <img
+                src="../assets/img/cars/carYellow.png"
+                alt=""
+                class="game-levels__cars game-levels__cars--three"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase Screen -->
+        <div id="game-phase">
+          <div class="game-levels__back-btn">
+            <a href=""><img src="../assets/img/btns/backBtn.png" alt="" /></a>
+          </div>
+          <div class="game-levels__levels">
+            <div class="game-levels__levels-car">
+              <a class="game-levels__levels--one phase"
+                ><img
+                  id="phase-one"
+                  src="../assets/img/btns/phaseBtnOne.png"
+                  alt=""
+                  class="game-levels__levels-img"
+              /></a>
+              <img
+                alt=""
+                id="car-phase1"
+                class="game-levels__cars game-levels__cars--one,"
+              />
+            </div>
+            <div class="game-levels__levels-car">
+              <a class="game-levels__levels--two phase"
+                ><img
+                  id="phase-two"
+                  src="../assets/img/btns/phaseBtnTwo.png"
+                  alt=""
+                  class="game-levels__levels-img"
+              /></a>
+              <img
+                alt=""
+                id="car-phase2"
+                class="game-levels__cars game-levels__cars--two"
+              />
+            </div>
+            <div class="game-levels__levels-car">
+              <a class="game-levels__levels--three phase"
+                ><img
+                  id="phase-three"
+                  src="../assets/img/btns/phaseBtnThree.png"
+                  alt=""
+                  class="game-levels__levels-img"
+              /></a>
+              <img
+                id="car-phase3"
+                alt=""
+                class="game-levels__cars game-levels__cars--three"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Play Screen -->
+
+        <div id="game-play">
+          <div id="word-box">
+            <h1 id="read"></h1>
+            <h2 id="result"></h2>
+            <div id="medal"></div>
+          </div>
+          <div id="home-btn">
+            <a href=""><img src="../assets/img/btns/homeBtn.png" alt="" /></a>
+          </div>
+          <div id="pass-btn"></div>
+          <div id="sky"></div>
+          <div id="background"></div>
+          <div id="car">
+            <img id="carGamer" alt="" />
+          </div>
+          <div
+            id="mic-btn"
+            onclick="startArtyom();start(); showWordBox();animationGame();cleanMicBtn()"
+          ></div>
+          <!--Ainda vou criar-->
+          <div id="obstacle"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src = "../assets/ipc/androidjs.js" ></script>
+  <script>
+    front.send('Hello', 'Hello Android jS');
+    front.on('print', function(msg){
+        console.log(msg);
+    })
+  </script>
+  <script src="../assets/artyom.window.js" defer></script>
+  <script src="../main.js" defer></script>
+</html>

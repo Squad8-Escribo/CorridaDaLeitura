@@ -1,0 +1,50 @@
+#game-levels {
+  cursor: pointer;
+  display: none;
+  font-size: 20px;
+  justify-content: space-evenly;
+  margin: auto 0;
+  flex-direction: column;
+  width: 100%;
+}
+.game-levels__levels {
+  display: flex;
+  justify-content: space-evenly;
+  height: 300px;
+  align-items: center;
+}
+.game-levels__levels-img {
+  width: 120px;
+  margin-top: 0;
+}
+
+.game-levels__levels-img:hover {
+  transform: scale(1.05);
+  z-index: 2;
+}
+.game-levels__levels-car {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 1.5s;
+}
+.game-levels__cars {
+  width: 60px;
+}
+.game-levels__levels--two {
+  margin-top: 45px;
+}
+.game-levels__cars--two,
+.game-levels__cars--three {
+  margin-bottom: 25px;
+}
+.game-levels__back-btn {
+  margin-left: 20px;
+  margin-top: 10px;
+  width: 60px;
+  transition: 0.3s;
+}
+.game-levels__back-btn:hover {
+  transform: scale(1.1);
+  z-index: 2;
+}

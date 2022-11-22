@@ -1,0 +1,19 @@
+{
+  "name": "corridadaleitura",
+  "app-name" : "Corrida da leitura",
+  "package-name": "myapp",
+  "icon":"./assets/icon/icon.png",
+  "permission": ["android.permission.RECORD_AUDIO","android.permission.MODIFY_AUDIO_SETTINGS"],
+  "dist-path": "../dist",
+  "project-type":"webview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
+
