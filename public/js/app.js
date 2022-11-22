@@ -549,6 +549,9 @@ function showMicBtn() {
   micBtn.style.display = "flex";
 }
 
+function cleanMicBtn() {
+  micBtn.style.display = "none";
+}
 // Congrats Scn
 const result = document.getElementById("result");
 

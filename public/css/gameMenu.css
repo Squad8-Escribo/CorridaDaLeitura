@@ -1,5 +1,6 @@
 #game-screen {
-  background: url(../img//background/backgroundStartScreen.png);
+  background: url(../img//background/backgroundMain.png
+  );
   background-size: contain;
   border: 1px solid black;
   display: flex;
@@ -15,7 +16,7 @@
   height: 300px;
 }
 .game-screen__menu-logo {
-  margin: 60px auto 10px;
+  margin: 0 auto;
 }
 .game-screen__menu-logo--img {
   width: 400px;
