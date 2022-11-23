@@ -5,7 +5,7 @@
   border: 1px solid black;
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 395px;
   width: 700px;
   z-index: 0;
 }
