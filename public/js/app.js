@@ -1,3 +1,15 @@
+if (window.hasOwnProperty('webkitSpeechRecognition')) {
+  console.log("webkitSpeechRecognition")
+
+  // your code that requires artyom.
+}
+
+if (window.hasOwnProperty('speechSynthesis')) {
+  console.log("speechSynthesis")
+
+  // your code that requires artyom.
+}
+
 // Game Scn
 const gameScreen = document.getElementById("game-screen");
 

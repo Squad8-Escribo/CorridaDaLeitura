@@ -54,12 +54,12 @@ var Artyom = (function () {
         };
         // Important: retrieve the voices of the browser as soon as possible.
         // Normally, the execution of speechSynthesis.getVoices will return at the first time an empty array.
-        if (window.hasOwnProperty('speechSynthesis')) {
+        /* if (window.hasOwnProperty('speechSynthesis')) {
             speechSynthesis.getVoices();
         }
         else {
             console.error("Artyom.js can't speak without the Speech Synthesis API.");
-        }
+        } */
         // This instance of webkitSpeechRecognition is the one used by Artyom.
         if (window.hasOwnProperty('webkitSpeechRecognition')) {
             this.ArtyomWebkitSpeechRecognition = new window.webkitSpeechRecognition();
@@ -68,7 +68,7 @@ var Artyom = (function () {
             console.error("Artyom.js can't recognize voice without the Speech Recognition API.");
         }
         this.ArtyomProperties = {
-            lang: 'en-GB',
+            lang: 'pt-BR',
             recognizing: false,
             continuous: false,
             speed: 1,
@@ -479,18 +479,18 @@ var Artyom = (function () {
      * @tutorial http://docs.ourcodeworld.com/projects/artyom-js/documentation/methods/getvoices
      * @returns {Array}
      */
-    Artyom.prototype.getVoices = function () {
+    /* Artyom.prototype.getVoices = function () {
         return window.speechSynthesis.getVoices();
-    };
+    }; */
     /**
      * Verify if the browser supports speechSynthesis.
      *
      * @tutorial http://docs.ourcodeworld.com/projects/artyom-js/documentation/methods/speechsupported
      * @returns {Boolean}
      */
-    Artyom.prototype.speechSupported = function () {
+    /* Artyom.prototype.speechSupported = function () {
         return 'speechSynthesis' in window;
-    };
+    }; */
     /**
      * Verify if the browser supports webkitSpeechRecognition.
      *
@@ -506,7 +506,7 @@ var Artyom = (function () {
      * @tutorial http://docs.ourcodeworld.com/projects/artyom-js/documentation/methods/shutup
      * @returns {undefined}
      */
-    Artyom.prototype.shutUp = function () {
+    /* Artyom.prototype.shutUp = function () {
         if ('speechSynthesis' in window) {
             do {
                 window.speechSynthesis.cancel();
@@ -514,7 +514,7 @@ var Artyom = (function () {
         }
         this.ArtyomProperties.speaking = false;
         this.clearGarbageCollection();
-    };
+    }; */
     /**
      * Returns an object with the actual properties of artyom.
      *
@@ -850,10 +850,10 @@ var Artyom = (function () {
         if (typeof (config) !== "object") {
             return Promise.reject("You must give the configuration for start artyom properly.");
         }
-        if (config.hasOwnProperty("lang")) {
+        /* if (config.hasOwnProperty("lang")) {
             _this.ArtyomVoice = _this.getVoice(config.lang);
             _this.ArtyomProperties.lang = config.lang;
-        }
+        } */
         if (config.hasOwnProperty("continuous")) {
             if (config.continuous) {
                 this.ArtyomProperties.continuous = true;
@@ -1065,7 +1065,7 @@ var Artyom = (function () {
      *
      * @param languageCode
      */
-    Artyom.prototype.getVoice = function (languageCode) {
+   /*  Artyom.prototype.getVoice = function (languageCode) {
         var voiceIdentifiersArray = this.ArtyomVoicesIdentifiers[languageCode];
         if (!voiceIdentifiersArray) {
             console.warn("The providen language " + languageCode + " isn't available, using English Great britain as default");
@@ -1089,7 +1089,7 @@ var Artyom = (function () {
                 break;
         }
         return voice;
-    };
+    }; */
     /**
      * Artyom provide an easy way to create a
      * dictation for your user.
@@ -1354,7 +1354,7 @@ var Artyom = (function () {
      * @param {Int} totalChunks
      * @returns {undefined}
      */
-    Artyom.prototype.talk = function (text, actualChunk, totalChunks, callbacks) {
+    /* Artyom.prototype.talk = function (text, actualChunk, totalChunks, callbacks) {
         var _this = this;
         var msg = new SpeechSynthesisUtterance();
         msg.text = text;
@@ -1416,7 +1416,7 @@ var Artyom = (function () {
         // Important : Save the SpeechSynthesisUtterance object in memory, otherwise it will get lost
         this.ArtyomGarbageCollection.push(msg);
         window.speechSynthesis.speak(msg);
-    };
+    }; */
     /**
      * Process the given text into chunks and execute the private function talk
      *
