@@ -2,7 +2,7 @@
 
 #game-play {
   background-image: none;
-  height: 400px;
+  height: 395px;
   width: 700px;
   border: 1px solid black;
   position: absolute;
@@ -210,19 +210,21 @@
 #mic-btn:hover {
   transform: scale(1.1);
 }
-/*  vou arrumar ainda
 #obstacle {
-    width: 20px;
-    height: 20px;
-    position: relative;
-    top: 110px;
-    left: 580px;
+    background: url(/public/img/elements/cone.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 15%;
+    top: 60%;
+    left: 100%;
 }
-*/
 
 /*Animations*/
 .carJump {
-  animation: carJump 1s linear;
+  animation: carJump 3.5s linear;
 }
 
 .carSuspension {
@@ -235,8 +237,10 @@
 
 .raceAnimation {
   animation: carMove 20s linear infinite;
-  animation: carMove 20s linear infinite;
-  animation: carMove 20s linear infinite;
+}
+
+.obstacleMove {
+  animation: obstacleMove 2.5s linear;
 }
 
 @keyframes carMove {
@@ -257,24 +261,39 @@
   }
 }
 
-@keyframes carJump {
-  0% {
-    top: 200px;
-  }
+/* @keyframes carJump {
   30% {
-    top: 220px;
+    top: 240px;
+  }
+  35% {
+    left: 20%;
   }
   50% {
-    top: 150px;
-  }
-  80% {
-    top: 180px;
+    top: 220px;
+    left: 25%;
   }
   100% {
-    top: 200px;
+    left: 200%;
+    top: 240px;
+  }
+} */
+@keyframes carJump {
+  30% {
+    top: 240px;
+  }
+  35% {
+    top: 150px;
+    left: 20%;
+  }
+  50% {
+    top: 220px;
+    left: 25%;
+  }
+  100% {
+    top: 240px;
+    left: 200%;
   }
 }
-
 @keyframes passBtnSlide {
   0% {
     transform: translateX(-100%);
@@ -302,5 +321,12 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+
+@keyframes obstacleMove {
+  100% {
+    transform: translateX(-1000px);
   }
 }

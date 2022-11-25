@@ -89,6 +89,25 @@ function setReadSize(a) {
 }
 
 // Main Function
+
+const showFinishScn = (phase,level)=>{
+  if (level >= 4) {
+    
+    gamePlay.style.background = "url('public/img/background/backgroundMain.png')";
+    gamePlay.style.backgroundSize = 'contain'
+    gamePlay.style.backgroundRepeat ='no-repeat'
+    background.style.display = 'none'
+    sky.style.display = 'none'
+    passBtn.style.display = 'none'
+    micBtn.style.display = 'none'
+    carGame.style.display = 'none'
+
+    
+  }
+  else{
+    choosePhase(phase,level)
+  }
+}
 const choosePhase = async (phase, level) => {
   //Get phases for json
 
@@ -99,19 +118,6 @@ const choosePhase = async (phase, level) => {
   var phaseName = phaseName[0];
   var arrayText = data[level][phase][phaseName];
 
-  //level passing system
-
-  restarBtn.setAttribute("onclick",`choosePhase(${phase},${level});showPlayScn(); wordBox(${level});cleanWordBox(${level}); cleanOpacity(); stopAnimation(); showMicBtn(); cleanRestartBtn();cleanRead()`)
-
-
-  /* if (phase >= data[level].length) {
-    level++
-    phase = 0
-  }
-  if (level >= data.length) {
-    alert('Parabéns Você terminou o jogo')
-  }
- */
 
   //if chosse word, one by one
 
@@ -122,7 +128,7 @@ const choosePhase = async (phase, level) => {
     var numberWord = 0;
     var wordNot1 = 100;
     var wordNot2 = 100;
-
+  
     //System randomazing word
 
     let randomWord = (Math.random() * 10).toFixed(0);
@@ -189,10 +195,10 @@ const choosePhase = async (phase, level) => {
           } else if (hits == 0) {
             medalSelect(4);
           }
-          showCongratulations();
+          showAnimation()
           passBtn.setAttribute(
             "onclick",
-            `randomLevel(${level});reset();cleanResult();cleanMedal();passBtnWord()`
+            `randomLevel(${level});reset();cleanResult();cleanMedal();passBtnWord();showCar()`
           );
         }
       }
@@ -208,16 +214,16 @@ const choosePhase = async (phase, level) => {
       setReadSize(3);
       passBtn.setAttribute(
         "onclick",
-        `choosePhase(0,${
+        `showFinishScn(0,${
           level + 1
-        });reset();cleanResult();cleanMedal();passBtnText();setReadSize(1)`
+        });reset();cleanResult();cleanMedal();passBtnText(${level});setReadSize(1);showCar()`
       );
     } else {
       cleanPassBtn();
       setReadSize(2);
       passBtn.setAttribute(
         "onclick",
-        `choosePhase(4,${level});reset();cleanResult();cleanMedal();passBtnPhrase();setReadSize(2)`
+        `choosePhase(4,${level});reset();cleanResult();cleanMedal();passBtnPhrase();setReadSize(2);showCar()`
       );
     }
 
@@ -370,7 +376,7 @@ const choosePhase = async (phase, level) => {
         } else {
           medalSelect(4);
         }
-        showCongratulations();
+        showAnimation()
       }
     });
   }
@@ -489,6 +495,15 @@ function chooseLevel(level) {
 const carApp = document.getElementById("car");
 const gamePlay = document.getElementById("game-play");
 
+function cleanCar() {
+  car.style.display = 'none'
+  carApp.style.display = "none"
+}
+
+function showCar() {
+  carApp.style.display = "flex"
+}
+
 function cleanPlayScn() {
   gamePlay.style.display = "none";
 }
@@ -551,24 +566,16 @@ const sky = document.getElementById("sky");
 
 const micBtn = document.getElementById("mic-btn");
 
-function showMicBtn() {
-  micBtn.style.display = "flex";
+function showMicBtn(x) {
+
+  if(x!==3) {
+    micBtn.style.display = "flex";
+  } 
 }
 
 function cleanMicBtn() {
   micBtn.style.display = "none";
 }
-
- function showStopScn() {
- setTimeout(() => {
-    cleanMedal()
-    showRestartBtn()
-    setOpacity()
-    wordBox(4)
-    cleanPhaseScn()
-    cleanLevelScn()
-     read.innerHTML = 'VOCÊ DEMOROU <br>A FALAR!! <br>REINICIE A FASE'
-   }, 1000); }
 
 const restarBtn = document.getElementById('restart-btn')
 
@@ -664,13 +671,14 @@ function passBtnPhrase() {
   showMicBtn();
 }
 
-function passBtnText() {
+function passBtnText(x) {
   cleanWordBox(2);
   cleanHomeBtn();
   cleanOpacity();
   stopAnimation();
   showRead();
-  showMicBtn();
+  showMicBtn(x);
+  showCar()
 }
 
 const homeBtn = document.getElementById("home-btn");
@@ -689,7 +697,6 @@ function setHomeBtn() {
 }
 
 function cleanBackground() {
-  gameScreen.style.background = "none";
   gameLevels.style.display = "none";
   gamePhase.style.display = "none";
 }
@@ -702,36 +709,53 @@ function setOpacity() {
 }
 
 function showCongratulations() {
-  cleanBackground();
-  setOpacity();
-  setHomeBtn();
-  showMedal();
-  showResult();
-  showTime();
-  showPassBtn();
-  wordBox(4);
-  stopArtyom();
+    showWordBox()
+    cleanBackground();
+    setOpacity();
+    setHomeBtn();
+    showMedal();
+    cleanCar();
+    showResult();
+    showTime();
+    showPassBtn();
+    wordBox(4);
+    stopArtyom();
 }
 
 // Animations
 const car = document.getElementById("car");
 const gameBackground = document.getElementById("background");
+const obstacle = document.getElementById("obstacle");
 
 function raceAnimation() {
   gameBackground.classList.add("raceAnimation");
 }
+
+function showAnimation() {
+  stopArtyom()
+  wordbox.style.display = 'none'
+  car.classList.remove("carSuspension")
+  car.classList.add("carJump")
+  obstacle.classList.add("obstacleMove")
+
+
+  setTimeout(showCongratulations,3000)
+}
+
 function animationGame() {
   raceAnimation();
   carAnimation();
 }
-
 function stopAnimation() {
   gameBackground.classList.remove("raceAnimation");
   car.classList.remove("carSuspension");
+  carApp.classList.remove("carJump")
+  obstacle.classList.remove("obstacleMove")
 }
 
 function carAnimation() {
   car.classList.add("carSuspension");
 }
 
-setPlayBtn();
+
+setPlayBtn()
