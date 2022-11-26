@@ -143,7 +143,8 @@
           </div>
           <div class="game-levels__levels">
             <div class="game-levels__levels-car">
-              <a class="game-levels__levels--one phase"
+              <a class="game-levels__levels--one phase "
+               onclick="audioPause()"
                 ><img
                   id="phase-one"
                   src="public/img/btns/phaseBtnOne.png"
@@ -158,6 +159,7 @@
             </div>
             <div class="game-levels__levels-car">
               <a class="game-levels__levels--two phase"
+              onclick="audioPause()"
                 ><img
                   id="phase-two"
                   src="public/img/btns/phaseBtnTwo.png"
@@ -172,6 +174,7 @@
             </div>
             <div class="game-levels__levels-car">
               <a class="game-levels__levels--three phase"
+              onclick="audioPause()"
                 ><img
                   id="phase-three"
                   src="public/img/btns/phaseBtnThree.png"
@@ -213,7 +216,11 @@
         </div>
       </div>
     </div>
+    <audio id="initialMusic" autoplay>
+      <source src="/public/sound/initialMusic.mp3">
+    </audio>
   </body>
   <script src="Artyom/artyom.window.js" defer></script>
   <script src="public/js/app.js" defer></script>
+  <script src="public/js/soundControl.js"></script>
 </html>
