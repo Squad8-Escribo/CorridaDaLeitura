@@ -524,6 +524,10 @@ function showWordBox() {
   wordbox.style.display = "flex";
 }
 
+function setWordBox() {
+  setTimeout(showWordBox,1000)
+}
+
 function cleanWordBox(x) {
   wordbox.style.display = "none";
 

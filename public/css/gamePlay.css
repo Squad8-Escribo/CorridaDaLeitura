@@ -40,6 +40,7 @@
 }
 
 #word-box {
+  display: none;
   cursor: default;
   background: #632e01;
   border: 20px solid #632e01;
@@ -47,7 +48,6 @@
   box-shadow: 0px 0px 0px 10px #633e01;
   position: absolute;
   z-index: 2;
-  display: flex;
 }
 
  .word-box__word {

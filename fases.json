@@ -80,7 +80,7 @@
         "gosta ",
         "de ",
         "comer ",
-        "estrogonofe ",
+        "strogonoff ",
         "de ",
         "frango."
       ]
@@ -106,9 +106,9 @@
         "pedestre ",
         "serve ",
         "para ",
-        "os ",
+        "o",
         "pedestre ",
-        "atravessarem ",
+        "atravessar ",
         "a ",
         "rua."
       ]
@@ -136,14 +136,15 @@
         "cachorro ",
         "estava ",
         "com ",
-        "osso ",
-        "entalado ",
+        "uma",
+        "carne",
+        "entalada ",
         "na ",
         "garganta."
       ]
     },
     {
-      "frase2": ["Francisco ", "deu ", "uma ", "dentada ", "no ", "sanduíche."]
+      "frase2": ["Francisco ", "mordeu ", "o ", "sanduíche ", "com ", "uma"," dentada."]
     },
     {
       "frase3": ["O ", "caminhão ", "de ", "lixo ", "passou ", "cedo ", "hoje."]
