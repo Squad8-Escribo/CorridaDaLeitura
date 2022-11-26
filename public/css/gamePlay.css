@@ -2,7 +2,7 @@
 
 #game-play {
   background-image: none;
-  height: 395px;
+  height: 365px;
   width: 700px;
   border-radius: 40px;
   position: absolute;
@@ -331,9 +331,8 @@
   }
 }
 
-/* @media(max-width: 421px){
+@media(max-height: 376px){
   #game-play{
-    height: 90%;
-    width: 95%;
- }
-} */
+    width: 99%;
+  }
+}
