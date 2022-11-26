@@ -4,7 +4,7 @@
   background-image: none;
   height: 395px;
   width: 700px;
-  border: 1px solid black;
+  border-radius: 40px;
   position: absolute;
   overflow-x: hidden;
   display: none;
