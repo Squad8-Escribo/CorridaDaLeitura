@@ -22,7 +22,9 @@ Corrida Maluca é uma ferramenta gamificada e lúdica, para avaliação automát
 * Tutorial Interativo
   - Tutorial simples para entender a mecânica do jogo
 
-## How To Use
+## Como jogar?
+
+//GIF
 
 ## Tecnologias
 
