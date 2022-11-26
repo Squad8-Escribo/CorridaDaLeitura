@@ -1,5 +1,18 @@
 // Game Scn
 const gameScreen = document.getElementById("game-screen");
+const levelsBackBtn = document.getElementById("levels-backBtn")
+const phaseBackBtn = document.getElementById("phase-backBtn")
+const tutorialBackBtn = document.getElementById("tutorial-backBtn")
+
+function backBtn(screen) {
+  if (screen===1) {
+    tutorialBackBtn.setAttribute("onclick", `cleanTutorialScn();showMenuScn()`)
+  } else if (screen===2) {
+    levelsBackBtn.setAttribute("onclick", `cleanLevelScn();showMenuScn()`)
+  } else if (screen==3) {
+    phaseBackBtn.setAttribute("onclick", `cleanPhaseScn();showLevelScn()`)
+  }
+}
 
 // Menu Scn
 const gameMenu = document.getElementById("game-menu");
@@ -9,6 +22,14 @@ const gameLogo = document.getElementById("game-logo");
 function cleanMenuScn() {
   gameMenu.style.display = "none";
   gameLogo.style.display = "none";
+}
+
+function showMenuScn() {
+  gameScreen.style.background = "url(public/img//background/backgroundMain.png)"
+  gameScreen.style.backgroundSize = "cover"
+  gameScreen.style.backgroundRepeat = "no-repeat"
+  gameMenu.style.display = "flex";
+  gameLogo.style.display = "flex"
 }
 
 function setPlayBtn() {
@@ -24,10 +45,16 @@ function showTutorialScn() {
   gameTutorial.style.display = "flex";
 }
 
+function cleanTutorialScn() {
+  showMenuScn()
+  gameTutorial.style.display = "none"
+}
+
 function setTutorialBtn() {
   tutorialBtn.onclick = showTutorialScn;
 }
 
+backBtn(1)
 setTutorialBtn();
 
 // Levels Scn
@@ -38,6 +65,8 @@ function showLevelScn() {
   cleanMenuScn();
   setLevelScn();
 }
+
+backBtn(2)
 
 function cleanLevelScn() {
   gameLevels.style.display = "none";
@@ -56,6 +85,7 @@ function selectCar(color) {
   carGame.setAttribute("src", `public/img/cars/car${color}.png`);
 }
 
+
 // Phase Scn
 const gamePhase = document.getElementById("game-phase");
 const phase1 = document.getElementById("phase-one");
@@ -65,6 +95,10 @@ const car1 = document.getElementById("car-phase1");
 const car2 = document.getElementById("car-phase2");
 const car3 = document.getElementById("car-phase3");
 const carGame = document.getElementById("carGamer");
+
+
+
+backBtn(3)
 
 function cleanPhaseScn() {
   gamePhase.style.display = "none";
