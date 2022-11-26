@@ -77,12 +77,19 @@ function showPhaseScn() {
 
 function setReadSize(a) {
   if (a === 1) {
+    read.classList.remove("read-box");
+    read.classList.remove("read-word");
     read.classList.remove("read-text");
     read.classList.add("read-box");
   } else if (a === 2) {
+    read.classList.remove("read-box");
+    read.classList.remove("read-box");
     read.classList.remove("read-word");
     read.classList.add("read-box");
+    read.style.fontSize = '20px'
   } else if (a === 3) {
+    read.classList.remove("read-text");
+    read.classList.remove("read-word");
     read.classList.remove("read-box");
     read.classList.add("read-text");
   }
@@ -523,32 +530,44 @@ function cleanWordBox(x) {
   if (x === 1) {
     wordbox.style.display = "none";
     wordbox.classList.remove("word-box__congrats");
+    wordbox.classList.remove("word-box__text");
     wordbox.classList.remove("word-box__word");
     wordbox.classList.add("word-box__phrase");
   } else if (x === 2) {
     wordbox.style.display = "none";
     wordbox.classList.remove("word-box__congrats");
+    wordbox.classList.remove("word-box__word");
     wordbox.classList.remove("word-box__phrase");
     wordbox.classList.add("word-box__text");
   } else if (x === 3) {
     wordbox.style.display = "none";
     wordbox.classList.remove("word-box__congrats");
     wordbox.classList.remove("word-box__text");
+    wordbox.classList.remove("word-box__phrase");
     wordbox.classList.add("word-box__word");
   }
 }
 
 function wordBox(a) {
   if (a == 1) {
-    wordbox.classList.add("word-box__word");
-  } else if (a == 2) {
-    wordbox.classList.add("word-box__phrase");
-  } else if (a == 3) {
-    wordbox.classList.add("word-box__text");
-  } else if (a == 4) {
-    wordbox.classList.add("word-box__congrats");
     wordbox.classList.remove("word-box__word");
     wordbox.classList.remove("word-box__text");
+    wordbox.classList.remove("word-box__phrase");
+    wordbox.classList.add("word-box__word");
+  } else if (a == 2) {
+    wordbox.classList.remove("word-box__word");
+    wordbox.classList.remove("word-box__text");
+    wordbox.classList.remove("word-box__phrase");
+    wordbox.classList.add("word-box__phrase");
+  } else if (a == 3) {
+    wordbox.classList.remove("word-box__word");
+    wordbox.classList.remove("word-box__text");
+    wordbox.classList.remove("word-box__phrase");
+    wordbox.classList.add("word-box__text");
+  } else if (a == 4) {
+    wordbox.classList.remove("word-box__word");
+    wordbox.classList.remove("word-box__text");
+    wordbox.classList.remove("word-box__phrase");
     wordbox.classList.add("word-box__congrats");
   }
 }
@@ -663,7 +682,7 @@ function passBtnWord() {
 }
 
 function passBtnPhrase() {
-  cleanWordBox(3);
+  cleanWordBox(2);
   cleanHomeBtn();
   cleanOpacity();
   stopAnimation();
@@ -672,7 +691,7 @@ function passBtnPhrase() {
 }
 
 function passBtnText(x) {
-  cleanWordBox(2);
+  cleanWordBox(3);
   cleanHomeBtn();
   cleanOpacity();
   stopAnimation();
