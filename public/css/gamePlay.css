@@ -330,3 +330,10 @@
     transform: translateX(-1000px);
   }
 }
+
+/* @media(max-width: 421px){
+  #game-play{
+    height: 90%;
+    width: 95%;
+ }
+} */

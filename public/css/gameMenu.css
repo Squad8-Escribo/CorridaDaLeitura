@@ -1,6 +1,5 @@
 #game-screen {
-  background: url(../img//background/backgroundMain.png
-  );
+  background: url(../img//background/backgroundMain.png);
   background-size: contain;
   border: 3px solid #632e01;
   box-shadow: 0px 0px 0px 10px #632e01;
@@ -40,3 +39,4 @@
 .game-screen__menu-btn--play {
   width: 100px;
 }
+
