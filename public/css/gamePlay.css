@@ -68,6 +68,7 @@
 
 .word-box__congrats {
   animation: popup 0.7s;
+  font-family: "Varela Round", sans-serif;
   height: 45%;
   top: 8%;
   width: 50%;
