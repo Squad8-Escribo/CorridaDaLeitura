@@ -236,7 +236,7 @@
 }
 
 .raceAnimation {
-  animation: carMove 20s linear infinite;
+  animation: carMove 20s ease infinite;
 }
 
 .obstacleMove {
