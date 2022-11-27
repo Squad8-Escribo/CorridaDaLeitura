@@ -1,25 +1,68 @@
 // Game Scn
 
 if (window.screen.width < 690) {
-  window.alert("Por favor, gire a tela para jogar!")
+  window.alert("Por favor, gire a tela para jogar!");
 }
 
-if (window.screen.orientation.type == "landscape-primary" && window.screen.width <690) {
-  window.alert("Dispotivo não possui a resolução mínima para jogar!")
+if (
+  window.screen.orientation.type == "landscape-primary" &&
+  window.screen.width < 690
+) {
+  window.alert("Dispotivo não possui a resolução mínima para jogar!");
 }
 
 const gameScreen = document.getElementById("game-screen");
-const levelsBackBtn = document.getElementById("levels-backBtn")
-const phaseBackBtn = document.getElementById("phase-backBtn")
-const tutorialBackBtn = document.getElementById("tutorial-backBtn")
+const levelsBackBtn = document.getElementById("levels-backBtn");
+const phaseBackBtn = document.getElementById("phase-backBtn");
+const tutorialBackBtn = document.getElementById("tutorial-backBtn");
+const newLevel = document.getElementById("new-level");
+
+
+function cleanGameScn() {
+  gameScreen.style.background = 'none'
+}
+
+function setGameScn(screen) {
+  // menu scn & finish scn
+  if (screen==1) {
+    gameScreen.style.background =
+    "url(public/img//background/backgroundMain.png)";
+    gameScreen.style.backgroundSize = "cover";
+    gameScreen.style.backgroundRepeat = "no-repeat";
+  } else if (screen==2) {
+    // levels scn & phase scn
+    gameScreen.style.backgroundImage =
+    "url('public/img/background/backgroundCleanScreen.png')";
+    gameScreen.style.backgroundSize = "cover";
+    gameScreen.style.backgroundRepeat = "no-repeat";
+  }
+}
+
+function showLevel(level) {
+  newLevel.style.display = "flex";
+  if (level == 2) {
+    newLevel.style.background = "url(public/img//elements/levelTwo.png)";
+    newLevel.style.backgroundSize = "contain";
+    newLevel.style.backgroundRepeat = "no-repeat";
+  } else if (level == 3) {
+    newLevel.style.background = "url(public/img//elements/levelThree.png)";
+    newLevel.style.background = "url(public/img//elements/levelTwo.png)";
+    newLevel.style.backgroundSize = "contain";
+    newLevel.style.backgroundRepeat = "no-repeat";
+  } else if (level == 4) {
+    newLevel.style.background = "url(public/img//elements/levelFour.png)";
+    newLevel.style.backgroundSize = "contain";
+    newLevel.style.backgroundRepeat = "no-repeat";
+  }
+}
 
 function backBtn(screen) {
-  if (screen===1) {
-    tutorialBackBtn.setAttribute("onclick", `cleanTutorialScn();showMenuScn()`)
-  } else if (screen===2) {
-    levelsBackBtn.setAttribute("onclick", `cleanLevelScn();showMenuScn()`)
-  } else if (screen==3) {
-    phaseBackBtn.setAttribute("onclick", `cleanPhaseScn();showLevelScn()`)
+  if (screen === 1) {
+    tutorialBackBtn.setAttribute("onclick", `cleanTutorialScn();showMenuScn()`);
+  } else if (screen === 2) {
+    levelsBackBtn.setAttribute("onclick", `cleanLevelScn();showMenuScn()`);
+  } else if (screen == 3) {
+    phaseBackBtn.setAttribute("onclick", `cleanPhaseScn();showLevelScn()`);
   }
 }
 
@@ -34,11 +77,12 @@ function cleanMenuScn() {
 }
 
 function showMenuScn() {
-  gameScreen.style.background = "url(public/img//background/backgroundMain.png)"
-  gameScreen.style.backgroundSize = "cover"
-  gameScreen.style.backgroundRepeat = "no-repeat"
+  gameScreen.style.background =
+    "url(public/img//background/backgroundMain.png)";
+  gameScreen.style.backgroundSize = "cover";
+  gameScreen.style.backgroundRepeat = "no-repeat";
   gameMenu.style.display = "flex";
-  gameLogo.style.display = "flex"
+  gameLogo.style.display = "flex";
 }
 
 function setPlayBtn() {
@@ -55,15 +99,15 @@ function showTutorialScn() {
 }
 
 function cleanTutorialScn() {
-  showMenuScn()
-  gameTutorial.style.display = "none"
+  showMenuScn();
+  gameTutorial.style.display = "none";
 }
 
 function setTutorialBtn() {
   tutorialBtn.onclick = showTutorialScn;
 }
 
-backBtn(1)
+backBtn(1);
 setTutorialBtn();
 
 // Levels Scn
@@ -75,15 +119,14 @@ function showLevelScn() {
   setLevelScn();
 }
 
-backBtn(2)
+backBtn(2);
 
 function cleanLevelScn() {
   gameLevels.style.display = "none";
 }
 
 function setLevelScn() {
-  gameScreen.style.backgroundImage =
-    "url('public/img/background/backgroundCleanScreen.png')";
+  setGameScn(2)
   gameLevels.style.display = "flex";
 }
 
@@ -93,7 +136,6 @@ function selectCar(color) {
   car3.setAttribute("src", `public/img/cars/car${color}.png`);
   carGame.setAttribute("src", `public/img/cars/car${color}.png`);
 }
-
 
 // Phase Scn
 const gamePhase = document.getElementById("game-phase");
@@ -105,9 +147,7 @@ const car2 = document.getElementById("car-phase2");
 const car3 = document.getElementById("car-phase3");
 const carGame = document.getElementById("carGamer");
 
-
-
-backBtn(3)
+backBtn(3);
 
 function cleanPhaseScn() {
   gamePhase.style.display = "none";
@@ -120,43 +160,57 @@ function showPhaseScn() {
 
 function setReadSize(a) {
   if (a === 1) {
+    read.classList.remove("read-endGame")
     read.classList.remove("read-box");
     read.classList.remove("read-word");
     read.classList.remove("read-text");
     read.classList.add("read-word");
   } else if (a === 2) {
+    read.classList.remove("read-endGame")
     read.classList.remove("read-box");
     read.classList.remove("read-box");
     read.classList.remove("read-word");
     read.classList.add("read-box");
   } else if (a === 3) {
+    read.classList.remove("read-endGame")
     read.classList.remove("read-text");
     read.classList.remove("read-word");
     read.classList.remove("read-box");
     read.classList.add("read-text");
+  } else if (a===4) {
+    read.classList.remove("read-text");
+    read.classList.remove("read-word");
+    read.classList.remove("read-box");
+    read.classList.remove("read-text");
+    read.classList.add("read-endGame")
   }
 }
 
 // Main Function
 
-const showFinishScn = (phase,level)=>{
+const showFinishScn = (phase, level) => {
   if (level >= 4) {
-    
-    gamePlay.style.background = "url('public/img/background/backgroundMain.png')";
-    gamePlay.style.backgroundSize = 'contain'
-    gamePlay.style.backgroundRepeat ='no-repeat'
-    background.style.display = 'none'
-    sky.style.display = 'none'
-    passBtn.style.display = 'none'
-    micBtn.style.display = 'none'
-    carGame.style.display = 'none'
-
-    
+    setGameScn(1)
+    background.style.display = "none";
+    sky.style.display = "none";
+    passBtn.style.display = "none";
+    carGame.style.display = "none";
+    cleanPassBtn();
+    cleanCar();
+    cleanMicBtn();
+    cleanLevel();
+    cleanRead()
+    showWordBox()
+    wordBox(5)
+    showRead();
+    setReadSize(4)
+    read.innerHTML = "<h1>PARABÉNS!</h1>  Você conseguiu finalizar o jogo!"
+    showHomeBtn()
+    homeBtn.classList.add("home-btn-endGame")
+  } else {
+    choosePhase(phase, level);
   }
-  else{
-    choosePhase(phase,level)
-  }
-}
+};
 const choosePhase = async (phase, level) => {
   //Get phases for json
 
@@ -167,7 +221,6 @@ const choosePhase = async (phase, level) => {
   var phaseName = phaseName[0];
   var arrayText = data[level][phase][phaseName];
 
-
   //if chosse word, one by one
 
   if (phaseName == "palavras") {
@@ -177,7 +230,7 @@ const choosePhase = async (phase, level) => {
     var numberWord = 0;
     var wordNot1 = 100;
     var wordNot2 = 100;
-  
+
     //System randomazing word
 
     let randomWord = (Math.random() * 10).toFixed(0);
@@ -244,7 +297,7 @@ const choosePhase = async (phase, level) => {
           } else if (hits == 0) {
             medalSelect(4);
           }
-          showAnimation()
+          showAnimation();
           passBtn.setAttribute(
             "onclick",
             `randomLevel(${level});reset();cleanResult();cleanMedal();passBtnWord();showCar()`
@@ -263,9 +316,9 @@ const choosePhase = async (phase, level) => {
       setReadSize(3);
       passBtn.setAttribute(
         "onclick",
-        `showFinishScn(0,${
+        `passBtnText(${level});reset();cleanResult();cleanMedal();setReadSize(1);showCar();showFinishScn(0,${
           level + 1
-        });reset();cleanResult();cleanMedal();passBtnText(${level});setReadSize(1);showCar()`
+        })`
       );
     } else {
       cleanPassBtn();
@@ -425,7 +478,7 @@ const choosePhase = async (phase, level) => {
         } else {
           medalSelect(4);
         }
-        showAnimation()
+        showAnimation();
       }
     });
   }
@@ -517,6 +570,7 @@ function stopArtyom() {
   artyom.fatality();
 }
 
+// randomize the phrases 
 function randomLevel(phase) {
   let randomPhrase = (Math.random() * 10 + 1).toFixed(0);
   while (randomPhrase > 3) {
@@ -525,6 +579,7 @@ function randomLevel(phase) {
   choosePhase(randomPhrase, phase);
 }
 
+// set the phase btns
 function chooseLevel(level) {
   phase1.setAttribute(
     "onclick",
@@ -543,38 +598,19 @@ function chooseLevel(level) {
 // Play Scn
 const carApp = document.getElementById("car");
 const gamePlay = document.getElementById("game-play");
-const newLevel = document.getElementById("new-level");
-
-function showLevel(level) {
-  newLevel.style.display = 'flex'
-  if (level==2) {
-    newLevel.style.background = "url(public/img//elements/levelTwo.png)"
-    newLevel.style.backgroundSize = 'contain'
-    newLevel.style.backgroundRepeat = 'no-repeat'
-  } else if (level==3) {
-    newLevel.style.background = "url(public/img//elements/levelThree.png)"
-    newLevel.style.background = "url(public/img//elements/levelTwo.png)"
-    newLevel.style.backgroundSize = 'contain'
-    newLevel.style.backgroundRepeat = 'no-repeat'
-  } else if (level==4) {
-    newLevel.style.background = "url(public/img//elements/levelFour.png)"
-    newLevel.style.backgroundSize = 'contain'
-    newLevel.style.backgroundRepeat = 'no-repeat'
-
-  }
-}
 
 function cleanLevel() {
-  newLevel.style.display = "none"
+  newLevel.style.display = "none";
 }
 
 function cleanCar() {
-  car.style.display = 'none'
-  carApp.style.display = "none"
+  car.style.display = "none";
+  carApp.style.display = "none";
 }
 
 function showCar() {
-  carApp.style.display = "flex"
+  carApp.style.display = "flex";
+  carGame.style.display = 'flex'
 }
 
 function cleanPlayScn() {
@@ -583,6 +619,13 @@ function cleanPlayScn() {
 
 function showPlayScn() {
   gamePlay.style.display = "flex";
+  cleanGameScn()
+  showBackground()
+  showSky()
+  showCar()
+  cleanPhaseScn()
+  showMicBtn()
+  
 }
 const wordbox = document.getElementById("word-box");
 
@@ -591,9 +634,10 @@ function showWordBox() {
 }
 
 function setWordBox() {
-  setTimeout(showWordBox,1000)
+  setTimeout(showWordBox, 1000);
 }
 
+// used in pass btn to defines word box after pass to the next phase
 function cleanWordBox(x) {
   wordbox.style.display = "none";
 
@@ -615,9 +659,12 @@ function cleanWordBox(x) {
     wordbox.classList.remove("word-box__text");
     wordbox.classList.remove("word-box__phrase");
     wordbox.classList.add("word-box__word");
+  } else if (x == 4) {
+    wordbox.classList.remove("word-box__congrats")
   }
 }
 
+// defines wordbox size for phase onclick
 function wordBox(a) {
   if (a == 1) {
     wordbox.classList.remove("word-box__word");
@@ -639,10 +686,22 @@ function wordBox(a) {
     wordbox.classList.remove("word-box__text");
     wordbox.classList.remove("word-box__phrase");
     wordbox.classList.add("word-box__congrats");
+  } else if (a==5) {
+    wordbox.classList.remove("word-box__word");
+    wordbox.classList.remove("word-box__text");
+    wordbox.classList.remove("word-box__phrase");
+    wordbox.classList.remove("word-box__congrats");
+    wordbox.classList.add("word-box__endGame");
+    
   }
 }
 
 const background = document.getElementById("background");
+
+function showBackground() {
+  background.style.display = 'flex'
+}
+
 const read = document.getElementById("read");
 
 function showRead() {
@@ -653,27 +712,31 @@ function cleanRead() {
 }
 const sky = document.getElementById("sky");
 
+function showSky () {
+  sky.style.display = 'flex'
+}
+
+
 const micBtn = document.getElementById("mic-btn");
 
 function showMicBtn(x) {
-
-  if(x!==3) {
+  if (x !== 3) {
     micBtn.style.display = "flex";
-  } 
+  }
 }
 
 function cleanMicBtn() {
   micBtn.style.display = "none";
 }
 
-const restarBtn = document.getElementById('restart-btn')
+const restarBtn = document.getElementById("restart-btn");
 
-function showRestartBtn () {
-  restarBtn.style.display = 'flex'
+function showRestartBtn() {
+  restarBtn.style.display = "flex";
 }
 
-function cleanRestartBtn(){
-  restarBtn.style.display = 'none'
+function cleanRestartBtn() {
+  restarBtn.style.display = "none";
 }
 
 // Congrats Scn
@@ -699,26 +762,29 @@ function cleanMedal() {
   medal.style.display = "none";
 }
 
-function medalSelect(a) {
-  if (a == 1) {
+// define the medal rank
+function medalSelect(rank) {
+  if (rank == 1) {
     medal.innerHTML = "  <img src='public/img/elements/diamond-medal.png'>";
     result.innerHTML =
       "<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE DIAMANTE!</h5>";
-  } else if (a == 2) {
+  } else if (rank == 2) {
     medal.innerHTML = "  <img src='public/img/elements/gold-medal.png'>";
     result.innerHTML =
       "<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE OURO!</h5>";
-  } else if (a == 3) {
+  } else if (rank == 3) {
     medal.innerHTML = "  <img src='public/img/elements/silver-medal.png'>";
     result.innerHTML =
       "<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE PRATA!</h5>";
-  } else if (a == 4) {
+  } else if (rank == 4) {
     medal.innerHTML = "  <img src='public/img/elements/cooper-medal.png'>";
     result.innerHTML =
       "<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE BRONZE!</h5>";
   }
 }
 
+
+// show the time of speak
 function showTime() {
   result.innerHTML += `<h5>SEU TEMPO FOI DE <br> ${timeToString(
     elapsedTime
@@ -734,7 +800,15 @@ function showPassBtn() {
 function cleanPassBtn() {
   passBtn.style.display = "none";
 }
+// add opacity to gameplay
+function setOpacity() {
+  micBtn.style.display = "none";
+  carApp.classList.add("car-opacity");
+  background.classList.add("background-opacity");
+  sky.classList.add("sky-opacity");
+}
 
+// remove game opacity
 function cleanOpacity() {
   sky.classList.remove("sky-opacity");
   micBtn.classList.remove("mic-opacity");
@@ -742,6 +816,7 @@ function cleanOpacity() {
   background.classList.remove("background-opacity");
 }
 
+// set the pass btn for word phase
 function passBtnWord() {
   cleanWordBox(1);
   cleanHomeBtn();
@@ -749,9 +824,10 @@ function passBtnWord() {
   stopAnimation();
   showRead();
   showMicBtn();
-  showLevel(2)
+  showLevel(2);
 }
 
+// set the pass btn for phrase phase
 function passBtnPhrase() {
   cleanWordBox(2);
   cleanHomeBtn();
@@ -759,9 +835,10 @@ function passBtnPhrase() {
   stopAnimation();
   showRead();
   showMicBtn();
-  showLevel(3)
+  showLevel(3);
 }
 
+// set the pass btn for text phase
 function passBtnText(x) {
   cleanWordBox(3);
   cleanHomeBtn();
@@ -769,8 +846,8 @@ function passBtnText(x) {
   stopAnimation();
   showRead();
   showMicBtn(x);
-  showCar()
-  showLevel(4)
+  showCar();
+  showLevel(4);
 }
 
 const homeBtn = document.getElementById("home-btn");
@@ -785,8 +862,12 @@ function cleanHomeBtn() {
 
 function setHomeBtn() {
   showHomeBtn();
+  homeBtn.classList.remove("home-btn-endGame")
   homeBtn.classList.add("home-btn");
-  homeBtn.setAttribute("onclick", `showMenuScn();cleanPlayScn();cleanPhaseScn();cleanWordBox();cleanHomeBtn();cleanPassBtn()`)
+  homeBtn.setAttribute(
+    "onclick",
+    `showMenuScn();cleanPlayScn();cleanPhaseScn();cleanHomeBtn();cleanWordBox(4);cleanMedal();cleanResult();cleanOpacity()`
+  );
 }
 
 function cleanBackground() {
@@ -794,29 +875,24 @@ function cleanBackground() {
   gamePhase.style.display = "none";
 }
 
-function setOpacity() {
-  micBtn.style.display = "none";
-  carApp.classList.add("car-opacity");
-  background.classList.add("background-opacity");
-  sky.classList.add("sky-opacity");
-}
-
+// show the congratulations screen
 function showCongratulations() {
-    showWordBox()
-    cleanBackground();
-    setOpacity();
-    setHomeBtn();
-    showMedal();
-    cleanCar();
-    showResult();
-    showTime();
-    showPassBtn();
-    wordBox(4);
-    stopArtyom();
-    stopAnimation()
-    cleanPhaseScn()
-    cleanLevelScn()
-    gameScreen.style.background = "none"
+  showWordBox();
+  cleanBackground();
+  setOpacity();
+  showMedal();
+  showHomeBtn()
+  setHomeBtn();
+  cleanCar();
+  showResult();
+  showTime();
+  showPassBtn();
+  wordBox(4);
+  stopArtyom();
+  stopAnimation();
+  cleanPhaseScn();
+  cleanLevelScn();
+  gameScreen.style.background = "none";
 }
 
 // Animations
@@ -828,31 +904,33 @@ function raceAnimation() {
   gameBackground.classList.add("raceAnimation");
 }
 
+function carAnimation() {
+  car.classList.add("carSuspension");
+}
+
+//show animation after complete phase
 function showAnimation() {
-  stopArtyom()
-  wordbox.style.display = 'none'
-  car.classList.remove("carSuspension")
-  car.classList.add("carJump")
-  obstacle.classList.add("obstacleMove")
+  stopArtyom();
+  wordbox.style.display = "none";
+  car.classList.remove("carSuspension");
+  car.classList.add("carJump");
+  obstacle.classList.add("obstacleMove");
 
-
-  setTimeout(showCongratulations,3000)
+  setTimeout(showCongratulations, 3000);
 }
 
 function animationGame() {
   raceAnimation();
   carAnimation();
 }
+
+// stop all game animations
 function stopAnimation() {
   gameBackground.classList.remove("raceAnimation");
   car.classList.remove("carSuspension");
-  carApp.classList.remove("carJump")
-  obstacle.classList.remove("obstacleMove")
-}
-
-function carAnimation() {
-  car.classList.add("carSuspension");
+  carApp.classList.remove("carJump");
+  obstacle.classList.remove("obstacleMove");
 }
 
 
-setPlayBtn()
+setPlayBtn();

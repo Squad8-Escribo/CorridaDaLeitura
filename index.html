@@ -146,7 +146,7 @@
           <div class="game-levels__levels">
             <div class="game-levels__levels-car">
               <a class="game-levels__levels--one phase "
-               onclick="audioPause()"
+               onclick="audioPause();cleanPhaseScn();showPlayScn()"
                 ><img
                   id="phase-one"
                   src="public/img/btns/phaseBtnOne.png"
@@ -161,7 +161,7 @@
             </div>
             <div class="game-levels__levels-car">
               <a class="game-levels__levels--two phase"
-              onclick="audioPause()"
+              onclick="audioPause();cleanPhaseScn();showPlayScn()"
                 ><img
                   id="phase-two"
                   src="public/img/btns/phaseBtnTwo.png"
@@ -176,7 +176,7 @@
             </div>
             <div class="game-levels__levels-car">
               <a class="game-levels__levels--three phase"
-              onclick="audioPause()"
+              onclick="audioPause();cleanPhaseScn();showPlayScn()"
                 ><img
                   id="phase-three"
                   src="public/img/btns/phaseBtnThree.png"
@@ -202,9 +202,7 @@
             <div id="medal"></div>
           </div>
           <div id="restart-btn"></div>
-          <div id="home-btn">
-            <a ><img src="public/img/btns/homeBtn.png" alt="" /></a>
-          </div>
+          <div id="home-btn"></div>
           <div id="pass-btn"></div>
           <div id="sky"></div>
           <div id="background"></div>
@@ -213,7 +211,7 @@
           </div>
           <div
             id="mic-btn"
-            onclick="startArtyom();start();cleanLevel();setWordBox();animationGame();cleanMicBtn();cleanPhaseScn()"
+            onclick="startArtyom();start();cleanLevel();setWordBox();animationGame();cleanMicBtn();showRead()"
           ></div>
           <div id="obstacle"></div>
         </div>
