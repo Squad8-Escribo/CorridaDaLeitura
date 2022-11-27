@@ -2,9 +2,9 @@
 
 #game-play {
   background-image: none;
-  height: 400px;
+  height: 365px;
   width: 700px;
-  border: 1px solid black;
+  border-radius: 40px;
   position: absolute;
   overflow-x: hidden;
   display: none;
@@ -23,7 +23,7 @@
 }
 
 .sky-opacity {
-  opacity: 0.3;
+  opacity: 0.6;
 }
 
 #background {
@@ -36,10 +36,11 @@
 }
 
 .background-opacity {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 #word-box {
+  display: none;
   cursor: default;
   background: #632e01;
   border: 20px solid #632e01;
@@ -47,7 +48,6 @@
   box-shadow: 0px 0px 0px 10px #633e01;
   position: absolute;
   z-index: 2;
-  display: none;
 }
 
 .word-box__word {
@@ -68,8 +68,9 @@
 
 .word-box__congrats {
   animation: popup 0.7s;
+  font-family: "Varela Round", sans-serif;
   height: 45%;
-  top: 8%;
+  top: 10%;
   width: 50%;
   left: 23%;
 }
@@ -86,13 +87,13 @@
   text-align: center;
   margin: 0 auto;
 }
-/*
+
 .read-phrase {
   font-size: 35px;
   bottom: 10%;
   left: 6%;
 }
-*/
+
 .read-text {
   font-size: 20px;
   text-align: center;
@@ -184,7 +185,7 @@
   transition: 0.3s;
   z-index: 2;
   height: 20%;
-  top: 70%;
+  top: 75%;
   left: 45%;
   width: 30%;
 }
@@ -210,19 +211,21 @@
 #mic-btn:hover {
   transform: scale(1.1);
 }
-/*  vou arrumar ainda
 #obstacle {
-    width: 20px;
-    height: 20px;
-    position: relative;
-    top: 110px;
-    left: 580px;
+  background: url(/public/img/elements/cone.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 15%;
+  top: 60%;
+  left: 100%;
 }
-*/
 
 /*Animations*/
 .carJump {
-  animation: carJump 1s linear;
+  animation: carJump 3.5s linear;
 }
 
 .carSuspension {
@@ -234,9 +237,12 @@
 }
 
 .raceAnimation {
-  animation: carMove 20s linear infinite;
-  animation: carMove 20s linear infinite;
-  animation: carMove 20s linear infinite;
+  animation: carMove 20s infinite;
+  animation-delay: 1s;
+}
+
+.obstacleMove {
+  animation: obstacleMove 2.5s linear;
 }
 
 @keyframes carMove {
@@ -257,24 +263,39 @@
   }
 }
 
-@keyframes carJump {
-  0% {
-    top: 200px;
-  }
+/* @keyframes carJump {
   30% {
-    top: 220px;
+    top: 240px;
+  }
+  35% {
+    left: 20%;
   }
   50% {
-    top: 150px;
-  }
-  80% {
-    top: 180px;
+    top: 220px;
+    left: 25%;
   }
   100% {
-    top: 200px;
+    left: 200%;
+    top: 240px;
+  }
+} */
+@keyframes carJump {
+  30% {
+    top: 240px;
+  }
+  35% {
+    top: 150px;
+    left: 20%;
+  }
+  50% {
+    top: 220px;
+    left: 25%;
+  }
+  100% {
+    top: 240px;
+    left: 200%;
   }
 }
-
 @keyframes passBtnSlide {
   0% {
     transform: translateX(-100%);
@@ -302,5 +323,17 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes obstacleMove {
+  100% {
+    transform: translateX(-1000px);
+  }
+}
+
+@media (max-height: 376px) {
+  #game-play {
+    width: 99%;
   }
 }

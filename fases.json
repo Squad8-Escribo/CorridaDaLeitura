@@ -14,34 +14,7 @@
     },
     {
       "texto": [
-        "Mariana ",
-        "tem ",
-        "nove ",
-        "anos. ",
-        "Ela ",
-        "gosta ",
-        "de ",
-        "jogar ",
-        "bola, ",
-        "fazer ",
-        "bolo ",
-        "de ",
-        "cenoura ",
-        "com ",
-        "sua ",
-        "vovó ",
-        "está ",
-        "na ",
-        "escola ",
-        "com ",
-        "seus ",
-        "amigos. ",
-        "Ela ",
-        "é ",
-        "uma ",
-        "menina ",
-        "bem ",
-        "feliz."
+        "Mariana "
       ]
     }
   ],
@@ -86,34 +59,7 @@
     },
     {
       "texto": [
-        "Mariana ",
-        "tem ",
-        "nove ",
-        "anos. ",
-        "Ela ",
-        "gosta ",
-        "de ",
-        "jogar ",
-        "bola, ",
-        "fazer ",
-        "bolo ",
-        "de ",
-        "cenoura ",
-        "com ",
-        "sua ",
-        "vovó ",
-        "está ",
-        "na ",
-        "escola ",
-        "com ",
-        "seus ",
-        "amigos. ",
-        "Ela ",
-        "é ",
-        "uma ",
-        "menina ",
-        "bem ",
-        "feliz."
+        "Mariana "
       ]
     }
   ],
@@ -134,7 +80,7 @@
         "gosta ",
         "de ",
         "comer ",
-        "estrogonofe ",
+        "strogonoff ",
         "de ",
         "frango."
       ]
@@ -160,43 +106,16 @@
         "pedestre ",
         "serve ",
         "para ",
-        "os ",
+        "o",
         "pedestre ",
-        "atravessarem ",
+        "atravessar ",
         "a ",
         "rua."
       ]
     },
     {
       "texto": [
-        "Mariana ",
-        "tem ",
-        "nove ",
-        "anos. ",
-        "Ela ",
-        "gosta ",
-        "de ",
-        "jogar ",
-        "bola, ",
-        "fazer ",
-        "bolo ",
-        "de ",
-        "cenoura ",
-        "com ",
-        "sua ",
-        "vovó ",
-        "está ",
-        "na ",
-        "escola ",
-        "com ",
-        "seus ",
-        "amigos. ",
-        "Ela ",
-        "é ",
-        "uma ",
-        "menina ",
-        "bem ",
-        "feliz."
+        "Mariana "
       ]
     }
   ],
@@ -217,48 +136,23 @@
         "cachorro ",
         "estava ",
         "com ",
-        "osso ",
-        "entalado ",
+        "uma",
+        "carne",
+        "entalada ",
         "na ",
         "garganta."
       ]
     },
     {
-      "frase2": ["Francisco ", "deu ", "uma ", "dentada ", "no ", "sanduíche."]
+      "frase2": ["Francisco ", "mordeu ", "o ", "sanduíche ", "com ", "uma"," dentada."]
     },
     {
       "frase3": ["O ", "caminhão ", "de ", "lixo ", "passou ", "cedo ", "hoje."]
     },
     {
       "texto": [
-        "Mariana ",
-        "tem ",
-        "nove ",
-        "anos. ",
-        "Ela ",
-        "gosta ",
-        "de ",
-        "jogar ",
-        "bola, ",
-        "fazer ",
-        "bolo ",
-        "de ",
-        "cenoura ",
-        "com ",
-        "sua ",
-        "vovó ",
-        "está ",
-        "na ",
-        "escola ",
-        "com ",
-        "seus ",
-        "amigos. ",
-        "Ela ",
-        "é ",
-        "uma ",
-        "menina ",
-        "bem ",
-        "feliz."
+        "Mariana "
+
       ]
     }
   ]
