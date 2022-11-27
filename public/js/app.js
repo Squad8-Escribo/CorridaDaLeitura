@@ -1,7 +1,11 @@
 // Game Scn
 
 if (window.screen.width < 690) {
-  alert("Por favor, gire a tela para jogar!")
+  window.alert("Por favor, gire a tela para jogar!")
+}
+
+if (window.screen.orientation.type == "landscape-primary" && window.screen.width <690) {
+  window.alert("Dispotivo não possui a resolução mínima para jogar!")
 }
 
 const gameScreen = document.getElementById("game-screen");

@@ -1,5 +1,4 @@
 #game-levels {
-  cursor: pointer;
   display: none;
   font-size: 20px;
   font-family: "Varela Round", sans-serif;
@@ -17,6 +16,7 @@
 .game-levels__levels-img {
   width: 120px;
   margin-top: 0;
+  cursor: pointer;
 }
 
 .game-levels__levels-img:hover {
