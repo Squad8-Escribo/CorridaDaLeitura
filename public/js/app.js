@@ -65,6 +65,7 @@ function backBtn(screen) {
   }
 }
 
+
 // Menu Scn
 const gameMenu = document.getElementById("game-menu");
 const playBtn = document.getElementById("play-btn");
@@ -126,7 +127,7 @@ function setLevelScn() {
   gameLevels.style.display = "flex";
 }
 
-// set a single color for the cars in eache level
+// set a single color for the cars in each level
 function selectCar(color) {
   car1.setAttribute("src", `public/img/cars/car${color}.png`);
   car2.setAttribute("src", `public/img/cars/car${color}.png`);
@@ -219,6 +220,8 @@ const choosePhase = async (phase, level) => {
   var phaseName = phaseName[0];
   var arrayText = data[level][phase][phaseName];
 
+  
+
   //if chosse word, one by one
 
   if (phaseName == "palavras") {
@@ -281,6 +284,8 @@ const choosePhase = async (phase, level) => {
         read.innerHTML = arrayText[randomWord];
         numberWord++;
 
+        // set pass btn to each phase
+  
         //Congratulations screen
 
         if (numberWord == 3) {
@@ -296,12 +301,9 @@ const choosePhase = async (phase, level) => {
             medalSelect(4);
           }
           showAnimation();
-          passBtn.setAttribute(
-            "onclick",
-            `randomLevel(${level});reset();cleanResult();cleanMedal();passBtnWord();showCar()`
-          );
+          setPassBtn(1)
         }
-      }
+      }  
     });
 
     //other cases(Pharse or text)
@@ -312,19 +314,11 @@ const choosePhase = async (phase, level) => {
     if (phaseName == "texto") {
       cleanPassBtn();
       setReadSize(3);
-      passBtn.setAttribute(
-        "onclick",
-        `passBtnText(${level});reset();cleanResult();cleanMedal();setReadSize(1);showCar();showFinishScn(0,${
-          level + 1
-        })`
-      );
+      setPassBtn(2)
     } else {
       cleanPassBtn();
       setReadSize(2);
-      passBtn.setAttribute(
-        "onclick",
-        `choosePhase(4,${level});reset();cleanResult();cleanMedal();passBtnPhrase();setReadSize(2);showCar()`
-      );
+     setPassBtn(3)
     }
 
     //Show text
@@ -480,6 +474,26 @@ const choosePhase = async (phase, level) => {
       }
     });
   }
+  // set passBtn
+  function setPassBtn(phase) {
+    if (phase==1) {
+      passBtn.setAttribute(
+        "onclick",
+        `randomLevel(${level});reset();cleanResult();cleanMedal();passBtnWord();showCar()`
+      );
+    } else if (phase==2) {
+      passBtn.setAttribute(
+        "onclick",
+        `passBtnText(${level});reset();cleanResult();cleanMedal();setReadSize(1);showCar();showFinishScn(0,${
+          level + 1
+        })`
+      );
+    } else if (phase==3) {
+      passBtn.setAttribute(
+        "onclick",
+        `choosePhase(4,${level});reset();cleanResult();cleanMedal();passBtnPhrase();setReadSize(2);showCar()`
+      );
+    }}
 };
 
 //Stopwatch codes
