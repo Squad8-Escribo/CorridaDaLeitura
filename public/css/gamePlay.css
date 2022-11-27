@@ -237,7 +237,7 @@
 }
 
 .raceAnimation {
-  animation: carMove 20s infinite;
+  animation: carMove 10s linear infinite;
   animation-delay: 1s;
 }
 
