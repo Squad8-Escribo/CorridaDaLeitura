@@ -17,22 +17,21 @@ const phaseBackBtn = document.getElementById("phase-backBtn");
 const tutorialBackBtn = document.getElementById("tutorial-backBtn");
 const newLevel = document.getElementById("new-level");
 
-
 function cleanGameScn() {
-  gameScreen.style.background = 'none'
+  gameScreen.style.background = "none";
 }
 
 function setGameScn(screen) {
   // menu scn & finish scn
-  if (screen==1) {
+  if (screen == 1) {
     gameScreen.style.background =
-    "url(public/img//background/backgroundMain.png)";
+      "url(public/img//background/backgroundMain.png)";
     gameScreen.style.backgroundSize = "cover";
     gameScreen.style.backgroundRepeat = "no-repeat";
-  } else if (screen==2) {
+  } else if (screen == 2) {
     // levels scn & phase scn
     gameScreen.style.backgroundImage =
-    "url('public/img/background/backgroundCleanScreen.png')";
+      "url('public/img/background/backgroundCleanScreen.png')";
     gameScreen.style.backgroundSize = "cover";
     gameScreen.style.backgroundRepeat = "no-repeat";
   }
@@ -77,10 +76,7 @@ function cleanMenuScn() {
 }
 
 function showMenuScn() {
-  gameScreen.style.background =
-    "url(public/img//background/backgroundMain.png)";
-  gameScreen.style.backgroundSize = "cover";
-  gameScreen.style.backgroundRepeat = "no-repeat";
+  setGameScn(1);
   gameMenu.style.display = "flex";
   gameLogo.style.display = "flex";
 }
@@ -126,10 +122,11 @@ function cleanLevelScn() {
 }
 
 function setLevelScn() {
-  setGameScn(2)
+  setGameScn(2);
   gameLevels.style.display = "flex";
 }
 
+// set a single color for the cars in eache level
 function selectCar(color) {
   car1.setAttribute("src", `public/img/cars/car${color}.png`);
   car2.setAttribute("src", `public/img/cars/car${color}.png`);
@@ -158,31 +155,32 @@ function showPhaseScn() {
   gamePhase.style.display = "flex";
 }
 
+// content size
 function setReadSize(a) {
   if (a === 1) {
-    read.classList.remove("read-endGame")
+    read.classList.remove("read-endGame");
     read.classList.remove("read-box");
     read.classList.remove("read-word");
     read.classList.remove("read-text");
     read.classList.add("read-word");
   } else if (a === 2) {
-    read.classList.remove("read-endGame")
+    read.classList.remove("read-endGame");
     read.classList.remove("read-box");
     read.classList.remove("read-box");
     read.classList.remove("read-word");
     read.classList.add("read-box");
   } else if (a === 3) {
-    read.classList.remove("read-endGame")
+    read.classList.remove("read-endGame");
     read.classList.remove("read-text");
     read.classList.remove("read-word");
     read.classList.remove("read-box");
     read.classList.add("read-text");
-  } else if (a===4) {
+  } else if (a === 4) {
     read.classList.remove("read-text");
     read.classList.remove("read-word");
     read.classList.remove("read-box");
     read.classList.remove("read-text");
-    read.classList.add("read-endGame")
+    read.classList.add("read-endGame");
   }
 }
 
@@ -190,7 +188,7 @@ function setReadSize(a) {
 
 const showFinishScn = (phase, level) => {
   if (level >= 4) {
-    setGameScn(1)
+    setGameScn(1);
     background.style.display = "none";
     sky.style.display = "none";
     passBtn.style.display = "none";
@@ -199,14 +197,14 @@ const showFinishScn = (phase, level) => {
     cleanCar();
     cleanMicBtn();
     cleanLevel();
-    cleanRead()
-    showWordBox()
-    wordBox(5)
+    cleanRead();
+    showWordBox();
+    wordBox(5);
     showRead();
-    setReadSize(4)
-    read.innerHTML = "<h1>PARABÉNS!</h1>  Você conseguiu finalizar o jogo!"
-    showHomeBtn()
-    homeBtn.classList.add("home-btn-endGame")
+    setReadSize(4);
+    read.innerHTML = "<h1>PARABÉNS!</h1>  Você conseguiu finalizar o jogo!";
+    showHomeBtn();
+    homeBtn.classList.add("home-btn-endGame");
   } else {
     choosePhase(phase, level);
   }
@@ -570,7 +568,7 @@ function stopArtyom() {
   artyom.fatality();
 }
 
-// randomize the phrases 
+// randomize the phrases
 function randomLevel(phase) {
   let randomPhrase = (Math.random() * 10 + 1).toFixed(0);
   while (randomPhrase > 3) {
@@ -610,7 +608,7 @@ function cleanCar() {
 
 function showCar() {
   carApp.style.display = "flex";
-  carGame.style.display = 'flex'
+  carGame.style.display = "flex";
 }
 
 function cleanPlayScn() {
@@ -619,13 +617,12 @@ function cleanPlayScn() {
 
 function showPlayScn() {
   gamePlay.style.display = "flex";
-  cleanGameScn()
-  showBackground()
-  showSky()
-  showCar()
-  cleanPhaseScn()
-  showMicBtn()
-  
+  cleanGameScn();
+  showBackground();
+  showSky();
+  showCar();
+  cleanPhaseScn();
+  showMicBtn();
 }
 const wordbox = document.getElementById("word-box");
 
@@ -660,7 +657,7 @@ function cleanWordBox(x) {
     wordbox.classList.remove("word-box__phrase");
     wordbox.classList.add("word-box__word");
   } else if (x == 4) {
-    wordbox.classList.remove("word-box__congrats")
+    wordbox.classList.remove("word-box__congrats");
   }
 }
 
@@ -686,20 +683,19 @@ function wordBox(a) {
     wordbox.classList.remove("word-box__text");
     wordbox.classList.remove("word-box__phrase");
     wordbox.classList.add("word-box__congrats");
-  } else if (a==5) {
+  } else if (a == 5) {
     wordbox.classList.remove("word-box__word");
     wordbox.classList.remove("word-box__text");
     wordbox.classList.remove("word-box__phrase");
     wordbox.classList.remove("word-box__congrats");
     wordbox.classList.add("word-box__endGame");
-    
   }
 }
 
 const background = document.getElementById("background");
 
 function showBackground() {
-  background.style.display = 'flex'
+  background.style.display = "flex";
 }
 
 const read = document.getElementById("read");
@@ -712,10 +708,9 @@ function cleanRead() {
 }
 const sky = document.getElementById("sky");
 
-function showSky () {
-  sky.style.display = 'flex'
+function showSky() {
+  sky.style.display = "flex";
 }
-
 
 const micBtn = document.getElementById("mic-btn");
 
@@ -782,7 +777,6 @@ function medalSelect(rank) {
       "<h1>PARABÉNS!</h1> <h5>VOCÊ CONSEGUIU A <br> MEDALHA DE BRONZE!</h5>";
   }
 }
-
 
 // show the time of speak
 function showTime() {
@@ -862,7 +856,7 @@ function cleanHomeBtn() {
 
 function setHomeBtn() {
   showHomeBtn();
-  homeBtn.classList.remove("home-btn-endGame")
+  homeBtn.classList.remove("home-btn-endGame");
   homeBtn.classList.add("home-btn");
   homeBtn.setAttribute(
     "onclick",
@@ -881,7 +875,7 @@ function showCongratulations() {
   cleanBackground();
   setOpacity();
   showMedal();
-  showHomeBtn()
+  showHomeBtn();
   setHomeBtn();
   cleanCar();
   showResult();
@@ -931,6 +925,5 @@ function stopAnimation() {
   carApp.classList.remove("carJump");
   obstacle.classList.remove("obstacleMove");
 }
-
 
 setPlayBtn();
