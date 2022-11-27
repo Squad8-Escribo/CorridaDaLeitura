@@ -23,7 +23,7 @@
 }
 
 .sky-opacity {
-  opacity: 0.3;
+  opacity: 0.6;
 }
 
 #background {
@@ -36,7 +36,7 @@
 }
 
 .background-opacity {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 #word-box {
@@ -70,7 +70,7 @@
   animation: popup 0.7s;
   font-family: "Varela Round", sans-serif;
   height: 45%;
-  top: 8%;
+  top: 10%;
   width: 50%;
   left: 23%;
 }
@@ -185,7 +185,7 @@
   transition: 0.3s;
   z-index: 2;
   height: 20%;
-  top: 70%;
+  top: 75%;
   left: 45%;
   width: 30%;
 }

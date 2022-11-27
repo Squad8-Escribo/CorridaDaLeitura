@@ -751,6 +751,7 @@ function cleanHomeBtn() {
 function setHomeBtn() {
   showHomeBtn();
   homeBtn.classList.add("home-btn");
+  homeBtn.setAttribute("onclick", `showMenuScn();cleanPlayScn();cleanPhaseScn();cleanWordBox();cleanHomeBtn();cleanPassBtn()`)
 }
 
 function cleanBackground() {
@@ -777,6 +778,10 @@ function showCongratulations() {
     showPassBtn();
     wordBox(4);
     stopArtyom();
+    stopAnimation()
+    cleanPhaseScn()
+    cleanLevelScn()
+    gameScreen.style.background = "none"
 }
 
 // Animations
