@@ -1,4 +1,9 @@
 // Game Scn
+
+if (window.screen.width < 690) {
+  alert("Por favor, gire a tela para jogar!")
+}
+
 const gameScreen = document.getElementById("game-screen");
 const levelsBackBtn = document.getElementById("levels-backBtn")
 const phaseBackBtn = document.getElementById("phase-backBtn")
@@ -114,13 +119,12 @@ function setReadSize(a) {
     read.classList.remove("read-box");
     read.classList.remove("read-word");
     read.classList.remove("read-text");
-    read.classList.add("read-box");
+    read.classList.add("read-word");
   } else if (a === 2) {
     read.classList.remove("read-box");
     read.classList.remove("read-box");
     read.classList.remove("read-word");
     read.classList.add("read-box");
-    read.style.fontSize = '20px'
   } else if (a === 3) {
     read.classList.remove("read-text");
     read.classList.remove("read-word");
@@ -535,6 +539,30 @@ function chooseLevel(level) {
 // Play Scn
 const carApp = document.getElementById("car");
 const gamePlay = document.getElementById("game-play");
+const newLevel = document.getElementById("new-level");
+
+function showLevel(level) {
+  newLevel.style.display = 'flex'
+  if (level==2) {
+    newLevel.style.background = "url(public/img//elements/levelTwo.png)"
+    newLevel.style.backgroundSize = 'contain'
+    newLevel.style.backgroundRepeat = 'no-repeat'
+  } else if (level==3) {
+    newLevel.style.background = "url(public/img//elements/levelThree.png)"
+    newLevel.style.background = "url(public/img//elements/levelTwo.png)"
+    newLevel.style.backgroundSize = 'contain'
+    newLevel.style.backgroundRepeat = 'no-repeat'
+  } else if (level==4) {
+    newLevel.style.background = "url(public/img//elements/levelFour.png)"
+    newLevel.style.backgroundSize = 'contain'
+    newLevel.style.backgroundRepeat = 'no-repeat'
+
+  }
+}
+
+function cleanLevel() {
+  newLevel.style.display = "none"
+}
 
 function cleanCar() {
   car.style.display = 'none'
@@ -717,6 +745,7 @@ function passBtnWord() {
   stopAnimation();
   showRead();
   showMicBtn();
+  showLevel(2)
 }
 
 function passBtnPhrase() {
@@ -726,6 +755,7 @@ function passBtnPhrase() {
   stopAnimation();
   showRead();
   showMicBtn();
+  showLevel(3)
 }
 
 function passBtnText(x) {
@@ -736,6 +766,7 @@ function passBtnText(x) {
   showRead();
   showMicBtn(x);
   showCar()
+  showLevel(4)
 }
 
 const homeBtn = document.getElementById("home-btn");
