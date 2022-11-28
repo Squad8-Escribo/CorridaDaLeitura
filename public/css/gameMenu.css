@@ -40,6 +40,9 @@
 .game-screen__menu-btn--play {
   width: 100px;
 }
+.game-screen__menu-btn-options{
+  display: none;
+}
 
 @keyframes pulseLogo {
   0% {
