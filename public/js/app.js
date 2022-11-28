@@ -218,7 +218,15 @@ const showFinishScn = (phase, level) => {
 const choosePhase = async (phase, level) => {
 
   //Show box level
-  newLevel.innerHTML=`<h2>Level ${(level+1)}</h2>Fase ${(phase+1)}`
+
+  newLevel.style.display="flex"
+  if(phase==0){
+    newLevel.innerHTML=`<h2>Level ${(level+1)}</h2>Fase ${(phase+1)}`
+  }else if(phase==4){
+    newLevel.innerHTML=`<h2>Level ${(level+1)}</h2>Fase 3`
+  }else{
+    newLevel.innerHTML=`<h2>Level ${(level+1)}</h2>Fase 2`
+  }
 
  /*  showBoxLevel(phase,level) */
 
@@ -618,7 +626,6 @@ function randomLevel(phase) {
   while (randomPhrase > 3) {
     randomPhrase = (Math.random() * 10 + 1).toFixed(0);
   }
-  newLevel.style.display="flex"
   choosePhase(randomPhrase, phase);
 }
 
