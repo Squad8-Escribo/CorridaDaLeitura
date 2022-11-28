@@ -818,6 +818,7 @@ function showPassBtn() {
 function cleanPassBtn() {
   passBtn.style.display = "none";
 }
+
 // add opacity to gameplay
 function setOpacity() {
   micBtn.style.display = "none";
