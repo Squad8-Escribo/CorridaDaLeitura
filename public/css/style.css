@@ -1,12 +1,12 @@
 body {
   margin: 0;
   padding: 0;
-  background: url('/public/img/background/webBackground_blurry.png');
+  background: url("/public/img/background/webBackground_blurry.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-html{
+html {
   height: 100%;
 }
 

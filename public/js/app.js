@@ -28,7 +28,7 @@ function setGameScn(screen) {
   // menu scn & finish scn
   if (screen == 1) {
     gameScreen.style.background =
-      "url(public/img//background/backgroundMain.png)";
+      "url(public/img/background/backgroundMain.png)";
     gameScreen.style.backgroundSize = "cover";
     gameScreen.style.backgroundRepeat = "no-repeat";
   } else if (screen == 2) {
@@ -60,14 +60,22 @@ function showLevel(level) {
 
 function backBtn(screen) {
   if (screen === 1) {
-    tutorialBackBtn.setAttribute("onclick", `cleanTutorialScn();showMenuScn()`);
+    tutorialBackBtn.setAttribute(
+      "onclick",
+      `cleanTutorialScn();showMenuScn();btnAudio.play()`
+    );
   } else if (screen === 2) {
-    levelsBackBtn.setAttribute("onclick", `cleanLevelScn();showMenuScn()`);
+    levelsBackBtn.setAttribute(
+      "onclick",
+      `cleanLevelScn();showMenuScn();btnAudio.play()`
+    );
   } else if (screen == 3) {
-    phaseBackBtn.setAttribute("onclick", `cleanPhaseScn();showLevelScn()`);
+    phaseBackBtn.setAttribute(
+      "onclick",
+      `cleanPhaseScn();showLevelScn();btnAudio.play()`
+    );
   }
 }
-
 
 // Menu Scn
 const gameMenu = document.getElementById("game-menu");
@@ -223,8 +231,6 @@ const choosePhase = async (phase, level) => {
   var phaseName = phaseName[0];
   var arrayText = data[level][phase][phaseName];
 
-  
-
   //if chosse word, one by one
 
   if (phaseName == "palavras") {
@@ -288,7 +294,7 @@ const choosePhase = async (phase, level) => {
         numberWord++;
 
         // set pass btn to each phase
-  
+
         //Congratulations screen
 
         if (numberWord == 3) {
@@ -304,9 +310,9 @@ const choosePhase = async (phase, level) => {
             medalSelect(4);
           }
           showAnimation();
-          setPassBtn(1)
+          setPassBtn(1);
         }
-      }  
+      }
     });
 
     //other cases(Pharse or text)
@@ -317,11 +323,11 @@ const choosePhase = async (phase, level) => {
     if (phaseName == "texto") {
       cleanPassBtn();
       setReadSize(3);
-      setPassBtn(2)
+      setPassBtn(2);
     } else {
       cleanPassBtn();
       setReadSize(2);
-     setPassBtn(3)
+      setPassBtn(3);
     }
 
     //Show text
@@ -479,24 +485,25 @@ const choosePhase = async (phase, level) => {
   }
   // set passBtn
   function setPassBtn(phase) {
-    if (phase==1) {
+    if (phase == 1) {
       passBtn.setAttribute(
         "onclick",
-        `randomLevel(${level});reset();cleanResult();cleanMedal();passBtnWord();showCar()`
+        `randomLevel(${level});reset();cleanResult();cleanMedal();passBtnWord();showCar();btnAudio.play()`
       );
-    } else if (phase==2) {
+    } else if (phase == 2) {
       passBtn.setAttribute(
         "onclick",
-        `passBtnText(${level});reset();cleanResult();cleanMedal();setReadSize(1);showCar();showFinishScn(0,${
+        `passBtnText(${level});reset();cleanResult();cleanMedal();setReadSize(1);showCar();btnAudio.play();showFinishScn(0,${
           level + 1
         })`
       );
-    } else if (phase==3) {
+    } else if (phase == 3) {
       passBtn.setAttribute(
         "onclick",
-        `choosePhase(4,${level});reset();cleanResult();cleanMedal();passBtnPhrase();setReadSize(2);showCar()`
+        `choosePhase(4,${level});reset();cleanResult();cleanMedal();passBtnPhrase();setReadSize(2);showCar();btnAudio.play()`
       );
-    }}
+    }
+  }
 };
 
 //Stopwatch codes
@@ -877,7 +884,7 @@ function setHomeBtn() {
   homeBtn.classList.add("home-btn");
   homeBtn.setAttribute(
     "onclick",
-    `showMenuScn();cleanPlayScn();cleanPhaseScn();cleanHomeBtn();cleanWordBox(4);cleanMedal();cleanResult();cleanOpacity()`
+    `showMenuScn();cleanPlayScn();cleanPhaseScn();cleanHomeBtn();cleanWordBox(4);cleanMedal();cleanResult();cleanOpacity();btnAudio.play()`
   );
 }
 
@@ -942,5 +949,25 @@ function stopAnimation() {
   carApp.classList.remove("carJump");
   obstacle.classList.remove("obstacleMove");
 }
+
+// Music
+
+const initialMusic = document.getElementById("initialMusic");
+const musicToggle = document.getElementById("game-screen__cfgBtn");
+const btnAudio = new Audio();
+
+btnAudio.src = "public//sound/btnAudio.mp3";
+
+initialMusic.volume = 0.05;
+
+function audioPause() {
+  initialMusic.pause();
+}
+
+function audioPlay() {
+  initialMusic.play();
+}
+
+musicToggle.onclick = audioPlay;
 
 setPlayBtn();
