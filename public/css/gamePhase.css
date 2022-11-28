@@ -1,5 +1,4 @@
 #game-phase {
-  cursor: pointer;
   display: none;
   font-size: 20px;
   justify-content: space-evenly;
@@ -43,10 +42,12 @@
   margin-top: 10px;
   transition: 1s;
 }
-.game-levels__back-btn img {
+.game-levels__back-btn {
+  cursor: pointer;
   width: 60px;
 }
-.game-levels__back-btn:hover img {
+.game-levels__back-btn:hover {
+  cursor: pointer;
   transform: scale(1.3);
   z-index: 2;
 }

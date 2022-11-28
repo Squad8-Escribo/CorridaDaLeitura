@@ -2,9 +2,9 @@
 
 #game-play {
   background-image: none;
-  height: 400px;
+  height: 365px;
   width: 700px;
-  border: 1px solid black;
+  border-radius: 30px;
   position: absolute;
   overflow-x: hidden;
   display: none;
@@ -23,10 +23,23 @@
 }
 
 .sky-opacity {
-  opacity: 0.3;
+  opacity: 0.6;
+}
+
+#new-level {
+  display: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  height: 45%;
+  width: 100%;
+  z-index: 2;
 }
 
 #background {
+  position: absolute;
   background: url(/public/img/background/backgroundGamePlayScreen.png);
   background-size: contain;
   background-repeat: repeat-x;
@@ -36,42 +49,49 @@
 }
 
 .background-opacity {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 #word-box {
+  display: none;
   cursor: default;
   background: #632e01;
   border: 20px solid #632e01;
   border-radius: 40px;
   box-shadow: 0px 0px 0px 10px #633e01;
-  position: absolute;
+  position: relative;
   z-index: 2;
-  display: none;
 }
 
 .word-box__word {
   top: 15%;
-  left: 40%;
+  margin: 0 auto;
 }
 
 .word-box__phrase {
   top: 10%;
-  left: 17%;
+  margin: 0 auto;
+  max-width: 70%;
 }
 
 .word-box__text {
   top: 12%;
-  left: 13%;
-  right: 10%;
+  margin: 0 auto;
+  max-width: 68%;
 }
 
 .word-box__congrats {
   animation: popup 0.7s;
   height: 45%;
-  top: 8%;
   width: 50%;
-  left: 23%;
+  top: 10%;
+  margin: 0 auto;
+}
+
+.word-box__endGame {
+  animation: popup 0.7s;
+  margin: 0 auto;
+  top: 10%;
 }
 
 #read {
@@ -81,43 +101,58 @@
   font-weight: 1;
 }
 
-.read-box {
-  font-size: 40px;
-  text-align: center;
+.read-word {
   margin: 0 auto;
+  font-size: 50px;
+  text-align: center;
 }
-/*
+.read-box {
+  margin: 0 auto;
+  font-size: 30px;
+  text-align: center;
+}
+
 .read-phrase {
   font-size: 35px;
   bottom: 10%;
   left: 6%;
 }
-*/
+
 .read-text {
   font-size: 20px;
   text-align: center;
+  line-height: 25px;
+  margin: 0 auto;
+}
+
+.read-endGame {
+  font-size: 28px;
+  margin: 0 auto;
+  bottom: 10%;
+  text-align: center;
+}
+
+.read-endGame h1 {
+  color: yellow;
 }
 
 #result {
-  left: 35%;
-  flex-direction: column;
+  font-family: "Varela Round", sans-serif;
   position: absolute;
-  font-size: 20px;
   color: white;
+  left: 38%;
   text-align: center;
   line-height: 80%;
+  font-size: 18px;
   opacity: 1;
+  z-index: 2;
 }
 
-.result {
-  left: 35%;
-  flex-direction: column;
+#medal {
   position: absolute;
-  font-size: 20px;
-  color: white;
-  text-align: center;
-  line-height: 80%;
-  opacity: 1;
+  height: 100%;
+  width: 100%;
+  left: 5%;
 }
 #car {
   position: absolute;
@@ -133,23 +168,55 @@
   opacity: 0.7;
 }
 
-#home-btn {
+#restart-btn {
   display: none;
+  animation: passBtnSlide 1s linear;
+  background: url(/public/img/btns/restartBtn.png);
+  background-repeat: no-repeat;
+  background-size: contain;
   position: absolute;
+  height: 20%;
+  top: 70%;
+  left: 45%;
+  width: 30%;
   z-index: 2;
-  height: 15%;
-  width: 100%;
-  top: 2%;
-  left: 2%;
-  transition: 1s;
+  cursor: pointer;
+  transition: 0.2s;
+  margin: 0 auto;
 }
 
-.home-btn img {
+#restart-btn:hover {
+  transform: scale(1.14);
+}
+
+#home-btn {
+  background: url(/public/img/btns/homeBtn.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: none;
+  z-index: 2;
+  height: 18%;
+  width: 100%;
+}
+
+.home-btn {
   animation: passBtnSlide 1s linear;
   cursor: pointer;
   z-index: 2;
-  height: 100%;
+  top: 2%;
+  left: 2%;
+}
+
+.home-btn img {
   width: 100%;
+  height: 100%;
+}
+
+.home-btn-endGame {
+  top: 75%;
+  left: 45%;
+  transition: none;
 }
 
 #pass-btn {
@@ -163,7 +230,7 @@
   transition: 0.3s;
   z-index: 2;
   height: 20%;
-  top: 70%;
+  top: 75%;
   left: 45%;
   width: 30%;
 }
@@ -189,19 +256,21 @@
 #mic-btn:hover {
   transform: scale(1.1);
 }
-/*  vou arrumar ainda
 #obstacle {
-    width: 20px;
-    height: 20px;
-    position: relative;
-    top: 110px;
-    left: 580px;
+  background: url(/public/img/elements/cone.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 15%;
+  top: 60%;
+  left: 100%;
 }
-*/
 
 /*Animations*/
 .carJump {
-  animation: carJump 1s linear;
+  animation: carJump 3.5s linear;
 }
 
 .carSuspension {
@@ -213,9 +282,12 @@
 }
 
 .raceAnimation {
-  animation: carMove 20s linear infinite;
-  animation: carMove 20s linear infinite;
-  animation: carMove 20s linear infinite;
+  animation: carMove 10s linear infinite;
+  animation-delay: 1s;
+}
+
+.obstacleMove {
+  animation: obstacleMove 2.5s linear;
 }
 
 @keyframes carMove {
@@ -236,24 +308,39 @@
   }
 }
 
-@keyframes carJump {
-  0% {
-    top: 200px;
-  }
+/* @keyframes carJump {
   30% {
-    top: 220px;
+    top: 240px;
+  }
+  35% {
+    left: 20%;
   }
   50% {
-    top: 150px;
-  }
-  80% {
-    top: 180px;
+    top: 220px;
+    left: 25%;
   }
   100% {
-    top: 200px;
+    left: 200%;
+    top: 240px;
+  }
+} */
+@keyframes carJump {
+  30% {
+    top: 240px;
+  }
+  35% {
+    top: 150px;
+    left: 20%;
+  }
+  50% {
+    top: 220px;
+    left: 25%;
+  }
+  100% {
+    top: 240px;
+    left: 200%;
   }
 }
-
 @keyframes passBtnSlide {
   0% {
     transform: translateX(-100%);
@@ -281,5 +368,17 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes obstacleMove {
+  100% {
+    transform: translateX(-1000px);
+  }
+}
+
+@media (max-height: 376px) {
+  #game-play {
+    width: 99%;
   }
 }

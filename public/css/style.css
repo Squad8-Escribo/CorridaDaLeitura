@@ -1,9 +1,18 @@
 body {
   margin: 0;
   padding: 0;
+  background: url("/public/img/background/webBackground_blurry.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+html {
+  height: 100%;
 }
 
 .bg-body {
   justify-content: center;
   display: flex;
+  align-items: center;
+  height: 100vh;
 }

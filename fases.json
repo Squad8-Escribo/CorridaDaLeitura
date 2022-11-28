@@ -13,36 +13,7 @@
       "frase3": ["O ", "sapo ", "pula ", "muito."]
     },
     {
-      "texto": [
-        "Mariana ",
-        "tem ",
-        "nove ",
-        "anos. ",
-        "Ela ",
-        "gosta ",
-        "de ",
-        "jogar ",
-        "bola, ",
-        "fazer ",
-        "bolo ",
-        "de ",
-        "cenoura ",
-        "com ",
-        "sua ",
-        "vovó ",
-        "está ",
-        "na ",
-        "escola ",
-        "com ",
-        "seus ",
-        "amigos. ",
-        "Ela ",
-        "é ",
-        "uma ",
-        "menina ",
-        "bem ",
-        "feliz."
-      ]
+      "texto": ["Mariana ","tem ","nove ","anos."," Ela ","gosta ","de ","jogar ","bola, ","fazer ","bolo ","de ","cenoura ","com ","sua ","vovó, ","está ","na ","escola ","com ","seus ","amigos. ","Ela ","é ","uma ","menina ","bem ","feliz! "]
     }
   ],
   [
@@ -63,9 +34,9 @@
       "frase2": [
         "A ",
         "atriz ",
-        "está ",
-        "interpretando ",
-        "um ",
+        "está",
+        " interpretando",
+        " um ",
         "papel ",
         "de ",
         "vilã."
@@ -85,36 +56,7 @@
       ]
     },
     {
-      "texto": [
-        "Mariana ",
-        "tem ",
-        "nove ",
-        "anos. ",
-        "Ela ",
-        "gosta ",
-        "de ",
-        "jogar ",
-        "bola, ",
-        "fazer ",
-        "bolo ",
-        "de ",
-        "cenoura ",
-        "com ",
-        "sua ",
-        "vovó ",
-        "está ",
-        "na ",
-        "escola ",
-        "com ",
-        "seus ",
-        "amigos. ",
-        "Ela ",
-        "é ",
-        "uma ",
-        "menina ",
-        "bem ",
-        "feliz."
-      ]
+      "texto": ["Você ","sabe ","qual ","é ","a ","diferença ","entre ","uma ","bruxa ","e ","uma ","fada? ","Todo ","mundo ","pensa ","que ","as ","bruxas ","são ","sempre ","feias ","e ","más, ","e  ","as ","fadas ","boas ", "e ", "maravilhosas, ","mas ", "talvez ", "a ", "resposta ","não ", "seja ","tão ", "simples ", "assim! ","Antigamente, ", "quando ", "se ", "contava ", "a ","história ", "da ","Bela ","Adormecida ","a ","vilã ","era ","uma ","fada. ","Ofendida ","por ","não ","ser ","convidada ","para ","a ","festa ","de ","batizado ","da ","princesa ","Aurora, ","a ","fada ","madrinha ","passou ", "a ", "agir ","feito ","uma ","bruxa."]
     }
   ],
   [
@@ -134,7 +76,7 @@
         "gosta ",
         "de ",
         "comer ",
-        "estrogonofe ",
+        "strogonoff ",
         "de ",
         "frango."
       ]
@@ -159,45 +101,16 @@
         "de ",
         "pedestre ",
         "serve ",
-        "para ",
-        "os ",
+        "para <br> ",
+        "o ",
         "pedestre ",
-        "atravessarem ",
+        "atravessar ",
         "a ",
         "rua."
       ]
     },
     {
-      "texto": [
-        "Mariana ",
-        "tem ",
-        "nove ",
-        "anos. ",
-        "Ela ",
-        "gosta ",
-        "de ",
-        "jogar ",
-        "bola, ",
-        "fazer ",
-        "bolo ",
-        "de ",
-        "cenoura ",
-        "com ",
-        "sua ",
-        "vovó ",
-        "está ",
-        "na ",
-        "escola ",
-        "com ",
-        "seus ",
-        "amigos. ",
-        "Ela ",
-        "é ",
-        "uma ",
-        "menina ",
-        "bem ",
-        "feliz."
-      ]
+      "texto": ["Mariana "]
     }
   ],
   [
@@ -217,49 +130,29 @@
         "cachorro ",
         "estava ",
         "com ",
-        "osso ",
-        "entalado ",
+        "uma",
+        "carne",
+        "entalada ",
         "na ",
         "garganta."
       ]
     },
     {
-      "frase2": ["Francisco ", "deu ", "uma ", "dentada ", "no ", "sanduíche."]
+      "frase2": [
+        "Francisco ",
+        "mordeu ",
+        "o ",
+        "sanduíche ",
+        "com ",
+        "uma",
+        " dentada."
+      ]
     },
     {
       "frase3": ["O ", "caminhão ", "de ", "lixo ", "passou ", "cedo ", "hoje."]
     },
     {
-      "texto": [
-        "Mariana ",
-        "tem ",
-        "nove ",
-        "anos. ",
-        "Ela ",
-        "gosta ",
-        "de ",
-        "jogar ",
-        "bola, ",
-        "fazer ",
-        "bolo ",
-        "de ",
-        "cenoura ",
-        "com ",
-        "sua ",
-        "vovó ",
-        "está ",
-        "na ",
-        "escola ",
-        "com ",
-        "seus ",
-        "amigos. ",
-        "Ela ",
-        "é ",
-        "uma ",
-        "menina ",
-        "bem ",
-        "feliz."
-      ]
+      "texto": ["Mariana "]
     }
   ]
 ]

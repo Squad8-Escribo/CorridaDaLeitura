@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="public/css/gameTutorial.css" />
     <link rel="stylesheet" href="public/css/gamePlay.css" />
     <link rel="stylesheet" href="public/css/gamePhase.css" />
-    <title>Corrida Maluca</title>
+    <link rel="shortcut icon" href="public/img/cars/favicon.ico" />
+
+    <title>Corrida da Leitura</title>
   </head>
 
   <body>
@@ -29,7 +31,10 @@
         <!-- Menu Screen-->
 
         <div class="game-screen__menu" id="game-menu">
-          <a class="game-screen__menu-btn--cfg game-screen__menu-btn">
+          <a
+            class="game-screen__menu-btn--cfg game-screen__menu-btn"
+            id="game-screen__cfgBtn"
+          >
             <img
               src="public/img/btns/settingsBtn.png"
               alt=""
@@ -37,7 +42,7 @@
             />
           </a>
           <a id="play-btn" class="game-screen__menu-play game-screen__menu-btn">
-            <img
+            <img onclick="btnAudio.play()"
               src="public/img/btns/playBtn.png"
               alt=""
               class="game-screen__menu-btn--img game-screen__menu-btn--play"
@@ -45,9 +50,9 @@
           </a>
           <a
             id="tutorial-btn"
-            class="game-screen__menu-tutorial game-screen__menu-btn"
+            class="game-screen__menu-tutorial game-screen__menu-btn" 
           >
-            <img
+            <img onclick="btnAudio.play()"
               src="public/img/btns/tutorialBtn.png"
               alt=""
               class="game-screen__menu-btn--img"
@@ -59,7 +64,9 @@
 
         <div id="game-tutorial">
           <div class="game-tutorial__back-btn">
-            <a href=""><img src="public/img/btns/backBtn.png" alt="" /></a>
+            <a id="tutorial-backBtn"
+              ><img src="public/img/btns/backBtn.png" alt=""
+            /></a>
           </div>
           <div class="game-tutorial__container">
             <img
@@ -72,9 +79,11 @@
 
         <!-- Levels Screeen -->
 
-        <div id="game-levels">
+        <div id="game-levels" name="game-levels">
           <div class="game-levels__back-btn">
-            <a href=""><img src="public/img/btns/backBtn.png" alt="" /></a>
+            <a id="levels-backBtn"
+              ><img src="public/img/btns/backBtn.png" alt=""
+            /></a>
           </div>
           <div class="game-levels__levels">
             <div class="game-levels__levels-car">
@@ -83,7 +92,7 @@
                   src="public/img/btns/levelBtnOne.png"
                   alt=""
                   class="game-levels__levels-img"
-                  onclick="chooseLevel(0);showPhaseScn();selectCar('Blue')"
+                  onclick="chooseLevel(0);showPhaseScn();selectCar('Blue');btnAudio.play()"
               /></a>
               <img
                 src="public/img/cars/carBlue.png"
@@ -97,7 +106,7 @@
                   src="public/img/btns/leveBtnTwo.png"
                   alt=""
                   class="game-levels__levels-img"
-                  onclick="chooseLevel(1);showPhaseScn();selectCar('Green')"
+                  onclick="chooseLevel(1);showPhaseScn();selectCar('Green');btnAudio.play()"
               /></a>
               <img
                 src="public/img/cars/carGreen.png"
@@ -111,7 +120,7 @@
                   src="public/img/btns/levelBtnThree.png"
                   alt=""
                   class="game-levels__levels-img"
-                  onclick="chooseLevel(2);showPhaseScn();selectCar('Red')"
+                  onclick="chooseLevel(2);showPhaseScn();selectCar('Red');btnAudio.play()"
               /></a>
               <img
                 src="public/img/cars/carRed.png"
@@ -125,7 +134,7 @@
                   src="public/img/btns/levelBtnFour.png"
                   alt=""
                   class="game-levels__levels-img"
-                  onclick="chooseLevel(3);showPhaseScn();selectCar('Yellow')"
+                  onclick="chooseLevel(3);showPhaseScn();selectCar('Yellow');btnAudio.play()"
               /></a>
               <img
                 src="public/img/cars/carYellow.png"
@@ -139,11 +148,15 @@
         <!-- Phase Screen -->
         <div id="game-phase">
           <div class="game-levels__back-btn">
-            <a href=""><img src="public/img/btns/backBtn.png" alt="" /></a>
+            <a id="phase-backBtn"
+              ><img src="public/img/btns/backBtn.png" alt=""
+            /></a>
           </div>
           <div class="game-levels__levels">
             <div class="game-levels__levels-car">
-              <a class="game-levels__levels--one phase"
+              <a
+                class="game-levels__levels--one phase"
+                onclick="audioPause();cleanPhaseScn();showPlayScn();btnAudio.play()"
                 ><img
                   id="phase-one"
                   src="public/img/btns/phaseBtnOne.png"
@@ -157,7 +170,9 @@
               />
             </div>
             <div class="game-levels__levels-car">
-              <a class="game-levels__levels--two phase"
+              <a
+                class="game-levels__levels--two phase"
+                onclick="audioPause();cleanPhaseScn();showPlayScn();btnAudio.play()"
                 ><img
                   id="phase-two"
                   src="public/img/btns/phaseBtnTwo.png"
@@ -171,8 +186,10 @@
               />
             </div>
             <div class="game-levels__levels-car">
-              <a class="game-levels__levels--three phase"
-                ><img
+              <a
+                class="game-levels__levels--three phase"
+                onclick="audioPause();cleanPhaseScn();showPlayScn();btnAudio.play()"
+                ><img 
                   id="phase-three"
                   src="public/img/btns/phaseBtnThree.png"
                   alt=""
@@ -190,14 +207,14 @@
         <!-- Play Screen -->
 
         <div id="game-play">
+          <div id="new-level"></div>
           <div id="word-box">
             <h1 id="read"></h1>
             <h2 id="result"></h2>
             <div id="medal"></div>
           </div>
-          <div id="home-btn">
-            <a href=""><img src="public/img/btns/homeBtn.png" alt="" /></a>
-          </div>
+          <div id="restart-btn"></div>
+          <div id="home-btn"></div>
           <div id="pass-btn"></div>
           <div id="sky"></div>
           <div id="background"></div>
@@ -206,13 +223,15 @@
           </div>
           <div
             id="mic-btn"
-            onclick="startArtyom();start(); showWordBox();animationGame();cleanMicBtn()"
+            onclick="startArtyom();start();cleanLevel();setWordBox();animationGame();cleanMicBtn();showRead();btnAudio.play()"
           ></div>
-          <!--Ainda vou criar-->
           <div id="obstacle"></div>
         </div>
       </div>
     </div>
+    <audio id="initialMusic" autoplay>
+      <source src="/public/sound/initialMusic.mp3" />
+    </audio>
   </body>
   <script src="Artyom/artyom.window.js" defer></script>
   <script src="public/js/app.js" defer></script>
