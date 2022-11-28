@@ -1,4 +1,4 @@
-![jogomenu](https://user-images.githubusercontent.com/90625499/202186718-d1f8f926-6959-4d74-8ccf-70f4087da446.PNG)
+![tela escribo](https://user-images.githubusercontent.com/97136886/204396914-539c781c-5351-497d-84a6-aa0cd8cbb693.PNG)
 
 <p align="center">
   <a href="#description">Descrição</a> •
