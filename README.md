@@ -24,7 +24,7 @@ Corrida da Leitura é uma ferramenta gamificada e lúdica, para avaliação auto
 
 ## Como jogar?
 
-//GIF
+https://user-images.githubusercontent.com/97136886/204395521-f446a011-6fe5-4b3d-b428-86d22f7f1ea1.mp4
 
 ## Tecnologias
 
