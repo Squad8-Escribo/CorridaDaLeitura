@@ -1,14 +1,17 @@
 // Game Scn
-
-if (window.screen.width < 690) {
-  window.alert("Por favor, gire a tela para jogar!");
-}
-
 if (
+
   window.screen.orientation.type == "landscape-primary" &&
   window.screen.width < 690
+
 ) {
-  window.alert("Dispotivo não possui a resolução mínima para jogar!");
+
+  window.alert("Infelizmente o seu dispositivo é incompatível com o jogo D:");
+
+}else if (window.screen.width < 690) {
+
+  window.alert("Por favor, gire a tela para jogar!");
+
 }
 
 const gameScreen = document.getElementById("game-screen");
@@ -45,7 +48,7 @@ function showLevel(level) {
     newLevel.style.backgroundRepeat = "no-repeat";
   } else if (level == 3) {
     newLevel.style.background = "url(public/img//elements/levelThree.png)";
-    newLevel.style.background = "url(public/img//elements/levelTwo.png)";
+    // newLevel.style.background = "url(public/img//elements/levelTwo.png)";
     newLevel.style.backgroundSize = "contain";
     newLevel.style.backgroundRepeat = "no-repeat";
   } else if (level == 4) {
@@ -855,7 +858,7 @@ function passBtnText(x) {
   showRead();
   showMicBtn(x);
   showCar();
-  showLevel(4);
+  showLevel(2);
 }
 
 const homeBtn = document.getElementById("home-btn");
