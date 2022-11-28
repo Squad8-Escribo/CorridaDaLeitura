@@ -40,23 +40,6 @@ function setGameScn(screen) {
   }
 }
 
-function showLevel(level) {
-  newLevel.style.display = "flex";
-  if (level == 2) {
-    newLevel.style.background = "url(public/img//elements/levelTwo.png)";
-    newLevel.style.backgroundSize = "contain";
-    newLevel.style.backgroundRepeat = "no-repeat";
-  } else if (level == 3) {
-    newLevel.style.background = "url(public/img//elements/levelThree.png)";
-    // newLevel.style.background = "url(public/img//elements/levelTwo.png)";
-    newLevel.style.backgroundSize = "contain";
-    newLevel.style.backgroundRepeat = "no-repeat";
-  } else if (level == 4) {
-    newLevel.style.background = "url(public/img//elements/levelFour.png)";
-    newLevel.style.backgroundSize = "contain";
-    newLevel.style.backgroundRepeat = "no-repeat";
-  }
-}
 
 function backBtn(screen) {
   if (screen === 1) {
@@ -227,7 +210,18 @@ const showFinishScn = (phase, level) => {
     choosePhase(phase, level);
   }
 };
+
+/* const showBoxLevel=(phase,level)=>{
+  newLevel.innerHTML=`<h2>Level ${(level+1)}</h2>Fase ${(phase+1)}`
+} */
+
 const choosePhase = async (phase, level) => {
+
+  //Show box level
+  newLevel.innerHTML=`<h2>Level ${(level+1)}</h2>Fase ${(phase+1)}`
+
+ /*  showBoxLevel(phase,level) */
+
   //Get phases for json
 
   read.innerHTML = "";
@@ -624,6 +618,7 @@ function randomLevel(phase) {
   while (randomPhrase > 3) {
     randomPhrase = (Math.random() * 10 + 1).toFixed(0);
   }
+  newLevel.style.display="flex"
   choosePhase(randomPhrase, phase);
 }
 
@@ -873,7 +868,6 @@ function passBtnWord() {
   stopAnimation();
   showRead();
   showMicBtn();
-  showLevel(2);
 }
 
 // set the pass btn for phrase phase
@@ -884,7 +878,6 @@ function passBtnPhrase() {
   stopAnimation();
   showRead();
   showMicBtn();
-  showLevel(3);
 }
 
 // set the pass btn for text phase
@@ -896,7 +889,6 @@ function passBtnText(x) {
   showRead();
   showMicBtn(x);
   showCar();
-  showLevel(2);
 }
 
 const homeBtn = document.getElementById("home-btn");
