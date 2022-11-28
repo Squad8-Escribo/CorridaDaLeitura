@@ -10,7 +10,7 @@
 </p>
 
 ## Descrição
-Corrida Maluca é uma ferramenta gamificada e lúdica, para avaliação automática da velocidade e da precisão de leitura. <br> <br> O público alvo da solução são crianças que já passaram pelo 1° ano do ensino fundamental, a partir da captação do resultado da fala e processamento dos dados.
+Corrida da Leitura é uma ferramenta gamificada e lúdica, para avaliação automática da velocidade e da precisão de leitura. <br> <br> O público alvo da solução são crianças que já passaram pelo 1° ano do ensino fundamental, a partir da captação do resultado da fala e processamento dos dados.
 
 ## Funcionalidades
 
