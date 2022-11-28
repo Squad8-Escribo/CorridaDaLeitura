@@ -211,14 +211,7 @@ const showFinishScn = (phase, level) => {
   }
 };
 
-/* const showBoxLevel=(phase,level)=>{
-  newLevel.innerHTML=`<h2>Level ${(level+1)}</h2>Fase ${(phase+1)}`
-} */
-
-const choosePhase = async (phase, level) => {
-
-  //Show box level
-
+const showBoxLevel=(phase,level)=>{
   newLevel.style.display="flex"
   if(phase==0){
     newLevel.innerHTML=`<h2>Level ${(level+1)}</h2>Fase ${(phase+1)}`
@@ -227,8 +220,11 @@ const choosePhase = async (phase, level) => {
   }else{
     newLevel.innerHTML=`<h2>Level ${(level+1)}</h2>Fase 2`
   }
+} 
 
- /*  showBoxLevel(phase,level) */
+const choosePhase = async (phase, level) => {
+
+  showBoxLevel(phase,level) 
 
   //Get phases for json
 
