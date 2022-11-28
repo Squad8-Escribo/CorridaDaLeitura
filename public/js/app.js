@@ -57,11 +57,20 @@ function showLevel(level) {
 
 function backBtn(screen) {
   if (screen === 1) {
-    tutorialBackBtn.setAttribute("onclick", `cleanTutorialScn();showMenuScn();btnAudio.play()`);
+    tutorialBackBtn.setAttribute(
+      "onclick",
+      `cleanTutorialScn();showMenuScn();btnAudio.play()`
+    );
   } else if (screen === 2) {
-    levelsBackBtn.setAttribute("onclick", `cleanLevelScn();showMenuScn();btnAudio.play()`);
+    levelsBackBtn.setAttribute(
+      "onclick",
+      `cleanLevelScn();showMenuScn();btnAudio.play()`
+    );
   } else if (screen == 3) {
-    phaseBackBtn.setAttribute("onclick", `cleanPhaseScn();showLevelScn();btnAudio.play()`);
+    phaseBackBtn.setAttribute(
+      "onclick",
+      `cleanPhaseScn();showLevelScn();btnAudio.play()`
+    );
   }
 }
 
@@ -942,9 +951,9 @@ function stopAnimation() {
 
 const initialMusic = document.getElementById("initialMusic");
 const musicToggle = document.getElementById("game-screen__cfgBtn");
-const btnAudio = new Audio()
+const btnAudio = new Audio();
 
-btnAudio.src = "public//sound/btnAudio.mp3"
+btnAudio.src = "public//sound/btnAudio.mp3";
 
 initialMusic.volume = 0.05;
 
