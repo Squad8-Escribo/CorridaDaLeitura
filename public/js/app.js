@@ -62,17 +62,23 @@ function backBtn(screen) {
   if (screen === 1) {
     tutorialBackBtn.setAttribute(
       "onclick",
-      `cleanTutorialScn();showMenuScn();btnAudio.play()`
+      `cleanTutorialScn();
+       showMenuScn();
+       btnAudio.play()`
     );
   } else if (screen === 2) {
     levelsBackBtn.setAttribute(
       "onclick",
-      `cleanLevelScn();showMenuScn();btnAudio.play()`
+      `cleanLevelScn();
+       showMenuScn();
+       btnAudio.play()`
     );
   } else if (screen == 3) {
     phaseBackBtn.setAttribute(
       "onclick",
-      `cleanPhaseScn();showLevelScn();btnAudio.play()`
+      `cleanPhaseScn();
+       showLevelScn();
+       btnAudio.play()`
     );
   }
 }
@@ -488,19 +494,39 @@ const choosePhase = async (phase, level) => {
     if (phase == 1) {
       passBtn.setAttribute(
         "onclick",
-        `randomLevel(${level});reset();cleanResult();cleanMedal();passBtnWord();showCar();btnAudio.play()`
+        `randomLevel(${level});
+         reset();
+         cleanResult();
+         cleanMedal();
+         passBtnWord();
+         showCar();
+         btnAudio.play()`
       );
     } else if (phase == 2) {
       passBtn.setAttribute(
         "onclick",
-        `passBtnText(${level});reset();cleanResult();cleanMedal();setReadSize(1);showCar();btnAudio.play();showFinishScn(0,${
+        `passBtnText(${level});
+         reset();
+         cleanResult();
+         cleanMedal();
+         setReadSize(1);
+         showCar();
+         btnAudio.play();
+         showFinishScn(0,${
           level + 1
         })`
       );
     } else if (phase == 3) {
       passBtn.setAttribute(
         "onclick",
-        `choosePhase(4,${level});reset();cleanResult();cleanMedal();passBtnPhrase();setReadSize(2);showCar();btnAudio.play()`
+        `choosePhase(4,${level});
+         reset();
+         cleanResult();
+         cleanMedal();
+         passBtnPhrase();
+         setReadSize(2);
+         showCar();
+         btnAudio.play()`
       );
     }
   }
@@ -605,15 +631,20 @@ function randomLevel(phase) {
 function chooseLevel(level) {
   phase1.setAttribute(
     "onclick",
-    `choosePhase(0,${level});showPlayScn(); wordBox(1)`
+    `choosePhase(0,${level});
+     showPlayScn(); 
+     wordBox(1)`
   );
   phase2.setAttribute(
     "onclick",
-    `randomLevel(${level});showPlayScn(); wordBox(2)`
+    `randomLevel(${level});
+     showPlayScn(); wordBox(2)`
   );
   phase3.setAttribute(
     "onclick",
-    `choosePhase(4,${level});showPlayScn(); wordBox(3)`
+    `choosePhase(4,${level});
+     showPlayScn(); 
+     wordBox(3)`
   );
 }
 
@@ -884,7 +915,15 @@ function setHomeBtn() {
   homeBtn.classList.add("home-btn");
   homeBtn.setAttribute(
     "onclick",
-    `showMenuScn();cleanPlayScn();cleanPhaseScn();cleanHomeBtn();cleanWordBox(4);cleanMedal();cleanResult();cleanOpacity();btnAudio.play()`
+    `showMenuScn();
+     cleanPlayScn();
+     cleanPhaseScn();
+     cleanHomeBtn();
+     cleanWordBox(4);
+     cleanMedal();
+     cleanResult();
+     cleanOpacity();
+     btnAudio.play()`
   );
 }
 
@@ -895,22 +934,22 @@ function cleanBackground() {
 
 // show the congratulations screen
 function showCongratulations() {
-  showWordBox();
-  cleanBackground();
-  setOpacity();
-  showMedal();
-  showHomeBtn();
-  setHomeBtn();
-  cleanCar();
-  showResult();
-  showTime();
-  showPassBtn();
-  wordBox(4);
   stopArtyom();
   stopAnimation();
   cleanPhaseScn();
   cleanLevelScn();
-  gameScreen.style.background = "none";
+  cleanBackground();
+  cleanCar();
+  setOpacity();
+  showWordBox();
+  wordBox(4);
+  showMedal();
+  showHomeBtn();
+  setHomeBtn();
+  showResult();
+  showTime();
+  showPassBtn();
+  cleanGameScn()
 }
 
 // Animations
