@@ -3,6 +3,7 @@
 <p align="center">
   <a href="#description">Descrição</a> •
   <a href="#key-features">Funcionalidades</a> •
+  <a href="#how-to-deploy">Executando o projeto</a> •
   <a href="#how-to-use">Como jogar?</a> •
   <a href="#tech">Tecnologias</a> •
   <a href="#credits">Contribuidores</a> •
@@ -21,6 +22,10 @@ Corrida da Leitura é uma ferramenta gamificada e lúdica, para avaliação auto
   - O tempo de leitura também é retornado para o usuário
 * Tutorial Interativo
   - Tutorial simples para entender a mecânica do jogo
+
+## Executando o projeto
+
+Para executar o jogo basta baixar o código disponibilizado neste repositório e ou no tópico 1.1 e abrir em uma IDE com capacidade de executar um servidor de desenvolvimento web(Recomendamos o live server do Visual Studio Code, usando o navegador Google Chrome). Executando o projeto da maneira proposta, será possível jogar o projeto sem problemas.
 
 ## Como jogar?
 
