@@ -1,15 +1,5 @@
 ![tela escribo](https://user-images.githubusercontent.com/97136886/204396914-539c781c-5351-497d-84a6-aa0cd8cbb693.PNG)
 
-<p align="center">
-  <a href="#description">Descrição</a> •
-  <a href="#key-features">Funcionalidades</a> •
-  <a href="#how-to-deploy">Executando o projeto</a> •
-  <a href="#how-to-use">Como jogar?</a> •
-  <a href="#tech">Tecnologias</a> •
-  <a href="#credits">Contribuidores</a> •
-  <a href="#license">Licença</a>
-</p>
-
 ## Descrição
 Corrida da Leitura é uma ferramenta gamificada e lúdica, para avaliação automática da velocidade e da precisão de leitura. <br> <br> O público alvo da solução são crianças que já passaram pelo 1° ano do ensino fundamental, a partir da captação do resultado da fala e processamento dos dados.<br> <br> Para melhor desempenho e evitar bugs recomendamos o uso do Google Chrome.
 
