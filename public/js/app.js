@@ -1,17 +1,11 @@
 // Game Scn
 if (
-
   window.screen.orientation.type == "landscape-primary" &&
   window.screen.width < 690
-
 ) {
-
   window.alert("Infelizmente o seu dispositivo é incompatível com o jogo D:");
-
-}else if (window.screen.width < 690) {
-
+} else if (window.screen.width < 690) {
   window.alert("Por favor, gire a tela para jogar!");
-
 }
 
 const gameScreen = document.getElementById("game-screen");
@@ -39,7 +33,6 @@ function setGameScn(screen) {
     gameScreen.style.backgroundRepeat = "no-repeat";
   }
 }
-
 
 function backBtn(screen) {
   if (screen === 1) {
@@ -158,28 +151,21 @@ function showPhaseScn() {
 
 // content size
 function setReadSize(a) {
+  read.classList.remove("read-box");
+
   if (a === 1) {
     read.classList.remove("read-endGame");
-    read.classList.remove("read-box");
-    read.classList.remove("read-word");
     read.classList.remove("read-text");
     read.classList.add("read-word");
   } else if (a === 2) {
     read.classList.remove("read-endGame");
-    read.classList.remove("read-box");
-    read.classList.remove("read-box");
     read.classList.remove("read-word");
     read.classList.add("read-box");
   } else if (a === 3) {
     read.classList.remove("read-endGame");
-    read.classList.remove("read-text");
-    read.classList.remove("read-word");
     read.classList.remove("read-box");
     read.classList.add("read-text");
   } else if (a === 4) {
-    read.classList.remove("read-text");
-    read.classList.remove("read-word");
-    read.classList.remove("read-box");
     read.classList.remove("read-text");
     read.classList.add("read-endGame");
   }
@@ -200,7 +186,6 @@ const showFinishScn = (phase, level) => {
     cleanLevel();
     cleanRead();
     showWordBox();
-    wordBox(5);
     showRead();
     setReadSize(4);
     read.innerHTML = "<h1>PARABÉNS!</h1>  Você conseguiu finalizar o jogo!";
@@ -211,20 +196,19 @@ const showFinishScn = (phase, level) => {
   }
 };
 
-const showBoxLevel=(phase,level)=>{
-  newLevel.style.display="flex"
-  if(phase==0){
-    newLevel.innerHTML=`<h2>Level ${(level+1)}</h2>Fase ${(phase+1)}`
-  }else if(phase==4){
-    newLevel.innerHTML=`<h2>Level ${(level+1)}</h2>Fase 3`
-  }else{
-    newLevel.innerHTML=`<h2>Level ${(level+1)}</h2>Fase 2`
+const showBoxLevel = (phase, level) => {
+  newLevel.style.display = "flex";
+  if (phase == 0) {
+    newLevel.innerHTML = `<h2>Level ${level + 1}</h2>Fase ${phase + 1}`;
+  } else if (phase == 4) {
+    newLevel.innerHTML = `<h2>Level ${level + 1}</h2>Fase 3`;
+  } else {
+    newLevel.innerHTML = `<h2>Level ${level + 1}</h2>Fase 2`;
   }
-} 
+};
 
 const choosePhase = async (phase, level) => {
-
-  showBoxLevel(phase,level) 
+  showBoxLevel(phase, level);
 
   //Get phases for json
 
@@ -304,15 +288,7 @@ const choosePhase = async (phase, level) => {
         if (numberWord == 3) {
           pause();
           cleanRead();
-          if (hits == 3) {
-            medalSelect(1);
-          } else if (hits == 2) {
-            medalSelect(2);
-          } else if (hits == 1) {
-            medalSelect(3);
-          } else if (hits == 0) {
-            medalSelect(4);
-          }
+          medalSelect(4 - hits);
           showAnimation();
           setPassBtn(1);
         }
@@ -491,7 +467,7 @@ const choosePhase = async (phase, level) => {
   function setPassBtn(phase) {
     if (phase == 1) {
       passBtn.setAttribute(
-        "onclick",
+      "onclick", 
         `randomLevel(${level});
          reset();
          cleanResult();
@@ -630,19 +606,17 @@ function chooseLevel(level) {
   phase1.setAttribute(
     "onclick",
     `choosePhase(0,${level});
-     showPlayScn(); 
-     wordBox(1)`
+     showPlayScn();`
   );
   phase2.setAttribute(
     "onclick",
     `randomLevel(${level});
-     showPlayScn(); wordBox(2)`
+     showPlayScn();`
   );
   phase3.setAttribute(
     "onclick",
     `choosePhase(4,${level});
-     showPlayScn(); 
-     wordBox(3)`
+     showPlayScn();`
   );
 }
 
@@ -687,62 +661,9 @@ function setWordBox() {
   setTimeout(showWordBox, 1000);
 }
 
-// used in pass btn to defines word box after pass to the next phase
-function cleanWordBox(x) {
+function cleanWordBox() {
   wordbox.style.display = "none";
 
-  if (x === 1) {
-    wordbox.style.display = "none";
-    wordbox.classList.remove("word-box__congrats");
-    wordbox.classList.remove("word-box__text");
-    wordbox.classList.remove("word-box__word");
-    wordbox.classList.add("word-box__phrase");
-  } else if (x === 2) {
-    wordbox.style.display = "none";
-    wordbox.classList.remove("word-box__congrats");
-    wordbox.classList.remove("word-box__word");
-    wordbox.classList.remove("word-box__phrase");
-    wordbox.classList.add("word-box__text");
-  } else if (x === 3) {
-    wordbox.style.display = "none";
-    wordbox.classList.remove("word-box__congrats");
-    wordbox.classList.remove("word-box__text");
-    wordbox.classList.remove("word-box__phrase");
-    wordbox.classList.add("word-box__word");
-  } else if (x == 4) {
-    wordbox.classList.remove("word-box__congrats");
-  }
-}
-
-// defines wordbox size for phase onclick
-function wordBox(a) {
-  if (a == 1) {
-    wordbox.classList.remove("word-box__word");
-    wordbox.classList.remove("word-box__text");
-    wordbox.classList.remove("word-box__phrase");
-    wordbox.classList.add("word-box__word");
-  } else if (a == 2) {
-    wordbox.classList.remove("word-box__word");
-    wordbox.classList.remove("word-box__text");
-    wordbox.classList.remove("word-box__phrase");
-    wordbox.classList.add("word-box__phrase");
-  } else if (a == 3) {
-    wordbox.classList.remove("word-box__word");
-    wordbox.classList.remove("word-box__text");
-    wordbox.classList.remove("word-box__phrase");
-    wordbox.classList.add("word-box__text");
-  } else if (a == 4) {
-    wordbox.classList.remove("word-box__word");
-    wordbox.classList.remove("word-box__text");
-    wordbox.classList.remove("word-box__phrase");
-    wordbox.classList.add("word-box__congrats");
-  } else if (a == 5) {
-    wordbox.classList.remove("word-box__word");
-    wordbox.classList.remove("word-box__text");
-    wordbox.classList.remove("word-box__phrase");
-    wordbox.classList.remove("word-box__congrats");
-    wordbox.classList.add("word-box__endGame");
-  }
 }
 
 const background = document.getElementById("background");
@@ -795,14 +716,12 @@ function cleanResult() {
 }
 
 function showResult() {
-  result.style.display = "block";
-  result.classList.add("result");
+  result.style.display = "inline";
 }
 
 const medal = document.getElementById("medal");
 
 function showMedal() {
-  medal.classList.add("medal");
   medal.style.display = "flex";
 }
 
@@ -865,7 +784,7 @@ function cleanOpacity() {
 
 // set the pass btn for word phase
 function passBtnWord() {
-  cleanWordBox(1);
+  cleanWordBox();
   cleanHomeBtn();
   cleanOpacity();
   stopAnimation();
@@ -875,7 +794,7 @@ function passBtnWord() {
 
 // set the pass btn for phrase phase
 function passBtnPhrase() {
-  cleanWordBox(2);
+  cleanWordBox();
   cleanHomeBtn();
   cleanOpacity();
   stopAnimation();
@@ -885,7 +804,7 @@ function passBtnPhrase() {
 
 // set the pass btn for text phase
 function passBtnText(x) {
-  cleanWordBox(3);
+  cleanWordBox();
   cleanHomeBtn();
   cleanOpacity();
   stopAnimation();
@@ -914,7 +833,7 @@ function setHomeBtn() {
      cleanPlayScn();
      cleanPhaseScn();
      cleanHomeBtn();
-     cleanWordBox(4);
+     cleanWordBox();
      cleanMedal();
      cleanResult();
      cleanOpacity();
@@ -937,14 +856,13 @@ function showCongratulations() {
   cleanCar();
   setOpacity();
   showWordBox();
-  wordBox(4);
+  showResult();
   showMedal();
   showHomeBtn();
   setHomeBtn();
-  showResult();
   showTime();
   showPassBtn();
-  cleanGameScn()
+  cleanGameScn();
 }
 
 // Animations

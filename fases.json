@@ -13,7 +13,36 @@
       "frase3": ["O ", "sapo ", "pula ", "muito."]
     },
     {
-      "texto": ["Mariana ","tem ","nove ","anos."," Ela ","gosta ","de ","jogar ","bola, ","fazer ","bolo ","de ","cenoura ","com ","sua ","vovó, ","está ","na ","escola ","com ","seus ","amigos. ","Ela ","é ","uma ","menina ","bem ","feliz! "]
+      "texto": [
+        "Mariana ",
+        "tem ",
+        "nove ",
+        "anos.",
+        " Ela ",
+        "gosta ",
+        "de ",
+        "jogar ",
+        "bola, ",
+        "fazer ",
+        "bolo ",
+        "de ",
+        "cenoura ",
+        "com ",
+        "sua ",
+        "vovó, ",
+        "está ",
+        "na ",
+        "escola ",
+        "com ",
+        "seus ",
+        "amigos. ",
+        "Ela ",
+        "é ",
+        "uma ",
+        "menina ",
+        "bem ",
+        "feliz! "
+      ]
     }
   ],
   [
@@ -32,7 +61,8 @@
     },
     {
       "frase2": [
-        "Atriz ",
+        "Essa ",
+        "atriz ",
         "está",
         " interpretando",
         " um ",
@@ -55,7 +85,46 @@
       ]
     },
     {
-      "texto": ["Você ","sabe ","qual ","é ","a ","diferença ","entre ","uma ","bruxa ","e ","uma ","fada? ","Todo ","mundo ","pensa ","que ","as ","bruxas ","são ","sempre ","feias ","e ","más, ","e  ","as ","fadas ","boas ", "e ", "maravilhosas, ","mas ", "talvez ", "a ", "resposta ","não ", "seja ","tão ", "simples ", "assim! "]
+      "texto": [
+        "Você ",
+        "sabe ",
+        "qual ",
+        "é ",
+        "a ",
+        "diferença ",
+        "entre ",
+        "uma ",
+        "bruxa ",
+        "e ",
+        "uma ",
+        "fada? ",
+        "Todo ",
+        "mundo ",
+        "pensa ",
+        "que ",
+        "as ",
+        "bruxas ",
+        "são ",
+        "sempre ",
+        "feias ",
+        "e ",
+        "más, ",
+        "e  ",
+        "as ",
+        "fadas ",
+        "boas ",
+        "e ",
+        "maravilhosas, ",
+        "mas ",
+        "talvez ",
+        "a ",
+        "resposta ",
+        "não ",
+        "seja ",
+        "tão ",
+        "simples ",
+        "assim! "
+      ]
     }
   ],
   [
@@ -100,7 +169,7 @@
         "de ",
         "pedestre ",
         "serve ",
-        "para <br> ",
+        "para ",
         "o ",
         "pedestre ",
         "atravessar ",
@@ -109,7 +178,38 @@
       ]
     },
     {
-      "texto":  ["A ","fada ","dos ","brinquedos ","abandonados."," Depois ","ele ","carregava ","no ","trenó ","as ","maravilhas ","que ","no ","Natal ","daria ","para ","as ","crianças."," Dava ","um ","beijo ","na ","fadinha ","dos ","brinquedos ","abandonados ","e ","ia ","embora." ]
+      "texto": [
+        "A ",
+        "fada ",
+        "dos ",
+        "brinquedos ",
+        "abandonados.",
+        " Depois ",
+        "ele ",
+        "carregava ",
+        "no ",
+        "trenó ",
+        "as ",
+        "maravilhas ",
+        "que ",
+        "no ",
+        "Natal ",
+        "daria ",
+        "para ",
+        "as ",
+        "crianças.",
+        " Dava ",
+        "um ",
+        "beijo ",
+        "na ",
+        "fadinha ",
+        "dos ",
+        "brinquedos ",
+        "abandonados ",
+        "e ",
+        "ia ",
+        "embora."
+      ]
     }
   ],
   [
@@ -151,7 +251,7 @@
       "frase3": ["O ", "caminhão ", "de ", "lixo ", "passou ", "cedo ", "hoje."]
     },
     {
-      "texto":  ["Um ","lobo ","devorou ","sua ","presa ","tão ","depressa, ","que ","acabou ","ficando ","com ","um ","osso ","entalado ","na ","garganta. ","Cheio ","de ","dor, ","ofereceu ","uma ","bela ","recompensa ","pra ","quem ","tirasse ","o ","osso ","de ","sua ","garganta."]
+      "texto":  ["Um ","lobo ","devorou ","sua ","presa ","tão ","depressa, ","que ","acabou ","ficando ","com ","um ","osso ","entalado ","na ","garganta. ","Cheio ","de ","dor, ","ofereceu ","uma ","bela ","recompensa ","para ","quem ","tirasse ","o ","osso ","de ","sua ","garganta."]
     }
   ]
 ]

@@ -40,14 +40,14 @@
   z-index: 2;
   font-size: 30px;
   line-height: 0%;
-  color:whitesmoke;
+  color: whitesmoke;
   text-align: center;
   flex-direction: column;
   font-family: "Varela Round", sans-serif;
   font-weight: 1;
 }
 
-#new-level h2{
+#new-level h2 {
   bottom: 20px;
   position: relative;
   color: yellow;
@@ -69,43 +69,16 @@
 }
 
 #word-box {
+  animation: popup 0.7s;
   display: none;
   cursor: default;
   background: #632e01;
   border: 20px solid #632e01;
   border-radius: 40px;
   box-shadow: 0px 0px 0px 10px #633e01;
-  position: relative;
   z-index: 2;
-}
-
-.word-box__word {
-  top: 15%;
-  margin: 0 auto;
-}
-
-.word-box__phrase {
-  top: 10%;
-  margin: 0 auto;
+  position: relative;
   max-width: 70%;
-}
-
-.word-box__text {
-  top: 12%;
-  margin: 0 auto;
-  max-width: 68%;
-}
-
-.word-box__congrats {
-  animation: popup 0.7s;
-  height: 45%;
-  width: 50%;
-  top: 10%;
-  margin: 0 auto;
-}
-
-.word-box__endGame {
-  animation: popup 0.7s;
   margin: 0 auto;
   top: 10%;
 }
@@ -128,12 +101,6 @@
   text-align: center;
 }
 
-.read-phrase {
-  font-size: 35px;
-  bottom: 10%;
-  left: 6%;
-}
-
 .read-text {
   font-size: 20px;
   text-align: center;
@@ -154,22 +121,27 @@
 
 #result {
   font-family: "Varela Round", sans-serif;
-  position: absolute;
   color: white;
-  left: 38%;
   text-align: center;
   line-height: 80%;
-  font-size: 18px;
+  font-size: 20px;
   opacity: 1;
   z-index: 2;
+  padding-left: 2%;
+  max-height: 150px;
 }
 
 #medal {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 5%;
+  display: none;
+  padding-top: 2%;
+  padding-right: 1%;
+  max-height: 180px;
 }
+
+#medal img {
+  height: 180px;
+}
+
 #car {
   position: absolute;
   bottom: 24%;
@@ -184,42 +156,20 @@
   opacity: 0.7;
 }
 
-#restart-btn {
-  display: none;
-  animation: passBtnSlide 1s linear;
-  background: url(/public/img/btns/restartBtn.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  height: 20%;
-  top: 70%;
-  left: 45%;
-  width: 30%;
-  z-index: 2;
-  cursor: pointer;
-  transition: 0.2s;
-  margin: 0 auto;
-}
-
-#restart-btn:hover {
-  transform: scale(1.14);
-}
-
 #home-btn {
+  cursor: pointer;
   background: url(/public/img/btns/homeBtn.png);
   background-size: contain;
   background-repeat: no-repeat;
-  position: absolute;
   display: none;
   z-index: 2;
   height: 18%;
   width: 100%;
+  position: absolute;
+  transition: 0.3s;
 }
 
 .home-btn {
-  animation: passBtnSlide 1s linear;
-  cursor: pointer;
-  z-index: 2;
   top: 2%;
   left: 2%;
 }
@@ -230,13 +180,11 @@
 }
 
 .home-btn-endGame {
-  top: 75%;
+  top: 76%;
   left: 45%;
-  transition: none;
 }
 
 #pass-btn {
-  animation: passBtnSlide 1s linear;
   display: none;
   background: url(/public/img/btns/passBtn.png);
   background-size: contain;
@@ -245,14 +193,14 @@
   background-repeat: no-repeat;
   transition: 0.3s;
   z-index: 2;
-  height: 20%;
-  top: 75%;
+  height: 18%;
+  top: 78%;
   left: 45%;
   width: 30%;
 }
 
 #pass-btn:hover {
-  transform: scale(1.14);
+  transform: scale(1.1);
 }
 
 #mic-btn {
@@ -324,22 +272,6 @@
   }
 }
 
-/* @keyframes carJump {
-  30% {
-    top: 240px;
-  }
-  35% {
-    left: 20%;
-  }
-  50% {
-    top: 220px;
-    left: 25%;
-  }
-  100% {
-    left: 200%;
-    top: 240px;
-  }
-} */
 @keyframes carJump {
   30% {
     top: 240px;
@@ -377,10 +309,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.15);
-  }
-  80% {
-    transform: scale(1);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1);
